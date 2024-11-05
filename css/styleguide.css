@@ -1,0 +1,29 @@
+:root {
+    --verybig-font-size: 3rem;
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --bigh-font-size: 2.738rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+
+  :root {
+    --hitam: #161616;
+    --putih: #F2F2F3;
+    --putihtransparan: #F2F2F31A;
+    --ijo: #389C9A;
+    --shadowitem: rgba(22, 22, 22, 0.8);
+  }
+
+  body {
+    background-color: #f8f9fa;  
+    color: #212529;
+  }
+
+  
+ 
+
+  

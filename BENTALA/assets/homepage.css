@@ -130,16 +130,16 @@ input:checked + label .description {
 }
 
 .card[for="c1"] {
-  background-image: url('/img/IMGSepatu.png');
+  background-image: url('/BENTALA/assets/img/IMGSepatu.png');
 }
 .card[for="c2"] {
-  background-image: url('/img/IMGJaket.png');
+  background-image: url('/BENTALA/assets/img/IMGJaket.png');
 }
 .card[for="c3"] {
-  background-image: url('/img/IMGkemeja.png');
+  background-image: url('/BENTALA/assets/img/IMGkemeja.png');
 }
 .card[for="c4"] {
-  background-image: url('/img/IMGCelana.png');
+  background-image: url('/BENTALA/assets/img/IMGCelana.png');
 }
 
 

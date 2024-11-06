@@ -1,6 +1,6 @@
 
 function openInstagram() {
-    window.open('https://www.instagram.com/', '_blank');
+    window.open('https://www.instagram.com/raffi1__/', '_blank');
 }
 
 
@@ -29,3 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Tambahkan script ini
+window.addEventListener('scroll', function() {
+    var navbar = document.querySelector('.navbar');
+    var imgFluid = document.querySelector('.imgfluid');
+    var imgHeight = imgFluid.offsetHeight;
+    
+    if (window.scrollY > imgHeight) {
+        navbar.classList.add('navbar-scrolled');
+    } else {
+        navbar.classList.remove('navbar-scrolled');
+    }
+});

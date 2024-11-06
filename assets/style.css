@@ -1,0 +1,78 @@
+.navbar-brand {
+  position: relative;
+  right: 55vh;
+}
+
+.navbar-nav.me-auto {
+  margin-left: 50px;
+}
+
+.navbar-nav.me-auto .nav-item {
+  margin: 0 10px;
+}
+
+
+.navbar-nav.me-auto .nav-link {
+  color: var(--putih); 
+}
+
+.form-control[type="text"] {
+  background-color: rgba(255, 255, 255, 0.2); 
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  color: #fff; 
+  padding: 0.375rem 0.75rem; 
+  transition: all 0.3s ease; 
+}
+
+.form-control[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.7); 
+}
+
+.form-control[type="text"]:focus {
+  background-color: rgba(255, 255, 255, 0.3); 
+  border-color: rgba(255, 255, 255, 0.5); 
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25); 
+  color: #fff; 
+}
+
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled {
+  background-color: white !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled .navbar-nav .nav-link {
+  color: black !important;
+}
+
+.navbar-scrolled .btn i {
+  color: black !important;
+}
+
+.navbar-scrolled .form-control[type="text"] {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.navbar-scrolled .form-control[type="text"]::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-scrolled .form-control[type="text"]:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.navbar-brand img {
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled .navbar-brand img {
+  content: url('img/Logo\ BENTALA.png');
+}

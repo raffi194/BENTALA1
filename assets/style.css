@@ -1,8 +1,3 @@
-.navbar-brand {
-  position: relative;
-  right: 55vh;
-}
-
 .navbar-nav.me-auto {
   margin-left: 50px;
 }
@@ -48,12 +43,14 @@
 }
 
 /* Logo styles */
-.navbar-brand img {
+.navbar-brand {
   height: 40px; /* Ukuran awal logo, sesuaikan sesuai kebutuhan */
   transition: all 0.3s ease;
+  position: relative;
+  right: 50vh;
 }
 
-.navbar-scrolled .navbar-brand img {
+.navbar-scrolled .navbar-brand {
   height: 40px; /* Ukuran logo yang lebih kecil saat di-scroll */
   content: url('/img/Logo\ BENTALA.png'); /* Ganti dengan path ke logo versi gelap */
 }
@@ -105,21 +102,3 @@
   color: black;
 }
 
-/* Media query untuk perangkat mobile */
-@media (max-width: 768px) {
-  .navbar, .navbar-scrolled {
-      padding: 0.5rem 1rem; /* Padding yang konsisten untuk mobile */
-  }
-
-  .navbar-brand img, .navbar-scrolled .navbar-brand img {
-      height: 30px; /* Ukuran logo yang konsisten untuk mobile */
-  }
-
-  .navbar-nav .nav-link, .navbar-scrolled .navbar-nav .nav-link {
-      padding: 0.3rem 0.5rem; /* Padding yang konsisten untuk nav links pada mobile */
-  }
-
-  .navbar .btn, .navbar-scrolled .btn {
-      padding: 0.3rem 0.5rem; /* Padding yang konsisten untuk tombol pada mobile */
-  }
-}

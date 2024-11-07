@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Tambahkan script ini
 window.addEventListener('scroll', function() {
     var navbar = document.querySelector('.navbar');
-    var imgFluid = document.querySelector('.imgfluid');
+    var imgFluid = document.querySelector('.img-container');
     var imgHeight = imgFluid.offsetHeight;
     
     if (window.scrollY > imgHeight) {
@@ -41,3 +41,7 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('navbar-scrolled');
     }
 });
+
+function toggleHeart(element) {
+    element.classList.toggle('active'); // Menambahkan atau menghapus kelas 'active'
+}

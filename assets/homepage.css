@@ -5,17 +5,18 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.imgfluid {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+
+/* Gaya untuk gambar responsif */
+.img-fluid {
+ width: 100%;
+}
+
+/* Media query untuk perangkat kecil */
+@media (max-width: 576px) {
+  .img-container {
+      padding: 10px; /* Mengurangi padding pada perangkat kecil */
   }
-  
-  
-.imgfluid img {
-    width: 100%; 
-    height: 695px;
-  }
+}
 
 .content2 {
   margin: 20px auto 20px auto;
@@ -107,7 +108,6 @@
   position: absolute;
   font-size: 24px;
   font-weight: 600;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 input:checked + label .description {
@@ -191,7 +191,87 @@ input:checked + label.card[for="c4"] {
 .card[for="c3"] { --bg-image: url('/img/IMGkemeja.png'); }
 .card[for="c4"] { --bg-image: url('/img/IMGCelana.png'); }
 
+.container1 {
+  display: flex; /* Menggunakan flexbox untuk layout */
+  justify-content: center; /* Mengatur agar card berada di tengah */
+  flex-wrap: wrap;
+  margin-left: 217px;
+}
 
+.row {
+  display: flex; /* Menggunakan flexbox untuk row */
+  flex-wrap: wrap; /* Membungkus elemen jika tidak muat dalam satu baris */
+  justify-content: center; /* Mengatur agar kolom berada di tengah */
+}
 
+.col {
+  margin: 40px -52px; /* Jarak antara card */
+  justify-content: center;
+}
+
+.rating {
+  display: flex; /* Mengatur elemen menjadi flexbox */
+  align-items: center; /* Mengatur agar elemen sejajar secara vertikal */
+  margin-top: -10px;
+}
+
+.rating-rectangle {
+  display: flex; /* Mengatur elemen di dalam rectangle menjadi flexbox */
+  align-items: center; /* Menyelaraskan ikon dan teks secara vertikal */
+  width: 40px; /* Lebar rectangle */
+  height: 15px; /* Tinggi rectangle */
+  background-color: var(--putih); /* Warna rectangle (kuning) */
+  border: 2px solid black; 
+  border-radius: 20px; /* Membuat sudut rectangle menjadi melengkung */
+  padding: 5px; /* Memberikan padding di dalam rectangle */ 
+  margin-left: -10px;
+
+}
+
+.rating-icon {
+  color: var(--hitam); 
+  margin-right: 2px; 
+  font-size: 8px;
+  position: relative;
+  bottom: 0.5px;
+  left: -1px;
+}
+
+.rating-text {
+  font-size: 8px; /* Ukuran font untuk rating */
+  color: var(--hitam); /* Warna teks */
+}
+
+.Penjelasan {
+  margin-top: 10px;
+  margin-left: 12px;
+}
+
+.merk {
+  font-size: 20px;
+}
+
+.text {
+  font-size: 14px; /* Ukuran font untuk penjelasan */
+  color: var(--hitam); /* Warna teks */
+  display: flex; /* Mengatur elemen menjadi flexbox */
+  align-items: center; /* Menyelaraskan ikon hati dan teks secara vertikal */
+}
+
+.heart-icon {
+  color: var(--hitam); /* Warna ikon hati */
+  margin-left: 135px; /* Memberikan jarak antara teks dan ikon hati */
+  font-size: 20px; /* Ukuran ikon hati */
+}
+
+.heart-icon.active {
+  color: red; /* Warna saat ikon hati aktif */
+}
+
+.price {
+  font-size: 12px; /* Ukuran font untuk harga */
+  color: var(--hitam); /* Warna teks */
+  margin-top: 2px; /* Jarak di atas harga */
+}
 
   

@@ -156,14 +156,14 @@
 /* Gaya untuk ikon sosial media */
 .social-links {
   flex: 0.85; /* Mengambil ruang yang tersedia */
-  margin-right: 75px;
+  margin-right: 65px;
   display: flex; /* Menggunakan flexbox untuk tata letak */
   justify-content: flex-end; /* Memposisikan ikon sosial media ke kanan */
   align-items: center; /* Memusatkan ikon secara vertikal */
 }
 
 .social-links i {
-  margin-left: 15px; /* Margin kiri untuk setiap ikon sosial media */
+  margin-left: 25px; /* Margin kiri untuk setiap ikon sosial media */
   cursor: pointer; /* Menunjukkan bahwa ikon dapat diklik */
   transition: color 0.3s; /* Transisi warna saat hover */
   width: 10px;

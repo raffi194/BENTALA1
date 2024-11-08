@@ -197,15 +197,24 @@ h1 {
 }
 
 .container1 {
-  display: flex; /* Menggunakan flexbox untuk layout */
+  display: flex; /* Menggunakan Flexbox untuk layout */
+  flex-wrap: wrap; /* Membungkus elemen jika tidak muat dalam satu baris */
   justify-content: center; /* Mengatur agar card berada di tengah */
-  margin-top: 20px;
+  margin-top: 20px; /* Jarak atas */
+  max-width: screen; /* Atur lebar maksimum kontainer */
+  width: 100%; /* Lebar kontainer 100% dari elemen induk */
+  margin-left: auto; /* Memusatkan kontainer */
+  margin-right: auto; /* Memusatkan kontainer */
 }
 
 .row {
-  display: flex; /* Menggunakan flexbox untuk row */
-  flex-wrap: wrap; /* Membungkus elemen jika tidak muat dalam satu baris */
-  justify-content: center; /* Mengatur agar kolom berada di tengah */
+  display: grid; /* Menggunakan Grid untuk layout */
+  gap: 20px; /* Jarak antar kolom */
+  position: relative;
+  left: 4vw;
+  justify-content: center; /* Memusatkan kolom secara horizontal */
+  max-width: 1050px; /* Atur lebar maksimum baris */
+  padding: 0 0; /* Menambahkan padding horizontal */
 }
 
 .col {
@@ -340,4 +349,4 @@ h1 {
 .icon-space {
   width: 15px; /* Lebar ruang antara ikon, sesuaikan sesuai kebutuhan */
   display: inline-block; /* Membuat ruang terlihat */
-}
+} 

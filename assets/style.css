@@ -102,3 +102,120 @@
   color: black;
 }
 
+/* Gaya untuk footer */
+.footer-4 {
+  background-color: #000000; /* Warna latar belakang hitam */
+  color: #ffffff; /* Warna teks putih */
+  padding: 40px 20px; /* Padding atas dan bawah */
+}
+
+/* Gaya untuk konten footer */
+.content {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-wrap: wrap; /* Membungkus elemen jika tidak muat dalam satu baris */
+  justify-content: space-between; /* Memisahkan elemen di dalam footer */
+  align-items: center; /* Memusatkan elemen secara vertikal */
+}
+
+/* Gaya untuk logo */
+.logo {
+  flex: 1; /* Mengambil ruang yang tersedia */
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  justify-content: center; /* Memusatkan logo */
+}
+
+.company-logo-icon {
+  max-width: 150px; /* Maksimal lebar logo */
+  height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+}
+
+/* Gaya untuk link */
+.links {
+  flex: 2; /* Mengambil ruang yang lebih besar */
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: column; /* Mengatur elemen dalam kolom */
+  align-items: center; /* Memusatkan elemen secara horizontal */
+}
+
+.koleksi {
+  margin: 5px 0; /* Margin atas dan bawah untuk setiap item */
+  cursor: pointer; /* Menunjukkan bahwa item dapat diklik */
+  transition: color 0.3s; /* Transisi warna saat hover */
+}
+
+.koleksi:hover {
+  color: #cccccc; /* Warna saat hover */
+}
+
+/* Gaya untuk ikon sosial media */
+.social-links {
+  flex: 1; /* Mengambil ruang yang tersedia */
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  justify-content: flex-end; /* Memposisikan ikon sosial media ke kanan */
+  align-items: center; /* Memusatkan ikon secara vertikal */
+}
+
+.social-links i {
+  margin-left: 15px; /* Margin kiri untuk setiap ikon sosial media */
+  cursor: pointer; /* Menunjukkan bahwa ikon dapat diklik */
+  transition: color 0.3s; /* Transisi warna saat hover */
+}
+
+.social-links i:hover {
+  color: #cccccc; /* Warna saat hover */
+}
+
+/* Gaya untuk bagian kredit */
+.credits {
+  margin-top: 20px; /* Margin atas untuk bagian kredit */
+  text-align: center; /* Memusatkan teks */
+}
+
+.divider {
+  height: 1px; /* Tinggi garis pemisah */
+  background-color: #ffffff; /* Warna garis pemisah */
+  margin: 10px 0; /* Margin atas dan bawah untuk garis pemisah */
+}
+
+.row {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  justify-content: center; /* Memusatkan elemen */
+  margin-top: 10px; /* Margin atas untuk baris */
+}
+
+/* Gaya untuk kebijakan privasi */
+.privacy-policy {
+  margin: 0 15px; /* Margin kiri dan kanan untuk setiap item */
+  cursor: pointer; /* Menunjukkan bahwa item dapat diklik */
+  transition: color 0.3s; /* Transisi warna saat hover */
+}
+
+.privacy-policy:hover {
+  color: #cccccc; /* Warna saat hover */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column; /* Mengubah arah flex menjadi kolom pada perangkat kecil */
+      align-items: center; /* Memusatkan elemen secara horizontal */
+  }
+
+  .links {
+      align-items: center; /* Memusatkan elemen dalam links */
+  }
+
+  .social-links {
+      justify-content: center; /* Memusatkan ikon sosial media pada perangkat kecil */
+      margin-top: 10px; /* Margin atas untuk ikon sosial media */
+  }
+
+  .credits {
+      flex-direction: column; /* Mengubah arah flex menjadi kolom pada perangkat kecil */
+  }
+
+  .row {
+      flex-direction: column; /* Mengubah arah flex menjadi kolom pada perangkat kecil */
+      align-items: center; /* Memusatkan elemen dalam baris */
+  }
+} 

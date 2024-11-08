@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Tambahkan script ini
 window.addEventListener('scroll', function() {
     var navbar = document.querySelector('.navbar');
-    var imgFluid = document.querySelector('.img-container');
+    var imgFluid = document.querySelector('.img-fluid');
     var imgHeight = imgFluid.offsetHeight;
     
     if (window.scrollY > imgHeight) {

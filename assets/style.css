@@ -1,13 +1,12 @@
-.navbar-nav.me-auto {
+.navbar-nav.me-1 {
   margin-left: 50px;
 }
 
-.navbar-nav.me-auto .nav-item {
+.navbar-nav.me-1 .nav-item {
   margin: 0 10px;
 }
 
-
-.navbar-nav.me-auto .nav-link {
+.navbar-nav.me-1 .nav-link {
   color: var(--putih); 
 }
 
@@ -33,7 +32,7 @@
 /* Navbar styles */
 .navbar {
   transition: all 0.3s ease;
-  padding: 1rem 2rem; /* Padding awal, sesuaikan sesuai kebutuhan */
+  padding: 1rem 2 rem; /* Padding awal, sesuaikan sesuai kebutuhan */
 }
 
 .navbar-scrolled {
@@ -46,8 +45,6 @@
 .navbar-brand {
   height: 40px; /* Ukuran awal logo, sesuaikan sesuai kebutuhan */
   transition: all 0.3s ease;
-  position: relative;
-  right: 50vh;
 }
 
 .navbar-scrolled .navbar-brand {
@@ -102,11 +99,17 @@
   color: black;
 }
 
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Gaya untuk footer */
 .footer-4 {
   background-color: var(--hitam); /* Warna latar belakang hitam */
   color: var(--putih); /* Warna teks putih */
   padding: 40px 20px; /* Padding atas dan bawah */
+  overflow-x: hidden;
 }
 
 /* Gaya untuk konten footer */
@@ -163,6 +166,8 @@
   margin-left: 15px; /* Margin kiri untuk setiap ikon sosial media */
   cursor: pointer; /* Menunjukkan bahwa ikon dapat diklik */
   transition: color 0.3s; /* Transisi warna saat hover */
+  width: 10px;
+  height: 10px;
 }
 
 .social-links i:hover {

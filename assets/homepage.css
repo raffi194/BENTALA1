@@ -5,10 +5,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.img-fluid {
- width: 100%;
-}
 
+.img-fluid {
+  width: screen;
+}
 
 .content2 {
   margin: 20px auto 20px auto;
@@ -189,7 +189,6 @@ input:checked + label.card[for="c4"] {
   align-items: center; /* Mengatur konten secara vertikal di tengah */
   height: 100%; /* Mengisi seluruh tinggi */
   text-align: center; /* Memastikan teks berada di tengah */
-  margin-left: 30px;
 }
 
 /* Tambahan untuk responsif */
@@ -200,7 +199,6 @@ h1 {
 .container1 {
   display: flex; /* Menggunakan flexbox untuk layout */
   justify-content: center; /* Mengatur agar card berada di tengah */
-  margin-left: 217px;
   margin-top: 20px;
 }
 
@@ -211,7 +209,7 @@ h1 {
 }
 
 .col {
-  margin: 40px -50px; /* Jarak antara card */
+  margin: 20px -50px; /* Jarak antara card */
   justify-content: center;
 }
 
@@ -265,7 +263,7 @@ h1 {
 }
 
 .heart-icon {
-  color: rgba(0, 0, 0, 0.186); /* Warna ikon hati hitam dengan transparansi 50% */
+  color: var(--hitamkurang); /* Warna ikon hati hitam dengan transparansi 50% */
   margin-left: 135px; /* Memberikan jarak antara teks dan ikon hati */
   font-size: 20px; /* Ukuran ikon hati */
 }
@@ -280,4 +278,66 @@ h1 {
   margin-top: 2px; /* Jarak di atas harga */
 }
 
-  
+.content {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  justify-content: center; /* Memusatkan elemen secara horizontal */
+  align-items: center; /* Memusatkan elemen secara vertikal */
+  padding: 20px; /* Menambahkan padding */
+}
+
+/* Mengatur gaya untuk dot slider */
+.slider-dots {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  margin: 0 20px; /* Jarak horizontal dari tombol */
+}
+
+.dot {
+  width: 10px; /* Lebar dot */
+  height: 10px; /* Tinggi dot */
+  border-radius: 50%; /* Membuat dot menjadi lingkaran */
+  background-color: var(--hitamkurang); /* Warna dot */
+  margin: 0 5px; /* Jarak antar dot */
+  cursor: pointer; /* Menunjukkan bahwa dot dapat diklik */
+  transition: background-color 0.3s; /* Transisi saat hover */
+}
+
+/* Mengatur gaya untuk dot yang aktif */
+.dot.active {
+  background-color: var(--hitam); /* Warna untuk dot aktif */
+}
+
+/* Mengatur gaya untuk tombol slider */
+.slider-buttons {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  align-items: center; /* Memusatkan tombol secara vertikal */
+}
+
+.buttonpag {
+  display: flex; /* Menggunakan flexbox untuk memusatkan ikon */
+  align-items: center; /* Memusatkan ikon secara vertikal */
+  justify-content: center; /* Memusatkan ikon secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border: 2px solid var(--hitam); /* Border tombol */
+  border-radius: 50%; /* Membuat tombol menjadi lingkaran */
+  background-color: white; /* Warna latar belakang tombol */
+  color: var(--hitam); /* Warna ikon */
+  cursor: pointer; /* Menunjukkan bahwa tombol dapat diklik */
+  transition: background-color 0.3s, color 0.3s; /* Transisi saat hover */
+}
+
+/* Mengatur gaya saat tombol di-hover */
+.button:hover {
+  background-color: #B197FC; /* Warna latar belakang saat hover */
+  color: white; /* Warna ikon saat hover */
+}
+
+/* Mengatur gaya untuk ikon */
+.icon {
+  font-size: 16px; /* Ukuran ikon */
+}
+
+.icon-space {
+  width: 15px; /* Lebar ruang antara ikon, sesuaikan sesuai kebutuhan */
+  display: inline-block; /* Membuat ruang terlihat */
+}

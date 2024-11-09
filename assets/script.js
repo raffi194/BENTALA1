@@ -1,3 +1,9 @@
+const logo = document.getElementById('logo');
+
+    // Menambahkan event listener untuk mengarahkan ke homepage saat logo diklik
+    logo.addEventListener('click', function() {
+        window.location.href = 'index.html'; // Ganti 'index.html' dengan URL homepage Anda
+    });
 
 function openInstagram() {
     window.open('https://www.instagram.com/raffi1__/', '_blank');

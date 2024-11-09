@@ -5,9 +5,43 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.imgatas {
+  overflow-x: hidden;
+  margin-bottom: -50px;
+}
 
 .img-fluid {
-  width: screen;
+  width: 100%;
+}
+
+.text-title {
+  font-size: 50px; /* Ukuran font untuk judul */
+  font-weight: bold; /* Membuat teks menjadi tebal */
+  margin: 0; /* Menghapus margin default */
+  color: var(--putih);
+  position: relative; /* Mengatur posisi elemen secara absolut */
+  bottom: 190px;
+  left: 50px;
+}
+
+.btn-discover {
+  display: inline-block; /* Menjadikan tombol sebagai inline-block */
+  padding: 10px 20px; /* Padding untuk tombol */
+  margin-top: 10px; /* Jarak antara judul dan tombol */
+  background-color: transparent; /* Latar belakang transparan */
+  border: 2px solid var(--putih); /* Border putih */
+  color: var(--putih); /* Warna teks tombol */
+  text-decoration: none; /* Menghapus garis bawah pada teks */
+  border-radius: 16px; /* Membuat sudut tombol melengkung */
+  transition: background-color 0.3s, color 0.3s; /* Efek transisi */
+  position: relative;
+  bottom: 300px;
+  right: 50px;
+}
+
+.btn-discover:hover {
+  background-color: var(--putih); /* Warna latar belakang saat hover */
+  color: var(--hitam); /* Warna teks saat hover */
 }
 
 .content2 {
@@ -291,7 +325,7 @@ h1 {
   display: flex; /* Menggunakan flexbox untuk tata letak */
   justify-content: center; /* Memusatkan elemen secara horizontal */
   align-items: center; /* Memusatkan elemen secara vertikal */
-  padding: 20px; /* Menambahkan padding */
+  margin-bottom: 20px;
 }
 
 /* Mengatur gaya untuk dot slider */
@@ -316,9 +350,15 @@ h1 {
 }
 
 /* Mengatur gaya untuk tombol slider */
-.slider-buttons {
+.slider-buttons1 {
   display: flex; /* Menggunakan flexbox untuk tata letak */
   align-items: center; /* Memusatkan tombol secara vertikal */
+}
+
+.slider-buttons2 {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  align-items: center; /* Memusatkan tombol secara vertikal */
+  margin-left: 515px;
 }
 
 .buttonpag {

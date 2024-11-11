@@ -165,3 +165,11 @@ h1 {
   width: 15px; /* Lebar ruang antara ikon, sesuaikan sesuai kebutuhan */
   display: inline-block; /* Membuat ruang terlihat */
 } 
+
+<select id="priceDropdown">
+          <option value="">Pilih Rentang Harga</option>
+          <option value="0-100000">Rp. 0 - Rp. 100.000</option>
+          <option value="100000-250000">Rp. 100.000 - Rp. 250.000</option>
+          <option value="250000-500000">Rp. 250.000 - Rp. 500.000</option>
+          <option value="500000-plus">Rp. > 500.000</option>
+      </select>

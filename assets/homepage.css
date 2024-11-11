@@ -16,33 +16,33 @@
 
 
 .text-title {
-  font-size: 50px; /* Ukuran font untuk judul */
-  font-weight: bold; /* Membuat teks menjadi tebal */
-  margin: 0; /* Menghapus margin default */
+  font-size: 50px; 
+  font-weight: bold; 
+  margin: 0; 
   color: var(--putih);
-  position: relative; /* Mengatur posisi elemen secara absolut */
+  position: relative; 
   bottom: 190px;
   left: 50px;
 }
 
 .btn-discover {
-  display: inline-block; /* Menjadikan tombol sebagai inline-block */
-  padding: 10px 20px; /* Padding untuk tombol */
-  margin-top: 10px; /* Jarak antara judul dan tombol */
-  background-color: transparent; /* Latar belakang transparan */
-  border: 2px solid var(--putih); /* Border putih */
-  color: var(--putih); /* Warna teks tombol */
-  text-decoration: none; /* Menghapus garis bawah pada teks */
-  border-radius: 16px; /* Membuat sudut tombol melengkung */
-  transition: background-color 0.3s, color 0.3s; /* Efek transisi */
+  display: inline-block; 
+  padding: 10px 20px; 
+  margin-top: 10px; 
+  background-color: transparent; 
+  border: 2px solid var(--putih); 
+  color: var(--putih); 
+  text-decoration: none; 
+  border-radius: 16px; 
+  transition: background-color 0.3s, color 0.3s; 
   position: relative;
   bottom: 300px;
   right: 50px;
 }
 
 .btn-discover:hover {
-  background-color: var(--putih); /* Warna latar belakang saat hover */
-  color: var(--hitam); /* Warna teks saat hover */
+  background-color: var(--putih); 
+  color: var(--hitam); 
 }
 
 .content2 {
@@ -161,7 +161,6 @@ input:checked + label .description {
   transform: translateY(0) !important;
 }
 
-/* Menambahkan shadow pada gambar background */
 .card[for="c1"] {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/img/IMGSepatu.png');
   background-size: cover;
@@ -186,7 +185,6 @@ input:checked + label .description {
   transition: all 0.6s ease;
 }
 
-/* Menghilangkan shadow saat card dibuka */
 input:checked + label.card[for="c1"] {
   background-image: url('/img/IMGSepatu.png');
 }
@@ -203,7 +201,6 @@ input:checked + label.card[for="c4"] {
   background-image: url('/img/IMGCelana.png');
 }
 
-/* Menambahkan hover effect untuk shadow yang lebih gelap */
 .card[for="c1"]:hover,
 .card[for="c2"]:hover,
 .card[for="c3"]:hover,
@@ -212,66 +209,64 @@ input:checked + label.card[for="c4"] {
                     var(--bg-image);
 }
 
-/* Menambahkan variabel CSS untuk background image */
 .card[for="c1"] { --bg-image: url('/img/IMGSepatu.png'); }
 .card[for="c2"] { --bg-image: url('/img/IMGJaket.png'); }
 .card[for="c3"] { --bg-image: url('/img/IMGkemeja.png'); }
 .card[for="c4"] { --bg-image: url('/img/IMGCelana.png'); }
 
 .JudulKoleksi {
-  display: flex; /* Menggunakan Flexbox */
-  justify-content: center; /* Mengatur konten secara horizontal di tengah */
-  align-items: center; /* Mengatur konten secara vertikal di tengah */
-  height: 100%; /* Mengisi seluruh tinggi */
-  text-align: center; /* Memastikan teks berada di tengah */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100%; 
+  text-align: center; 
 }
 
-/* Tambahan untuk responsif */
 h1 {
-  font-size: 2.5rem; /* Ukuran font yang responsif */
+  font-size: 2.5rem; 
 }
 
 .container1 {
-  display: flex; /* Menggunakan Flexbox untuk layout */
-  flex-wrap: wrap; /* Membungkus elemen jika tidak muat dalam satu baris */
-  justify-content: center; /* Mengatur agar card berada di tengah */
-  margin-top: 20px; /* Jarak atas */
-  max-width: screen; /* Atur lebar maksimum kontainer */
-  width: 100%; /* Lebar kontainer 100% dari elemen induk */
-  margin-left: auto; /* Memusatkan kontainer */
-  margin-right: auto; /* Memusatkan kontainer */
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  margin-top: 20px; 
+  max-width: screen; 
+  width: 100%; 
+  margin-left: auto; 
+  margin-right: auto; 
 }
 
 .row {
-  display: grid; /* Menggunakan Grid untuk layout */
-  gap: 20px; /* Jarak antar kolom */
+  display: grid; 
+  gap: 20px; 
   position: relative;
   left: 4vw;
-  justify-content: center; /* Memusatkan kolom secara horizontal */
-  max-width: 1050px; /* Atur lebar maksimum baris */
-  padding: 0 0; /* Menambahkan padding horizontal */
+  justify-content: center; 
+  max-width: 1050px; 
+  padding: 0 0; 
 }
 
 .col {
-  margin: 20px -50px; /* Jarak antara card */
+  margin: 20px -50px; 
   justify-content: center;
 }
 
 .rating {
-  display: flex; /* Mengatur elemen menjadi flexbox */
-  align-items: center; /* Mengatur agar elemen sejajar secara vertikal */
+  display: flex; 
+  align-items: center; 
   margin-top: -10px;
 }
 
 .rating-rectangle {
-  display: flex; /* Mengatur elemen di dalam rectangle menjadi flexbox */
-  align-items: center; /* Menyelaraskan ikon dan teks secara vertikal */
-  width: 40px; /* Lebar rectangle */
-  height: 15px; /* Tinggi rectangle */
-  background-color: var(--putih); /* Warna rectangle (kuning) */
+  display: flex; 
+  align-items: center; 
+  width: 40px; 
+  height: 15px; 
+  background-color: var(--putih); 
   border: 2px solid black; 
-  border-radius: 20px; /* Membuat sudut rectangle menjadi melengkung */
-  padding: 5px; /* Memberikan padding di dalam rectangle */ 
+  border-radius: 20px; 
+  padding: 5px; 
   margin-left: -10px;
 
 }
@@ -286,8 +281,8 @@ h1 {
 }
 
 .rating-text {
-  font-size: 8px; /* Ukuran font untuk rating */
-  color: var(--hitam); /* Warna teks */
+  font-size: 8px; 
+  color: var(--hitam); 
 }
 
 .Penjelasan {
@@ -300,95 +295,90 @@ h1 {
 }
 
 .text {
-  font-size: 14px; /* Ukuran font untuk penjelasan */
-  color: var(--hitam); /* Warna teks */
-  display: flex; /* Mengatur elemen menjadi flexbox */
-  align-items: center; /* Menyelaraskan ikon hati dan teks secara vertikal */
+  font-size: 14px; 
+  color: var(--hitam); 
+  display: flex; 
+  align-items: center; 
 }
 
 .heart-icon {
-  color: var(--hitamkurang); /* Warna ikon hati hitam dengan transparansi 50% */
-  margin-left: 135px; /* Memberikan jarak antara teks dan ikon hati */
-  font-size: 20px; /* Ukuran ikon hati */
+  color: var(--hitamkurang); 
+  margin-left: 135px; 
+  font-size: 20px; 
 }
 
 .heart-icon.active {
-  color: red; /* Warna saat ikon hati aktif */
+  color: red; 
 }
 
 .price {
-  font-size: 12px; /* Ukuran font untuk harga */
-  color: var(--hitam); /* Warna teks */
-  margin-top: 2px; /* Jarak di atas harga */
+  font-size: 12px; 
+  color: var(--hitam); 
+  margin-top: 2px; 
 }
 
 .content {
-  display: flex; /* Menggunakan flexbox untuk tata letak */
-  justify-content: center; /* Memusatkan elemen secara horizontal */
-  align-items: center; /* Memusatkan elemen secara vertikal */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
   margin-bottom: 20px;
 }
 
-/* Mengatur gaya untuk dot slider */
 .slider-dots {
-  display: flex; /* Menggunakan flexbox untuk tata letak */
-  margin: 0 20px; /* Jarak horizontal dari tombol */
+  display: flex; 
+  margin: 0 20px; 
 }
 
 .dot {
-  width: 10px; /* Lebar dot */
-  height: 10px; /* Tinggi dot */
-  border-radius: 50%; /* Membuat dot menjadi lingkaran */
-  background-color: var(--hitamkurang); /* Warna dot */
-  margin: 0 5px; /* Jarak antar dot */
-  cursor: pointer; /* Menunjukkan bahwa dot dapat diklik */
-  transition: background-color 0.3s; /* Transisi saat hover */
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%; 
+  background-color: var(--hitamkurang); 
+  margin: 0 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
 }
 
-/* Mengatur gaya untuk dot yang aktif */
 .dot.active {
-  background-color: var(--hitam); /* Warna untuk dot aktif */
+  background-color: var(--hitam); 
 }
 
-/* Mengatur gaya untuk tombol slider */
 .slider-buttons1 {
-  display: flex; /* Menggunakan flexbox untuk tata letak */
-  align-items: center; /* Memusatkan tombol secara vertikal */
+  display: flex; 
+  align-items: center; 
 }
 
 .slider-buttons2 {
-  display: flex; /* Menggunakan flexbox untuk tata letak */
-  align-items: center; /* Memusatkan tombol secara vertikal */
+  display: flex; 
+  align-items: center; 
   margin-left: 515px;
 }
 
 .buttonpag {
-  display: flex; /* Menggunakan flexbox untuk memusatkan ikon */
-  align-items: center; /* Memusatkan ikon secara vertikal */
-  justify-content: center; /* Memusatkan ikon secara horizontal */
-  width: 40px; /* Lebar tombol */
-  height: 40px; /* Tinggi tombol */
-  border: 2px solid var(--hitam); /* Border tombol */
-  border-radius: 50%; /* Membuat tombol menjadi lingkaran */
-  background-color: white; /* Warna latar belakang tombol */
-  color: var(--hitam); /* Warna ikon */
-  cursor: pointer; /* Menunjukkan bahwa tombol dapat diklik */
-  transition: background-color 0.3s, color 0.3s; /* Transisi saat hover */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 40px; 
+  height: 40px; 
+  border: 2px solid var(--hitam); 
+  border-radius: 50%; 
+  background-color: white; 
+  color: var(--hitam); 
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s; 
 }
 
-/* Mengatur gaya saat tombol di-hover */
 .button:hover {
-  background-color: #B197FC; /* Warna latar belakang saat hover */
-  color: white; /* Warna ikon saat hover */
+  background-color: #B197FC; 
+  color: white; 
 }
 
-/* Mengatur gaya untuk ikon */
 .icon {
-  font-size: 16px; /* Ukuran ikon */
+  font-size: 16px; 
 }
 
 .icon-space {
-  width: 15px; /* Lebar ruang antara ikon, sesuaikan sesuai kebutuhan */
-  display: inline-block; /* Membuat ruang terlihat */
+  width: 15px; 
+  display: inline-block; 
 } 
 

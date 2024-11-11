@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Menghindari scrollbar saat video ditampilkan */
+            overflow: hidden; 
         }
         #videoPopup {
             display: none;
@@ -30,7 +30,7 @@
         video {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Memastikan video mengisi area tanpa distorsi */
+            object-fit: cover; 
         }
         #question {
             display: none;
@@ -39,7 +39,7 @@
             border-radius: 10px;
             text-align: center;
             position: absolute;
-            animation: move 10s linear infinite; /* Animasi bergerak */
+            animation: move 10s linear infinite; 
         }
 
         @keyframes move {
@@ -73,28 +73,72 @@
             const videoPopup = document.getElementById('videoPopup');
             const myVideo = document.getElementById('myVideo');
             videoPopup.style.display = 'flex';
-            myVideo.play(); // Memulai pemutaran video saat popup dibuka
-            document.getElementById('question').style.display = 'block'; // Tampilkan pertanyaan saat video dibuka
+            myVideo.play(); 
+            document.getElementById('question').style.display = 'block'; 
         }
 
         function answer(response) {
             if (response === 'yes') {
-                window.close(); // Menutup jendela atau tab
+                window.close(); 
             } else {
                 alert("Harus Mengakui Raffi Ganteng untuk menutupnya.");
-                // Mencegah penutupan tab dengan menampilkan pertanyaan lagi
                 const question = document.getElementById('question');
-                question.style.display = 'block'; // Tampilkan pertanyaan lagi
+                question.style.display = 'block'; 
             }
         }
 
-        // Menampilkan pertanyaan saat pengguna mencoba menutup tab atau browser
         window.addEventListener('beforeunload', function (event) {
             const confirmationMessage = "Gak Mau Coba Lagi?";
-            event.returnValue = confirmationMessage; // Beberapa browser akan menampilkan pesan ini
-            return confirmationMessage; // Beberapa browser akan menampilkan pesan ini
+            event.returnValue = confirmationMessage; 
+            return confirmationMessage; 
         });
     </script>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+    <label class="form-check-label" for="flexRadioDefault1">
+      Default radio
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+    <label class="form-check-label" for="flexRadioDefault2">
+      Default checked radio
+    </label>
+  </div>
+
+  <div class="filter-section3">
+    <div class="cariharga">
+      <h8><strong>Harga</strong></h8>
+      <i class="fa-solid fa-chevron-down fa-2xs" style="color: var(--hitam);" id="dropdownToggle2"></i>
+    </div>
+    <div class="hargalist" id="hargalist">
+      <div class="harga-list">
+          <div class="harga-card" style="display: flex; align-items: center;">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <span>Rp 0 - Rp 100.000</span>
+          </div>
+      </div>
+      <div class="harga-list">
+          <div class="harga-card" style="display: flex; align-items: center;">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <span>Rp 100.000 - Rp 250.000</span>
+          </div>
+      </div>
+      <div class="harga-list">
+          <div class="harga-card" style="display: flex; align-items: center;">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <span>Rp 250.000 - Rp 500.000</span>
+          </div>
+      </div>
+      <div class="harga-list">
+          <div class="harga-card" style="display: flex; align-items: center;">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <span>Rp > 500.000</span>
+          </div>
+      </div>
+    </div>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,414 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbreadcrumb {
+  margin-top: 100px;
+  margin-left: 80px;
+}
+
+.breadcrumb-item a {
+  color: var(--hitam); 
+  text-decoration: none;
+}
+
+.filter-container {
+  margin-top: 80px;
+}
+
+.filteratasclear {
+  margin-left: 80px;
+}
+
+.filter-section1 {
+  margin-left: 80px;
+  margin-top: -40px;
+}
+
+.filter-section1 a {
+  color: var(--hitam); 
+  text-decoration: none;
+}
+
+.divider1 {
+  height: 1px; 
+  background-color: var(--hitam); 
+  width: 35%; 
+  max-width: 235px;
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+
+.filter-section1 label {
+  display: block; 
+  margin-bottom: 10px; 
+  font-size: 16px; 
+  color: #333;
+}
+
+.filter-section {
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+
+.titleatas {
+  margin-left: 80px;
+}
+
+.clearallatas {
+  position: relative;
+  bottom: 6.5vh;
+  margin-left: 150px;
+}
+
+.clearall {
+  background-color: transparent;  
+  border: none; 
+  color: var(--hitam); 
+  cursor: default; 
+  padding: 10px; 
+  font-size: 16px; 
+  outline: none; 
+}
+
+.filter-section h3 {
+  display: flex; 
+  align-items: center; 
+  cursor: pointer; 
+}
+
+.caribrand {
+  margin-top: 20px;
+}
+
+.caribrand h8 {
+  display: flex;
+  align-items: center; 
+}
+
+.caribrand h8 strong {
+  margin-right: 170px; 
+}
+
+#brandSearch {
+  margin-top: 10px; 
+  display: none; 
+  width: 15%; 
+}
+
+#brandList {
+  margin-top: 10px; 
+  display: none; 
+  border: 1px solid var(--putih); 
+  max-height: 150px; 
+  overflow-y: auto; 
+}
+
+.brand-item {
+  padding: 5px; 
+  cursor: pointer; 
+}
+
+.brand-item:hover {
+  background-color: var(--putih); 
+}
+
+.filter-section2 {
+  margin-bottom: 20px; 
+  margin-left: 80px;
+}
+
+.cariwarna h8 {
+  display: flex;
+  align-items: center; 
+}
+
+.cariwarna h8 strong {
+  margin-right: 10px; 
+}
+
+.cariwarna h8 i {
+  margin-left: 158px; 
+}
+
+.color-list {
+  display: none; 
+  margin-top: 10px; 
+  display: flex; 
+  flex-wrap: wrap; 
+}
+
+.color-card {
+  display: flex;
+  align-items: center; 
+  margin: 5px; 
+  padding: 1px; 
+  border: 1px solid #ccc; 
+  border-radius: 20px; 
+  width: 10%; 
+  max-width: 100px;
+  box-sizing: border-box; 
+}
+
+.color-box {
+  width: 15px; 
+  height: 15px; 
+  border-radius: 20px; 
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.cariwarna h8 {
+  display: flex;
+  align-items: center; 
+}
+
+.cariwarna h8 strong {
+  margin-right: 10px; 
+}
+
+.color-card.selected {
+  border: 2px solid var(--hitam); 
+  background-color: var(--putihtransparan); 
+}
+
+.color-card.color-card.selected span {
+  color: var(--shadowitem);
+}
+
+.filter-section3 {
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+
+.cariharga {
+  display: flex;
+  align-items: center;  
+}
+
+.cariharga h8 {
+  margin-right: 10px; 
+}
+
+.cariharga i {
+  margin-left: 159.5px; 
+}
+
+.harga-card span {
+  margin-left: 10px;
+}
+
+.harga-list {
+  margin: 5px;
+}
+
+.harga-card i {
+  color: var(--hitam); 
+  transition: color 0.3s; 
+}
+
+.harga-card i.active {
+  color: var(--hitamkurang); 
+}
+
+.filter-section4 {
+  margin-bottom: 10px; 
+  margin-left: 80px;
+}
+
+.cariukuran i {
+  margin-left: 157.5px; 
+}
+
+.ukuran-list-container {
+  display: flex; 
+  margin: 10px 0; 
+}
+
+
+.ukuran-card {
+  display: flex; 
+  align-items: center; 
+  margin-right: 10px;
+}
+
+.ukuran-card span {
+  display: inline-block; /* Make the span behave like a block element */
+  padding: 2px 7px; /* Padding inside the span */
+  border: 2px solid var(--hitam); /* Border color */
+  border-radius: 10px; /* Rounded corners for the rectangle */
+  background-color: var(--putihtransparan); /* Default background color */
+  color: var(--hitam); /* Default text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+/* Change background and text color when the span is active */
+.ukuran-card span.active {
+  background-color: var(--hitam); /* Background color when active */
+  color: white; /* Text color when active */
+}
+
+h1 {
+  font-size: 2.5rem; 
+}
+
+.container1 {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  margin-top: 20px; 
+  max-width: screen; 
+  width: 100%; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+.row {
+  display: grid; 
+  gap: 20px; 
+  position: relative;
+  left: 4vw;
+  justify-content: center; 
+  max-width: 1050px; 
+  padding: 0 0; 
+}
+
+.col {
+  margin: 20px -50px; 
+  justify-content: center;
+}
+
+.rating {
+  display: flex; 
+  align-items: center; 
+  margin-top: -10px;
+}
+
+.rating-rectangle {
+  display: flex; 
+  align-items: center; 
+  width: 40px; 
+  height: 15px; 
+  background-color: var(--putih); 
+  border: 2px solid var(--hitam); 
+  border-radius: 20px; 
+  padding: 5px; 
+  margin-left: -10px;
+}
+
+.rating-icon {
+  color: var(--hitam); 
+  margin-right: 2px; 
+  font-size: 8px;
+  position: relative;
+  bottom: 0.5px;
+  left: -1px;
+}
+
+.rating-text {
+  font-size: 8px; 
+  color: var(--hitam); 
+}
+
+.Penjelasan {
+  margin-top: 10px;
+  margin-left: 12px;
+}
+
+.merk {
+  font-size: 20px;
+}
+
+.text {
+  font-size: 14px; 
+  color: var(--hitam); 
+  display: flex; 
+  align-items: center; 
+}
+
+.heart-icon {
+  color: var(--hitamkurang); 
+  margin-left: 135px; 
+  font-size: 20px; 
+}
+
+.heart-icon.active {
+  color: red; 
+}
+
+.price {
+  font-size: 12px; 
+  color: var(--hitam); 
+  margin-top: 2px; 
+}
+
+.content {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin-bottom: 20px;
+}
+
+.slider-dots {
+  display: flex; 
+  margin: 0 20px; 
+}
+
+.dot {
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%; 
+  background-color: var(--hitamkurang); 
+  margin: 0 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+.dot.active {
+  background-color: var(--hitam); 
+}
+
+.slider-buttons1 {
+  display: flex; 
+  align-items: center; 
+}
+
+.slider-buttons2 {
+  display: flex; 
+  align-items: center; 
+  margin-left: 515px;
+}
+
+.buttonpag {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 40px; 
+  height: 40px; 
+  border: 2px solid var(--hitam); 
+  border-radius: 50%; 
+  background-color: white; 
+  color: var(--hitam); 
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.button:hover {
+  background-color: #B197FC; 
+  color: white; 
+}
+
+.icon {
+  font-size: 16px; 
+}
+
+.icon-space {
+  width: 15px; 
+  display: inline-block; 
+} 
+
+
+

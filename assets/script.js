@@ -1,8 +1,7 @@
 const logo = document.getElementById('logo');
 
-    // Menambahkan event listener untuk mengarahkan ke homepage saat logo diklik
     logo.addEventListener('click', function() {
-        window.location.href = 'index.html'; // Ganti 'index.html' dengan URL homepage Anda
+        window.location.href = 'index.html'; 
     });
 
 function openInstagram() {
@@ -35,23 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const radioId = this.getAttribute('for');
             const radio = document.getElementById(radioId);
             
-            // Membersihkan timeout sebelumnya jika ada
             clearTimeout(hoverTimeout);
             
-            // Mengatur delay (dalam milidetik)
+            
             hoverTimeout = setTimeout(() => {
                 radio.checked = true;
-            }, 100); // Anda bisa mengubah nilai 200 sesuai keinginan
+            }, 100); 
         });
 
-        // Opsional: membatalkan perpindahan jika mouse keluar sebelum delay selesai
         trigger.addEventListener('mouseleave', function() {
             clearTimeout(hoverTimeout);
         });
     });
 });
 
-// Tambahkan script ini
 window.addEventListener('scroll', function() {
     var navbar = document.querySelector('.navbar');
     var imgFluid = document.querySelector('.img-fluid');
@@ -65,7 +61,7 @@ window.addEventListener('scroll', function() {
 });
 
 function toggleHeart(element) {
-    element.classList.toggle('active'); // Menambahkan atau menghapus kelas 'active'
+    element.classList.toggle('active'); 
 }
 
 let slideIndex = 1;
@@ -82,13 +78,128 @@ let slideIndex = 1;
     function showSlides(n) {
         const dots = document.getElementsByClassName("dot");
         
-        // Reset slide index if it goes out of bounds
         if (n > dots.length) { slideIndex = 1; }
         if (n < 1) { slideIndex = dots.length; }
 
-        // Hide all dots and show the current one
         for (let i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
         dots[slideIndex - 1].className += " active";
     }
+
+    function clearAllFilters() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => checkbox.checked = false);
+  
+        document.getElementById('brandSearch').value = '';
+  
+        const dropdowns = document.querySelectorAll('select');
+        dropdowns.forEach(dropdown => dropdown.selectedIndex = 0);
+    }
+    
+    document.getElementById('dropdownToggle1').addEventListener('click', function() {
+        var searchInput = document.getElementById('brandSearch');
+        if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+            searchInput.style.display = 'block'; 
+            searchInput.focus(); 
+        } else {
+            searchInput.style.display = 'none'; 
+        }
+    });
+
+    document.getElementById('brandSearch').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            var newBrand = this.value.trim();
+            if (newBrand) {
+                alert('Brand baru ditambahkan: ' + newBrand); 
+                this.value = ""; 
+            }
+        }
+    });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.getElementById('dropdownToggle2');
+            const colorList = document.getElementById('colorlist');
+        
+            dropdownToggle.addEventListener('click', function() {
+                if (colorList.style.display === 'none' || colorList.style.display === '') {
+                    colorList.style.display = 'block'; 
+                } else {
+                    colorList.style.display = 'none'; 
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.getElementById('dropdownToggle3');
+            const hargalist = document.getElementById('hargalist');
+        
+            dropdownToggle.addEventListener('click', function() {
+                if (hargalist.style.display === 'none' || hargalist.style.display === '') {
+                    hargalist.style.display = 'block'; 
+                } else {
+                    hargalist.style.display = 'none'; 
+                }
+            });
+        });
+
+const icons = document.querySelectorAll('.harga-card i');
+
+icons.forEach(icon => {
+    icon.addEventListener('click', function() {
+        icons.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const ukuranCards = document.querySelectorAll('.ukuran-card');
+
+    ukuranCards.forEach(card => {
+        card.addEventListener('click', function() {
+            ukuranCards.forEach(c => c.querySelector('span').classList.remove('active'));
+            this.querySelector('span').classList.add('active');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.getElementById('dropdownToggle4');
+    const ukuranlist = document.getElementById('ukuranlist');
+
+    dropdownToggle.addEventListener('click', function() {
+        if (ukuranlist.style.display === 'none' || ukuranlist.style.display === '') {
+            ukuranlist.style.display = 'block'; 
+        } else {
+            ukuranlist.style.display = 'none'; 
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.getElementById('dropdownToggle2');
+    const colorlist = document.getElementById('colorlist');
+
+    // Toggle the display of color list
+    dropdownToggle.addEventListener('click', function() {
+        if (colorlist.style.display === 'none' || colorlist.style.display === '') {
+            colorlist.style.display = 'block'; 
+        } else {
+            colorlist.style.display = 'none'; 
+        }
+    });
+
+    // Add event listeners to color cards
+    const colorCards = document.querySelectorAll('.color-card');
+    colorCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Remove active class from all cards
+            colorCards.forEach(c => c.classList.remove('selected'));
+            // Add active class to the clicked card
+            this.classList.add('selected');
+        });
+    });
+});
+
+    

@@ -154,30 +154,6 @@ icons.forEach(icon => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const ukuranCards = document.querySelectorAll('.ukuran-card');
-
-    ukuranCards.forEach(card => {
-        card.addEventListener('click', function() {
-            ukuranCards.forEach(c => c.querySelector('span').classList.remove('active'));
-            this.querySelector('span').classList.add('active');
-        });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const dropdownToggle = document.getElementById('dropdownToggle4');
-    const ukuranlist = document.getElementById('ukuranlist');
-
-    dropdownToggle.addEventListener('click', function() {
-        if (ukuranlist.style.display === 'none' || ukuranlist.style.display === '') {
-            ukuranlist.style.display = 'block'; 
-        } else {
-            ukuranlist.style.display = 'none'; 
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
     const dropdownToggle = document.getElementById('dropdownToggle2');
     const colorlist = document.getElementById('colorlist');
 
@@ -202,4 +178,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-    
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle4 = document.getElementById('dropdownToggle4');
+    const ukuranlist = document.getElementById('ukuranlist');
+
+    // Toggle the display of the ukuranlist when the icon is clicked
+    dropdownToggle4.addEventListener('click', function() {
+        if (ukuranlist.style.display === 'none' || ukuranlist.style.display === '') {
+            ukuranlist.style.display = 'block'; // Show the list
+        } else {
+            ukuranlist.style.display = 'none'; // Hide the list
+        }
+    });
+
+    // Optional: Add click event to size cards to select a size
+    const ukuranCards = document.querySelectorAll('.ukuran-card');
+    ukuranCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Remove 'active' class from all cards
+            ukuranCards.forEach(c => c.classList.remove('active'));
+            // Add 'active' class to the clicked card
+            this.classList.add('active');
+        });
+    });
+});

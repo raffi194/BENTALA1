@@ -5,6 +5,7 @@
   <meta name="viewport" content="Width=device-width initial-sccale=1.0">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
   <link rel="stylesheet" href="assets/navbarhtm.css">
+  <link rel="stylesheet" href="assets/navbarpth.css">
   <link rel="stylesheet" href="assets/styleguide.css">
   <link rel="stylesheet" href="assets/prank.css">
   <link rel="stylesheet" href="assets/koleksi.css">
@@ -201,286 +202,43 @@
 
 <div class="filter-section4">
   <div class="cariukuran">
-    <h8><strong>Ukuran</strong></h8>
-    <i class="fa-solid fa-chevron-down fa-2xs" style="color: var(--hitam);" id="dropdownToggle4"></i>
+      <h8><strong>Ukuran</strong></h8>
+      <i class="fa-solid fa-chevron-down fa-2xs" style="color: var(--hitam);" id="dropdownToggle4"></i>
   </div>
-  <div class="ukuranlist" id="ukuranlist">
-    <div class="ukuran-list-container" style="display: flex;">
-        <div class="ukuran-list">
-            <div class="ukuran-card">
-                <span>S</span>
-            </div>
-        </div>
-        <div class="ukuran-list">
-            <div class="ukuran-card">
-                <span>M</span>
-            </div>
-        </div>
-        <div class="ukuran-list">
-            <div class="ukuran-card">
-                <span>L</span>
-            </div>
-        </div>
-        <div class="ukuran-list">
-            <div class="ukuran-card">
-                <span>XL</span>
-            </div>
-        </div>
-    </div>
+  <div class="ukuranlist" id="ukuranlist" style="display: none;"> <!-- Hidden by default -->
+      <div class="ukuran-list-container" style="display: flex;">
+          <div class="ukuran-list">
+              <div class="ukuran-card">
+                  <span>S</span>
+              </div>
+          </div>
+          <div class="ukuran-list">
+              <div class="ukuran-card">
+                  <span>M</span>
+              </div>
+          </div>
+          <div class="ukuran-list">
+              <div class="ukuran-card">
+                  <span>L</span>
+              </div>
+          </div>
+          <div class="ukuran-list">
+              <div class="ukuran-card">
+                  <span>XL</span>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 </div>
 
-  <div class="countkoleksi carousel carousel-dark slide" id="carouselExampleDark">
-    <div class="JudulKoleksi">
-    </div>
-    <div class="slides active">
-    <div class="container1">
-    <div class="row row-cols-lg-3">
-      <div class="col">
-        <div class="card1">
-            <div class="card koleksi-terbaru">
-                <img src="img/card4.png" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <div class="rating">
-                        <div class="rating-rectangle">
-                            <i class="fa-regular fa-star rating-icon"></i>
-                            <span class="rating-text">4.5/5</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="Penjelasan">
-            <div class="merk">
-              <strong>Aile</strong>
-              <i class="fa-solid fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-            </div>
-            <div class="text">
-              <div class="tipe">Knit Sweater</div> 
-          </div>
-          <div class="price">Rp199.000</div>
-        </div>
-      </div>
-    </div>
-      <div class="col">
-        <div class="card1">
-          <div class="card koleksi-terbaru">
-              <img src="img/card6.png" class="card-img" alt="...">
-              <div class="card-img-overlay">
-                  <div class="rating">
-                      <div class="rating-rectangle">
-                          <i class="fa-regular fa-star rating-icon"></i>
-                          <span class="rating-text">4.7/5</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="Penjelasan">
-          <div class="merk">
-            <strong>Aile</strong>
-            <i class="fa-solid fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-          </div>
-          <div class="text">
-            <div class="tipe">Jacket Long-Sleeve</div> 
-        </div>
-        <div class="price">Rp299.000</div>
-      </div>
-    </div>
+<div class="card" style="width:500px">
+  <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+  <div class="card-img-overlay">
+    <h4 class="card-title">John Doe</h4>
+    <p class="card-text">Some example text.</p>
+    <a href="#" class="btn btn-primary">See Profile</a>
   </div>
-      <div class="col"><div class="card1">
-        <div class="card koleksi-terbaru">
-            <img src="img/card5.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <div class="rating">
-                    <div class="rating-rectangle">
-                        <i class="fa-regular fa-star rating-icon"></i>
-                        <span class="rating-text">4.1/5</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Penjelasan">
-        <div class="merk">
-          <strong>Aile</strong>
-          <i class="fa-solid fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-        </div>
-        <div class="text">
-          <div class="tipe">Sweater Polo Long-Sleeve</div> 
-      </div>
-      <div class="price">Rp255.000</div>
-    </div>
-  </div>
-</div>
-      <div class="col">
-        <div class="card1">
-          <div class="card koleksi-terbaru">
-              <img src="img/card7.png" class="card-img" alt="...">
-              <div class="card-img-overlay">
-                  <div class="rating">
-                      <div class="rating-rectangle">
-                          <i class="fa-regular fa-star rating-icon"></i>
-                          <span class="rating-text">4.5/5</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="Penjelasan">
-          <div class="merk">
-            <strong>Aile</strong>
-            <i class="fa-solid fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-          </div>
-          <div class="text">
-            <div class="tipe">Knit Sweater</div> 
-        </div>
-        <div class="price">Rp299.000</div>
-      </div>
-    </div>
-  </div>
-      <div class="col"><div class="card1">
-        <div class="card koleksi-terbaru">
-            <img src="img/card8.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <div class="rating">
-                    <div class="rating-rectangle">
-                        <i class="fa-regular fa-star rating-icon"></i>
-                        <span class="rating-text">4/5</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Penjelasan">
-        <div class="merk">
-          <strong>Aile</strong>
-          <i class="fa-solid fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-        </div>
-        <div class="text">
-          <div class="tipe">Oversize Tees</div> 
-      </div>
-      <div class="price">Rp99.000</div>
-    </div>
-  </div>
-</div>
-
-      <div class="col">
-        <div class="card6">
-        <div class="card koleksi-terbaru">
-            <img src="img/card9.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <div class="rating">
-                    <div class="rating-rectangle">
-                        <i class="fa-regular fa-star rating-icon"></i>
-                        <span class="rating-text">4.4/5</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Penjelasan">
-        <div class="merk">
-          <strong>Aile</strong>
-          <i class="fa-solid fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-        </div>
-        <div class="text">
-          <div class="tipe">Jersey Polo</div> 
-      </div>
-      <div class="price">Rp255.000</div>
-    </div>
-  </div>
-</div>
-      <div class="col"><div class="card1">
-        <div class="card koleksi-terbaru">
-            <img src="img/card3.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <div class="rating">
-                    <div class="rating-rectangle">
-                        <i class="fa-regular fa-star rating-icon"></i>
-                        <span class="rating-text">4/5</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Penjelasan">
-        <div class="merk">
-          <strong>Aile</strong>
-          <i class="fa-solid fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-        </div>
-        <div class="text">
-          <div class="tipe">Short-Sleeve Shirt</div> 
-      </div>
-      <div class="price">Rp285.000</div>
-    </div>
-  </div>
-</div>
-      <div class="col"><div class="card1">
-        <div class="card koleksi-terbaru">
-            <img src="img/card4.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <div class="rating">
-                    <div class="rating-rectangle">
-                        <i class="fa-regular fa-star rating-icon"></i>
-                        <span class="rating-text">4.3/5</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Penjelasan">
-        <div class="merk">
-          <strong>Aile</strong>
-          <i class="fa-solid fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-        </div>
-        <div class="text">
-          <div class="tipe">Corduroy Cap</div> 
-      </div>
-      <div class="price">Rp159.000</div>
-    </div>
-  </div>
-</div>
-      <div class="col"><div class="card1">
-        <div class="card koleksi-terbaru">
-            <img src="img/card5.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <div class="rating">
-                    <div class="rating-rectangle">
-                        <i class="fa-regular fa-star rating-icon"></i>
-                        <span class="rating-text">4.1/5</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Penjelasan">
-        <div class="merk">
-          <strong>Aile</strong>
-          <i class="fa-solid fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-        </div>
-        <div class="text">
-          <div class="tipe">Flannel Scarf</div> 
-      </div>
-      <div class="price">Rp199.000</div>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  </div>
-  
-  <div class="content">
-    <div class="slider-buttons1">
-        <div class="slider-dots">
-          <div class="dot active" onclick="currentSlide(1)"></div>
-          <div class="dot" onclick="currentSlide(2)"></div>
-          <div class="dot" onclick="currentSlide(3)"></div>
-          <div class="dot" onclick="currentSlide(4)"></div>
-          <div class="dot" onclick="currentSlide(5)"></div>
-        </div>
-    <div class="slider-buttons2">
-        <div class="buttonpag" onclick="plusSlides(-1)">
-          <i class="icon fa-solid fa-arrow-left"></i>
-        </div>
-        <span class="icon-space"></span> 
-        <div class="buttonpag" onclick="plusSlides(1)">
-            <i class="icon fa-solid fa-arrow-right"></i>
-        </div>
-    </div>
-  </div>
-</div>
 </div>
 
   <div class="footer-4">
@@ -498,10 +256,9 @@
     <div class="social-links">
       <i class="fa-brands fa-facebook fa-lg" style="color: var(--putih);" onclick="openVideo()"></i>
       <i class="fa-brands fa-instagram fa-lg" style="color: var(--putih);" checked onclick="openInstagram()"></i>
-    <i class="fa-brands fa-x-twitter fa-lg" style="color: var(--putih);" checked onclick="openX()"></i>
     <i class="fa-brands fa-linkedin fa-lg" style="color: var(--putih);" checked onclick="openlinkedin()"></i>
-    <i class="fa-brands fa-youtube fa-lg" style="color: var(--putih);" checked onclick="openyt()"></i>    
-      </div>
+    <i class="fa-brands fa-youtube fa-lg" style="color: var(--ijo);" checked onclick="openyt()"></i>    
+    </div>
     </div>
     <div class="credits">
     <div class="divider">

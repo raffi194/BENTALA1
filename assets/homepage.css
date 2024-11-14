@@ -7,7 +7,7 @@
 
 .imgatas {
   overflow-x: hidden;
-  margin-bottom: -50px;
+  margin-bottom: 10px;
 }
 
 .img-fluid {
@@ -26,18 +26,13 @@
 }
 
 .btn-discover {
-  display: inline-block; 
-  padding: 10px 20px; 
-  margin-top: 10px; 
+  padding: 10px 5px; 
   background-color: transparent; 
   border: 2px solid var(--putih); 
   color: var(--putih); 
   text-decoration: none; 
   border-radius: 16px; 
   transition: background-color 0.3s, color 0.3s; 
-  position: relative;
-  bottom: 300px;
-  right: 50px;
 }
 
 .btn-discover:hover {

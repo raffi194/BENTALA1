@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbreadcrumb {
@@ -236,19 +235,18 @@
 }
 
 .ukuran-card span {
-  display: inline-block; /* Make the span behave like a block element */
-  padding: 2px 7px; /* Padding inside the span */
-  border: 2px solid var(--hitam); /* Border color */
-  border-radius: 10px; /* Rounded corners for the rectangle */
-  background-color: var(--putihtransparan); /* Default background color */
-  color: var(--hitam); /* Default text color */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+  display: inline-block; 
+  padding: 2px 7px; 
+  border: 2px solid var(--hitam); 
+  border-radius: 10px; 
+  background-color: var(--putihtransparan); 
+  color: var(--hitam); 
+  transition: background-color 0.3s, color 0.3s; 
 }
 
-/* Change background and text color when the span is active */
 .ukuran-card span.active {
-  background-color: var(--hitam); /* Background color when active */
-  color: white; /* Text color when active */
+  background-color: var(--hitam); 
+  color: var(--putih); 
 }
 
 h1 {

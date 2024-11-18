@@ -6,22 +6,16 @@
 
 .imgatas {
   overflow-x: hidden;
-  margin-bottom: 10px;
 }
 
 .img-fluid {
   width: 100%;
 }
 
-
 .text-title {
   font-size: 50px; 
   font-weight: bold; 
-  margin: 0; 
   color: var(--putih);
-  position: relative; 
-  bottom: 190px;
-  left: 50px;
 }
 
 .btn-discover {
@@ -40,34 +34,10 @@
 }
 
 .content2 {
-  margin: -150px auto 20px auto;
+  margin: 0px auto 20px auto;
   position: relative;
   width: 80%; 
   max-width: 1200px;
-}
-
-.eco-friendly-products {
-  	color: var(--ijo);
-}
-.medium-length-hero-container {
-  	height: 100%;
-  	flex: 1;
-  	width: 100%;
-  	position: relative;
-  	font-size: 40px;
-  	line-height: 150%;
-  	font-family: 'Bebas Neue';
-  	text-align: center;
-  	display: inline-block;
-  	color: var(--hitam);
-}
-
-.wrapper {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .container {

@@ -174,3 +174,12 @@ h1 {
           <option value="500000-plus">Rp. > 500.000</option>
       </select>
 
+      bg-transparent border-3 border-[--putih] text-[--putih] no-underline rounded-lg
+
+      <div class="text-center mx-20 my-10 uppercase max-w-full">
+      <div class="text-4xl roboto-bold text-[--item]">
+        <span>We creates </span>
+      <span class="text-[--ijo]">eco-friendly products</span>
+      <span> using sustainable materials like kenaf canvas, recycled plastic leather, and rubber soles. With solar-powered, water-saving production, they offer modern, casual shoes, bags, sandals, and clothing for all activities.</span>
+    </div>
+      </div>

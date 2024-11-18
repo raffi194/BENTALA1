@@ -4,14 +4,6 @@
   padding: 0;
 }
 
-.imgatas {
-  overflow-x: hidden;
-}
-
-.img-fluid {
-  width: 100%;
-}
-
 .text-title {
   font-size: 50px; 
   font-weight: bold; 

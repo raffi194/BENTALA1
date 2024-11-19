@@ -608,6 +608,10 @@ video {
   position: relative;
 }
 
+.bottom-17 {
+  bottom: 72px;
+}
+
 .bottom-2\/4 {
   bottom: 50%;
 }
@@ -761,6 +765,12 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.space-x-card > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(40rem /* 640px */ * var(--tw-space-x-reverse));
+  margin-left: calc(40rem /* 640px */ * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-10 > :not([hidden]) ~ :not([hidden]) {

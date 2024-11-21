@@ -50,7 +50,7 @@
         </div>
     </nav>
 
-    <div class="flex flex-col w-full">
+    <div class="flex flex-col">
         <ul class="flex flex-nowrap md:flex-nowrap space-y-10 md:space-y-0 md:space-x-20 mx-4 sm:mx-10 md:mx-20 lg:mx-30 xl:mx-40 2xl:mx-40">
             <!-- Koleksi Section (Left) -->
             <li class="flex-1">
@@ -127,8 +127,8 @@
                 </div>
             </li>
             <!-- Product Image Section (Center) -->
-            <li class=" flex-1 flex justify-center">
-                <div class="mt-20">
+            <li class="flex-1 flex justify-center">
+                <div class="mt-20 flex flex-col items-center justify-center"> <!-- Centering the content vertically -->
                     <img src="img/HeadCC.png" alt="Product 9" class="w-full h-80 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
                     
                     <div class="flex justify-center mt-5 space-x-1 h-36">
@@ -241,8 +241,8 @@
     
                             <div class="flex flex-col items-start absolute bottom-0 left-60">
                                 <span class="font-semibold mb-2">Qty</span>
-                                <div class="py-2 p-2 border-2 border-[--hitam] rounded-xl w-14 text-center flex items-center justify-center">
-                                    <span class="font-semibold">1</span>
+                                <div class="py-2 p-2 border-2 border-[--hitam] rounded-xl w-14 text-center flex items-center justify-center]">
+                                    <input type="number" min="1" value="1" class="font-semibold text-center w-full bg-transparent border-none outline-none" />
                                 </div>
                             </div>
                         </div>

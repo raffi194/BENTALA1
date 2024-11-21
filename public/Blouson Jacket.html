@@ -50,194 +50,162 @@
         </div>
     </nav>
 
-    <div class="flex flex-col w-full">
-        <ul class="flex flex-nowrap md:flex-nowrap space-y-10 md:space-y-0 md:space-x-20 mx-4 sm:mx-10 md:mx-20 lg:mx-30 xl:mx-40 2xl:mx-40">
-            <!-- Koleksi Section (Left) -->
-            <li class="flex-1">
-                <div class="flex flex-col max-w-md mt-20 -ml-28">
-                    <div class="w-auto space-x-1">
-                        <ul class="flex flex-nowrap space-x-1 ml-2">
-                            <li>
-                                <a href="koleksi.html" class="text-[--hitam] py-2 rounded no-underline text-lg">Koleksi</a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-angle-right fa-xs relative top-0.5"></i>
-                            </li>
-                            <li>
-                                <a href="#" class="text-[--hitam] px-3 py-2 rounded no-underline text-lg">Pria</a>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-angle-right fa-xs relative top-0.5"></i>
-                            </li>
-                            <li>
-                                <a href="#" class="text-[--hitam] px-3 py-2 rounded no-underline text-lg font-semibold">Corduroy Cap</a>
-                            </li>
-                        </ul>
-                        <div class="mt-3">
-                            <span class="uppercase text-5xl font-bold">Corduroy Cap</span>
+<div class="flex">
+    <ul class="flex flex-nowrap space-x-20 mx-10">
+        <!-- Koleksi Section (Left) -->
+        <li>
+            <div class="flex flex-col max-w-md mt-20">
+            <div class="w-auto space-x-1">
+                <ul class="flex flex-nowrap space-x-1 ml-2">
+                    <li>
+                        <a href="koleksi.html" class="text-[--hitam] py-2 rounded no-underline text-lg">Koleksi</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-angle-right fa-xs relative top-0.5"></i>
+                    </li>
+                    <li>
+                        <a href="#" class="text-[--hitam] px-3 py-2 rounded no-underline text-lg">Pria</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-angle-right fa-xs relative top-0.5"></i>
+                    </li>
+                    <li>
+                        <a href="#" class="text-[--hitam] px-3 py-2 rounded no-underline text-lg font-semibold">Blouson Jacket Short Utility</a>
+                    </li>
+                </ul>
+                <div class="mt-3 ">
+                    <span class="uppercase text-5xl font-bold">Blouson Jacket</span>
+                </div>
+                <div class="mt-3 flex items-start">
+                    <span class="uppercase text-4xl font-bold">Rp 999.000</span>
+                    <div class="flex flex-col items-start ml-4 mt-1">
+                        <div class="flex space-x-1">
+                            <span class="uppercase text-xs font-light"><i class="fa-solid fa-star"></i></span>
+                            <span class="uppercase text-xs font-light"><i class="fa-solid fa-star"></i></span>
+                            <span class="uppercase text-xs font-light"><i class="fa-solid fa-star"></i></span>
+                            <span class="uppercase text-xs font-light"><i class="fa-solid fa-star"></i></span>
+                            <span class="uppercase text-xs font-light"><i class="fa-solid fa-star-half-stroke"></i></span>
                         </div>
-                        <div class="mt-3 flex items-start">
-                            <span class="uppercase text-4xl font-bold">Rp 159.000</span>
-                            <div class="flex flex-col items-start ml-4 mt-1">
-                                <div class="flex space-x-1">
-                                    <span class="uppercase text-xs font-light"><i class="fa-solid fa-star"></i></span>
-                                    <span class="uppercase text-xs font-light"><i class="fa-solid fa-star"></i></span>
-                                    <span class="uppercase text-xs font-light"><i class="fa-solid fa-star"></i></span>
-                                    <span class="uppercase text-xs font-light"><i class="fa-solid fa-star"></i></span>
-                                    <span class="uppercase text-xs font-light"><i class="fa-solid fa-star-half-stroke"></i></span>
-                                </div>
-                                <span class="text-sm font-medium mt-1">4.5 stars • 10 reviews</span>
-                            </div>
-                        </div>
-                        <div class="my-2 space-x-5">
-                            <span id="detail" class="text-lg cursor-pointer hover:underline" onclick="showDetail()">Detail</span>
-                            <span id="jejakKarbon" class="text-lg cursor-pointer hover:underline" onclick="showJejakKarbon()">Jejak Karbon</span>
-                        </div>
-    
-                        <div>
-                            <span class="text-lg font-bold uppercase">Aile</span>
-                        </div>
-                        
-                        <div id="detailContent" class="my-5 visible">
-                            <span class="text-lg">Bahan 100% katun yang terasa lembut di bagian luar, serta halus dan nyaman di bagian dalam. Desain kancing berbentuk bulat yang mudah dipasang. Dapat dikenakan sendirinya atau sebagai lapisan luar.</span>
-                        </div>
-                        
-                        <div id="carbonFootprint" class="my-5 pr-14 hidden">
-                            <span class="text-lg" id="carbonText">Produk ini memiliki jejak karbon sebesar 15Kg CO2</span>
-                        </div>
-                        
-                        <script>
-                            function showDetail() {
-                                document.getElementById('carbonFootprint').classList.add('hidden');
-                                document.getElementById('detailContent').classList.remove('hidden');
-                            }
-                        
-                            function showJejakKarbon() {
-                                document.getElementById('detailContent').classList.add('hidden');
-                                document.getElementById('carbonFootprint').classList.remove('hidden');
-                            }
-                        </script>
-                        
-                        <style>
-                            .hidden {
-                                display: none;
-                            }
-                        </style>
+                        <span class="text-sm font-medium mt-1">4.5 stars • 40 reviews</span>
                     </div>
                 </div>
-            </li>
-            <!-- Product Image Section (Center) -->
-            <li class=" flex-1 flex justify-center">
-                <div class="mt-20">
-                    <img src="img/HeadCC.png" alt="Product 9" class="w-full h-80 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
+                <div class="my-2 space-x-5">
+                    <span id="detail" class="text-lg cursor-pointer hover:underline" onclick="showDetail()">Detail</span>
+                    <span id="jejakKarbon" class="text-lg cursor-pointer hover:underline" onclick="showJejakKarbon()">Jejak Karbon</span>
+                </div>
+
+                <div>
+                    <span class="text-lg font-bold uppercase">Uniqlo</span>
+                </div>
+                
+                <div id="detailContent" class="my-5 visible">
+                    <span class="text-lg">Dilengkapi saku dada dan saku pinggang dengan kompartemen terpisah yang dapat diakses dari atas dan samping. Bahan korduroi di bagian kerah dan pergelangan tangan dengan aksen motif kotak pada lapisan dalam.</span>
+                </div>
+                
+                <div id="carbonFootprint" class="my-5 pr-14 hidden">
+                    <span class="text-lg" id="carbonText">Produk ini memiliki jejak karbon sebesar 27Kg CO2</span>
+                </div>
+                
+                <script>
+                    function showDetail() {
+                        document.getElementById('carbonFootprint').classList.add('hidden');
+                        document.getElementById('detailContent').classList.remove('hidden');
+                    }
+                
+                    function showJejakKarbon() {
+                        document.getElementById('detailContent').classList.add('hidden');
+                        document.getElementById('carbonFootprint').classList.remove('hidden');
+                    }
+                </script>
+                
+                <style>
+                    .hidden {
+                        display: none;
+                    }
+                </style>
+            </div>
+            </div>
+        </li>
+        <!-- Product Image Section (Center) -->
+        <Li>
+            <div class="mt-20 mx-auto">
+                <img src="img/HeadBJ.png" alt="Product 9" class="w-96 h-80 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
+                
+                <div class="flex justify-center mt-5 space-x-1 h-36">
+                    <img src="img/BJ01.png" alt="Product 1" class="w-32 h-20 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
+                    <img src="img/BJ02.png" alt="Product 2" class="w-32 h-20 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
+                    <img src="img/BJ03.png" alt="Product 3" class="w-32 h-20 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
+                </div>
+            </div>
+        </li>
+        <!-- Ukuran Section (Right) -->
+        <li>
+            <div class="p-4 mt-16">
+                <div class="flex items-center justify-between cursor-pointer">
+                    <h2 class="text-lg font-medium">Ukuran</h2>
+                </div>
+                <div class="ukuranlist mt-2">
+                    <div class="flex space-x-4">
+                        <div class="ukuran-list">
+                            <div class="ukuran-card bg-transparent border-2 border-[--hitam] p-2 px-4 rounded-xl text-center cursor-pointer hover:bg-[--hitamkurang]">
+                                <span class="font-semibold">S</span>
+                            </div>
+                        </div>
+                        <div class="ukuran-list">
+                            <div class="ukuran-card bg-transparent border-2 border-[--hitam] p-2 px-3 rounded-xl text-center cursor-pointer hover:bg-[--hitamkurang]">
+                                <span class="font-semibold">M</span>
+                            </div>
+                        </div>
+                        <div class="ukuran-list">
+                            <div class="ukuran-card bg-transparent border-2 border-[--hitam] p-2 px-4 rounded-xl text-center cursor-pointer hover:bg-[--hitamkurang]">
+                                <span class="font-semibold">L</span>
+                            </div>
+                        </div>
+                        <div class="ukuran-list">
+                            <div class="ukuran-card bg-transparent border-2 border-[--hitam] p-2 px-3 rounded-xl text-center cursor-pointer hover:bg-[--hitamkurang]">
+                                <span class="font-semibold">XL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <div class="flex items-center justify-between cursor-pointer">
+                        <h2 class="text-lg font-medium">Warna</h2>
+                    </div>
                     
-                    <div class="flex justify-center mt-5 space-x-1 h-36">
-                        <img src="img/CC01.png" alt="Product 1" class="w-32 h-20 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
-                        <img src="img/CC02.png" alt="Product 2" class="w-32 h-20 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
-                        <img src="img/CC03.png" alt="Product 3" class="w-32 h-20 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
-                    </div>
-                </div>
-            </li>
-            <!-- Ukuran Section (Right) -->
-            <li class="flex-1">
-                <div class="p-4 mt-16">
-                    <div>
-                        <div class="flex items-center justify-between cursor-pointer">
-                            <h2 class="text-lg font-medium">Ukuran</h2>
-                        </div>
-                        <div class="ukuranlist mt-2">
-                            <div class="flex space-x-4">
-                                <div class="ukuran-list">
-                                    <div class="ukuran-card bg-transparent border-2 border-[--hitam] p-2 px-4 rounded-xl text-center cursor-pointer" onclick="selectSize(this)">
-                                        <span class="font-semibold">S</span>
-                                    </div>
-                                </div>
-                                <div class="ukuran-list">
-                                    <div class="ukuran-card bg-transparent border-2 border-[--hitam] p-2 px-3 rounded-xl text-center cursor-pointer" onclick="selectSize(this)">
-                                        <span class="font-semibold">M</span>
-                                    </div>
-                                </div>
-                                <div class="ukuran-list">
-                                    <div class="ukuran-card bg-transparent border-2 border-[--hitam] p-2 px-4 rounded-xl text-center cursor-pointer" onclick="selectSize(this)">
-                                        <span class="font-semibold">L</span>
-                                    </div>
-                                </div>
-                                <div class="ukuran-list">
-                                    <div class="ukuran-card bg-transparent border-2 border-[--hitam] p-2 px-3 rounded-xl text-center cursor-pointer" onclick="selectSize(this)">
-                                        <span class="font-semibold">XL</span>
-                                    </div>
-                                </div>
+                    <div class="mt-2 flex items-start space-x-4 relative">
+                        <a href="">
+                            <div class="flex items-center px-20 py-2 bg-transparent border-2 border-[--hitam] rounded-xl hover:bg-[--hitamkurang]">
+                                <span class="font-semibold">Customize</span>
                             </div>
+                        </a>
+
+                        <div class="flex flex-col items-start absolute bottom-0 left-60">
+                            <span class="font-semibold mb-2">Qty</span>
+                            <input type="number" class="py-2 p-2 border-2 border-[--hitam] rounded-xl w-14" min="1" value="1">
                         </div>
-                        
-                        <script>
-                            function selectSize(element) {
-                                const sizeCards = document.querySelectorAll('.ukuran-card');
-                                const isSelected = element.classList.contains('bg-[--hitam]');
-                        
-                                sizeCards.forEach(card => {
-                                    card.classList.remove('bg-[--hitam]');
-                                    card.classList.remove('text-[--putih]');
-                                    card.classList.add('bg-transparent');
-                                    card.classList.add('border-[--hitam]');
-                                });
-                        
-                                if (!isSelected) {
-                                    element.classList.remove('bg-transparent');
-                                    element.classList.add('bg-[--hitam]');
-                                    element.classList.add('text-[--putih]');
-                                    element.classList.remove('border-[--hitam]');
-                                }
-                            }
-                        </script>
                     </div>
-    
-                    <div class="mt-3">
-                        <div class="flex items-center justify-between cursor-pointer">
-                            <h2 class="text-lg font-medium">Warna</h2>
+                
+                    <div class="relative mt-8">
+                        <div class="flex flex-nowrap w-full cursor-pointer">
+                            <a href="Keranjang.html" class="w-full px-28 py-2 bg-[--hitam] text-[--putih] border-2 border-[--hitam] no-underline rounded-xl text-nowrap text-center">Add To Cart</a>
                         </div>
                         
-                        <div class="mt-2 flex items-start space-x-4 relative">
-                            <a href="">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[--hitam] relative cursor-pointer">
-                                    <div class="absolute inset-0 rounded-full bg-[--ijocap]"></div>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[--hitam] relative cursor-pointer">
-                                    <div class="absolute inset-0 rounded-full bg-[--orange]"></div>
-                                </div>
-                            </a>
-    
-                            <div class="flex flex-col items-start absolute bottom-0 left-60">
-                                <span class="font-semibold mb-2">Qty</span>
-                                <input type="number" class="py-2 p-2 border-2 border-[--hitam] rounded-xl w-14" min="1" value="1 ">
-                            </div>
+                        <div class="flex flex-nowrap w-full mt-4 cursor-pointer">
+                            <a href="#" class="w-full px-20 py-2 bg-[--ijo] text-[--putih] border-2 border-[--hitam] no-underline rounded-xl text-nowrap text-center">Buy Now</a>
                         </div>
                     
-                        <div class="relative mt-8 space-y-2">
-                            <div class="flex flex-nowrap w-full cursor-pointer">
-                                <a href="Keranjang.html" class="w-full px-28 py -2 bg-transparent text-[--hitam] border-2 border-[--hitam] no-underline rounded-xl text-nowrap text-center font-semibold hover:bg-[--hitamkurang]">Customize</a>
-                            </div>
-                            
-                            <div class="flex flex-nowrap w-full cursor-pointer">
-                                <a href="Keranjang.html" class="w-full px-28 py-2 bg-[--hitam] text-[--putih] border-2 border-[--hitam] no-underline rounded-xl text-nowrap text-center">Add To Cart</a>
-                            </div>
-                            
-                            <div class="flex flex-nowrap w-full cursor-pointer">
-                                <a href="#" class="w-full px-20 py-2 bg-[--ijo] text-[--putih] border-2 border-[--hitam] no-underline rounded-xl text-nowrap text-center">Buy Now</a>
-                            </div>
-                        
-                            <div class="flex justify-center mt-2">
-                                <span class="text-nowrap text-center">Free shipping over Rp 150.000</span>
-                            </div>
+                        <div class="flex justify-center mt-2">
+                            <span class="text-nowrap text-center">Free shipping over Rp 150.000</span>
                         </div>
                     </div>
                 </div>
-            </li>
-        </ul>
-    </div>
-    
+            </div>
+        </li>
+    </ul>
+</div>
+
     <div class="content mx-auto">
             <div class="relative">
                 <div class="">

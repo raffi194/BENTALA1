@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo bentala putih.png">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleguide.css">
+    <link rel="stylesheet" href="css/style.css">    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>BENTALA</title>
+</head>
+<body class="flex flex-col min-h-screen">
+    <div class="flex flex-nowrap w-full h-screen">
+        <div class="w-[20%] bg-gray-400 p-4 border-r-2 border-[--hitam] flex flex-col h-full">
+            <div class="flex flex-col flex-grow">
+                <div class="flex flex-col space-y-2 mt-4 ada">
+                    <div class="text-[--hitam] text-md font-normal p-2 rounded">
+                        <ul class="flex items-center justify-start space-x-2">
+                            <li class="flex-nowrap">
+                                <i class="fa-solid fa-grip text-[--hitam]"></i>
+                            </li>
+                            <li class="flex-nowrap">
+                                <div>Dashboard</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded">
+                        <ul class="flex items-center justify-start space-x-2">
+                            <li class="flex-nowrap">
+                                <i class="fa-solid fa-cube text-[--hitam] group-hover:text-[--putih]"></i>  
+                            </li>
+                            <li class="flex-nowrap">
+                                <div>Produk</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded">
+                        <ul class="flex items-center justify-start space-x-2">
+                            <li class="flex-nowrap">
+                                <i class="fa-regular fa-square-plus text-[--hitam] group-hover:text-[--putih]"></i>  
+                            </li>
+                            <li class="flex-nowrap">
+                                <div>Upload Blog</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-2 w-full border-t-2 border-[--hitam] idi mt-auto">
+                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
+                        <ul class="flex items-center justify-start space-x-2">
+                            <li class="flex-nowrap">
+                                <i class="fa-regular fa-circle-question text-[--hitam] group-hover:text-[--putih]"></i>  
+                            </li>
+                            <li class="flex-nowrap">
+                                <div>Support</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded">
+                        <ul class="flex items-center justify-start space-x-2">
+                            <li class="flex-nowrap">
+                                <i class="fa-solid fa-gear text-[--hitam] group-hover:text-[--putih]"></i>  
+                            </li>
+                            <li class="flex-nowrap">
+                                <div>Settings</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-col border-t-2 border-[--hitam] mt-4">
+                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
+                        <ul class="flex items-center justify-start space-x-2">
+                            <li class="flex-nowrap">
+                                <div class="h-8 w-8 rounded-full overflow-hidden">
+                                    <img src="img/Profile 2.png" alt="Profile Picture" class="h-full w-full object-cover">
+                                </div>
+                            </li>
+                            <li class="flex-nowrap flex-grow">
+                                <div>Sukkha Citta</div>
+                            </li>
+                            <li class="flex-nowrap">
+                                <i class="fa-solid fa-ellipsis text-[--hitam] group-hover:text-[--putih] items-end"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-[80%] bg-blue-300 p-4">
+            <div class="text-6xl font-bold uppercase">
+                <div>Produk </div>
+            </div>
+            <div class="bg-slate-500 w-full h-auto p-2">
+                <div class="flex flex-nowrap justify-end space-x-5">
+                    <div class="relative">
+                        <input type="text" placeholder="Search" class="bg-transparent text-[--item] border-2 border-[--hitam] rounded-2xl py-2 pl-10 pr-3">
+                        <svg class="absolute left-3 top-3 transform  text-[--hitam] h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="hidden flex justify-end">
+                        <div class="text-[--hitamkurang] p-2 -mr-7">1</div>
+                    </div>
+                    <div class="hidden flex justify-end">
+                        <div class="text-[--hitamkurang] p-2">Pilihan</div>
+                    </div>
+                    <div class="hidden flex items-center">
+                        <i class="fa-solid fa-trash-can fa-xl"></i>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]">Pilih</div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]">Tambahkan Produk</div>
+                    </div>
+                </div>
+                
+                <div class="overflow-y-auto h-[520px] mt-10 flex justify-around"> <!-- Set a fixed height for the container -->
+                    <div class="grid grid-cols-3 gap-4"> <!-- Use grid layout for 3 columns -->
+                        <!-- Card 1 -->
+                        <div class="flex-shrink-0"> 
+                            <div class="relative w-fit"> 
+                                <div>
+                                    <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
+                                        <div class="relative group">
+                                            <img src="img/admin1.png" alt="Product 1" class="w-80 h-96 object-cover shadow-lg"> 
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col p-4">
+                                        <div class="flex justify-between items-center"> 
+                                            <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
+                                                <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-nowrap flex space-x-12 mt-2"> 
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>90</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Terjual</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center w-full mt-2">
+                                            <span class="text-xl font-bold text-[--hitamkurang]">Rp2.890.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 2 -->
+                        <div class="flex-shrink-0"> 
+                            <div class="relative w-fit"> 
+                                <div>
+                                    <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
+                                        <div class="relative group">
+                                            <img src="img/admin1.png" alt="Product 1" class="w-80 h-96 object-cover shadow-lg"> 
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col p-4">
+                                        <div class="flex justify-between items-center"> 
+                                            <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
+                                                <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-nowrap flex space-x-12 mt-2"> 
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>90</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Terjual</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center w-full mt-2">
+                                            <span class="text-xl font-bold text-[--hitamkurang]">Rp2.890.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="flex-shrink-0"> 
+                            <div class="relative w-fit"> 
+                                <div>
+                                    <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
+                                        <div class="relative group">
+                                            <img src="img/admin1.png" alt="Product 1" class="w-80 h-96 object-cover shadow-lg"> 
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col p-4">
+                                        <div class="flex justify-between items-center"> 
+                                            <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
+                                                <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-nowrap flex space-x-12 mt-2"> 
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>90</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Terjual</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center w-full mt-2">
+                                            <span class="text-xl font-bold text-[--hitamkurang]">Rp2.890.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 4 -->
+                        <div class="flex-shrink-0"> 
+                            <div class="relative w-fit"> 
+                                <div>
+                                    <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
+                                        <div class="relative group">
+                                            <img src="img/admin1.png" alt="Product 1" class="w-80 h-96 object-cover shadow-lg"> 
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col p-4">
+                                        <div class="flex justify-between items-center"> 
+                                            <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
+                                                <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-nowrap flex space-x-12 mt-2"> 
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>90</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Terjual</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center w-full mt-2">
+                                            <span class="text-xl font-bold text-[--hitamkurang]">Rp2.890.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 5 -->
+                        <div class="flex-shrink-0"> 
+                            <div class="relative w-fit"> 
+                                <div>
+                                    <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
+                                        <div class="relative group">
+                                            <img src="img/admin1.png" alt="Product 1" class="w-80 h-96 object-cover shadow-lg"> 
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col p-4">
+                                        <div class="flex justify-between items-center"> 
+                                            <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
+                                                <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-nowrap flex space-x-12 mt-2"> 
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>90</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Terjual</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center w-full mt-2">
+                                            <span class="text-xl font-bold text-[--hitamkurang]">Rp2.890.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 6 -->
+                        <div class="flex-shrink-0"> 
+                            <div class="relative w-fit"> 
+                                <div>
+                                    <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
+                                        <div class="relative group">
+                                            <img src="img/admin1.png" alt="Product 1" class="w-80 h-96 object-cover shadow-lg"> 
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col p-4">
+                                        <div class="flex justify-between items-center"> 
+                                            <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
+                                                <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-nowrap flex space-x-12 mt-2"> 
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>90</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Terjual</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center w-full mt-2">
+                                            <span class="text-xl font-bold text-[--hitamkurang]">Rp2.890.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 7 -->
+                        <div class="flex-shrink-0"> 
+                            <div class="relative w-fit"> 
+                                <div>
+                                    <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
+                                        <div class="relative group">
+                                            <img src="img/admin1.png" alt="Product 1" class="w-80 h-96 object-cover shadow-lg"> 
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col p-4">
+                                        <div class="flex justify-between items-center"> 
+                                            <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
+                                                <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-nowrap flex space-x-12 mt-2"> 
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>90</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Terjual</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center w-full mt-2">
+                                            <span class="text-xl font-bold text-[--hitamkurang]">Rp2.890.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 8 -->
+                        <div class="flex-shrink-0"> 
+                            <div class="relative w-fit"> 
+                                <div>
+                                    <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
+                                        <div class="relative group">
+                                            <img src="img/admin1.png" alt="Product 1" class="w-80 h-96 object-cover shadow-lg"> 
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col p-4">
+                                        <div class="flex justify-between items-center"> 
+                                            <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
+                                                <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-nowrap flex space-x-12 mt-2"> 
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>90</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Terjual</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center w-full mt-2">
+                                            <span class="text-xl font-bold text-[--hitamkurang]">Rp2.890.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Card 9 -->
+                        <div class="flex-shrink-0"> 
+                            <div class="relative w-fit"> 
+                                <div>
+                                    <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
+                                        <div class="relative group">
+                                            <img src="img/admin1.png" alt="Product 1" class="w-80 h-96 object-cover shadow-lg"> 
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col p-4">
+                                        <div class="flex justify-between items-center"> 
+                                            <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
+                                                <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-nowrap flex space-x-12 mt-2"> 
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Stock</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>90</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium text-[--hitamkurang]">
+                                                    <div>Terjual</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0"> 
+                                                <div class="text-md font-medium">
+                                                    <div>80</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center w-full mt-2">
+                                            <span class="text-xl font-bold text-[--hitamkurang]">Rp2.890.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+    </div>
+
+    <script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'></script>
+    <script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
+    <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
+    <script src="https:// cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+</body>
+</html>

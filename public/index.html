@@ -46,10 +46,17 @@
                             </a>
                         </button>
                         <button class="btn" type="button">
-                            <i class="fa-regular fa-user fa-lg" style="color: var(--hitam);"></i>
+                            <i class="fa-regular fa-user fa-lg"onclick="openProfile()" style="color: var(--hitam);"></i>
                         </button>
                     </form>
                 </div>
+
+                <script>
+                    function openProfile() {
+                        window.open('Profile.html', '_blank');
+                    }
+                </script>
+
             </div>
         </div>
     </nav>

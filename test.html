@@ -1,112 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
-  <link rel="stylesheet" href="assets/navbarpth.css">
-  <link rel="stylesheet" href="assets/styleguide.css">
-  <link rel="stylesheet" href="assets/homepage1.css">
-  <link rel="stylesheet" href="assets/prank.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" type="png" href="img/logo bentala putih.png">
-  <title>BENTALA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/styleguide.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --hitamkurang: rgba(0, 0, 0, 0.5); /* Define your custom background color */
+        }
+    </style>
+    <title>Multiple Choice Radio Input</title>
 </head>
-<body>
-  <nav class="fixed top-0 w-full h-14 z-10 shadow">
-    <div class="container mx-auto px-4">
-      <div class="flex justify-between items-center py-1">
-        <div class="absolute left-10 top-4 h-16 w-16 space-x-10">
-          <ul class="hidden sm:flex space-x-10">
-            <li><a href="koleksi.html" class="text-white hover:bg-black px-3 py-2 rounded no-underline">Koleksi</a></li>
-            <li><a href="#" class="text-white hover:bg-black px-3 py-2 rounded no-underline">Komunitas</a></li>
-            <li><a href="#" class="text-white hover:bg-black px-3 py-2 rounded no-underline">Tentang</a></li>
-          </ul>
-        </div>
-        <div class="relative bottom-2/4">
-          <a href="#" id="logo">
-            <img src="img/logo bentala putih.png" alt="BENTALA" class="flex justify-center w-15 h-9 gambar">
-          </a> 
-        </div>   
-        <div class="absolute top-2 right-10 flex items-center">
-          <form class="d-flex space-x-10">
-            <input class="form-control me-2" type="text" placeholder="Search">
-            <button class="btn" type="button"><i class="fa-solid fa-bag-shopping fa-lg" style="color: white;"></i></button>
-            <button class="btn" type="button"><i class="fa-regular fa-user fa-lg" style="color: white;"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </nav>
+<body class="flex justify-center items-center h-screen bg-gray-100">
 
-  <div class="gambaratas">
-    <div class="imgatas relative overflow-hidden h-screen">
-      <img src="img/img sepatu atas.png" class="img-fluid h-screen w-none object-cover object-top" alt="Gambar Sepatu">
-    </div>
-    <div class="relative">
-      <p class="text-start text-title absolute bottom-36 left-10 roboto-bold text-white">ITS YOUR TIME TO</p>
-      <p class="text-start text-title absolute bottom-20 left-10 roboto-bold text-white">MAKING A DIFFERENCE.</p> 
-    </div>
-    <div class="relative" id="discoverButton">
-      <a href="#" class="absolute bottom-28 right-10 py-2 px-4 bg-transparent border-2 border-white text-white no-underline rounded-lg transition duration-300 hover:bg-black">
-        Discover your lifestyle
-      </a>        
-    </div>
+  <div class="flex flex-col space-y-4">
+      <!-- Group 1 -->
+      <div class="flex-shrink-0"> 
+          <div class="relative w-fit"> 
+              <div id="card1" class="bg-white rounded-lg border-2 border-black overflow-hidden transition-all duration-300">
+                  <div class="relative group">
+                      <input type="radio" name="group1" class="absolute top-2 left-2 cursor-pointer z-10" onclick="toggleBackground('card1')" />
+                      <img src="https://via.placeholder.com/320x240" alt="Product 1" class="w-80 h-96 object-cover"> 
+                  </div>
+              </div>
+              <div class="flex flex-col p-4">
+                  <div class="flex justify-between items-center"> 
+                      <span class="text-md font-bold">Product 1</span>
+                      <div class="flex items-center bg-white border border-black rounded-2xl px-2 py-1 cursor-pointer">
+                          <i class="fa-regular fa-pen-to-square text-black"></i>
+                          <span class="ml-1 text-xs font-bold text-black">Edit</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Group 2 -->
+      <div class="flex-shrink-0"> 
+          <div class="relative w-fit"> 
+              <div id="card2" class="bg-white rounded-lg border-2 border-black overflow-hidden transition-all duration-300">
+                  <div class="relative group">
+                      <input type="radio" name="group1" class="absolute top-2 left-2 cursor-pointer z-10" onclick="toggleBackground('card2')" />
+                      <img src="https://via.placeholder.com/320x240" alt="Product 2" class="w-80 h-96 object-cover"> 
+                  </div>
+              </div>
+              <div class="flex flex-col p-4">
+                  <div class="flex justify-between items-center"> 
+                      <span class="text-md font-bold">Product 2</span>
+                      <div class="flex items-center bg-white border border-black rounded-2xl px-2 py-1 cursor-pointer">
+                          <i class="fa-regular fa-pen-to-square text-black"></i>
+                          <span class="ml-1 text-xs font-bold text-black">Edit</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Group 3 -->
+      <div class="flex-shrink-0"> 
+          <div class="relative w-fit"> 
+              <div id="card3" class="bg-white rounded-lg border-2 border-black overflow-hidden transition-all duration-300">
+                  <div class="relative group">
+                      <input type="radio" name="group2" class="absolute top-2 left-2 cursor-pointer z-10" onclick="toggleBackground('card3')" />
+                      <img src="https://via.placeholder.com/320x240" alt="Product 3" class="w-80 h-96 object-cover"> 
+                  </div>
+              </div>
+              <div class="flex flex-col p-4">
+                  <div class="flex justify-between items-center"> 
+                      <span class="text-md font-bold">Product 3</span>
+                      <div class="flex items-center bg-white border border-black rounded-2xl px-2 py-1 cursor-pointer">
+                          <i class="fa-regular fa-pen-to-square text-black"></i>
+                          <span class="ml-1 text-xs font-bold text-black ">Edit</span>
+                      </div>
+                  </div>
+          </div>
+      </div>
   </div>
 
-
-
-
-
   <script>
-    const logo = document.getElementById('logo');
+      function toggleBackground(cardId) {
+          const cards = document.querySelectorAll(`[id^="card"]`);
+          cards.forEach(c => {
+              c.classList.remove('bg-black'); // Remove custom background color
+              c.classList.add('bg-white'); // Reset to default background color
+          });
 
-    logo.addEventListener('click', function() {
-        window.location.href = 'index.html'; 
-    });
+          const card = document.getElementById(cardId);
+          const isChecked = document.querySelector(`input[name="${cardId.replace('card', 'group')}"]:checked`);
 
-    function openInstagram() {
-        window.open('https://www.instagram.com/raffi1__/', '_blank');
-    }
-
-    function openX() {
-        window.open('https://x.com/Raffi1__', '_blank');
-    }
-
-    function openlinkedin() {
-        window.open('https://www.linkedin.com/in/muhamadraffi/', '_blank');
-    }
-
-    function openyt() {
-        window.open('https://www.instagram.com/raffi1__/', '_blank');
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const hoverTriggers = document.querySelectorAll('.hover-trigger');
-        let hoverTimeout;
-
-        hoverTriggers.forEach(trigger => {
-            trigger.addEventListener('mouseenter', function() {
-                const radioId = this.getAttribute('for');
-                const radio = document.getElementById(radioId);
-
-                clearTimeout(hoverTimeout);
-                hoverTimeout = setTimeout(() => {
-                    radio.checked = true;
-                }, 100); 
-            });
-
-            trigger.addEventListener('mouseleave', function() {
-                clearTimeout(hoverTimeout);
-            });
-        });
-
-        document.getElementById("discoverButton").addEventListener("click", function(event) {
-            event.preventDefault(); // Mencegah perilaku default anchor
-            window.location.href = "koleksi.html"; // Mengarahkan ke koleksi.html
-        });
-    });
+          // If the current radio is checked, change the background color
+          if (isChecked) {
+              card.classList.remove('bg-white'); // Remove default background color
+              card.classList.add('bg-black'); // Apply custom background color
+          }
+      }
   </script>
 </body>
 </html>
+
+
+

@@ -20,10 +20,15 @@
             <div class="flex justify-between items-center py-1">
                 <div class="absolute left-10 top-4 h-16 w-16 space-x-10">
                     <ul class="sm:flex space-x-10">
-                        <li><a href="koleksi.html" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline">Koleksi</a></li>
-                        <li><a href="#" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline">Komunitas</a></li>
-                        <li><a href="#" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline">Tentang</a></li>
+                        <li><a href="koleksi.html" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer">Koleksi</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openKomunitas()">Komunitas</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer">Tentang</a></li>
                     </ul>
+                    <script>
+                        function openKomunitas() {
+                            window.open('Komunitas.html');
+                        }
+                    </script>
                 </div>
                 <div class="absolute top-2.5 left-1/2 transform -translate-x-1/2">
                     <a href="#" id="logo">
@@ -42,10 +47,16 @@
                             <i class="fa-solid fa-bag-shopping fa-lg" style="color: var(--hitam);"></i>
                         </button>
                         <button class="btn" type="button">
-                            <i class="fa-regular fa-user fa-lg" style="color: var(--hitam);"></i>
+                            <i class="fa-regular fa-user fa-lg"onclick="openProfile()" style="color: var(--hitam);"></i>
                         </button>
                     </form>
                 </div>
+
+                <script>
+                    function openProfile() {
+                        window.open('Profile.html', '_blank');
+                    }
+                </script>
             </div>
         </div>
     </nav>

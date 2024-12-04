@@ -150,7 +150,7 @@
                                         <div class="flex justify-between items-center">
                                             <span class="text-md font-bold">PAGISENJA - Weekend Shirt</span>
                                             <!-- Tombol Edit -->
-                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                            <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer" onclick="openEdit()">
                                                 <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
                                                 <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
                                             </div>
@@ -187,6 +187,13 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <script>
+                                function openEdit() {
+                                window.open('admin tambahkan produk.html', '_blank');
+                                }
+                            </script>
+
                         </div>
 
                         <!-- Card 2 -->

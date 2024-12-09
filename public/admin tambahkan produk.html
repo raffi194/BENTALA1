@@ -30,8 +30,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="bg-[--ijo] text-[--putih] text-md font-normal p-2 rounded cursor-pointer">
-                        <ul class="flex items-center justify-start space-x-2">
+                    <div class="bg-[--ijo] text-[--putih] text-md font-normal p-2 rounded cursor-pointer" onclick="openProduk()">
+                        <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
                                 <i class="fa-solid fa-cube text-[--putih]"></i>  
                             </li>
@@ -40,27 +40,17 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded cursor-pointer" onclick="openBlog()">
-                        <ul class="flex items-center justify-start space-x-2">
-                            <li class="flex-nowrap">
-                                <i class="fa-regular fa-square-plus text-[--hitam] group-hover:text-[--putih]"></i>  
-                            </li>
-                            <li class="flex-nowrap">
-                                <div>Upload Blog</div>
-                            </li>
-                        </ul>
-                    </div>
 
                     <script>
-                        function openBlog() {
-                           window.open('admin blog.html');
-                       }
+                        function openProduk() {
+                            window.location.href = 'admin produk.html';
+                        }
                     </script>
-
+                    
                 </div>
                 <div class="flex flex-col space-y-2 w-full border-t-2 border-[--hitam] mt-auto">
                     <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
-                        <ul class="flex items-center justify-start space-x-2">
+                        <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
                                 <i class="fa-regular fa-circle-question text-[--hitam] group-hover:text-[--putih]"></i>  
                             </li>
@@ -70,7 +60,7 @@
                         </ul>
                     </div>
                     <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded">
-                        <ul class="flex items-center justify-start space-x-2">
+                        <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
                                 <i class="fa-solid fa-gear text-[--hitam] group-hover:text-[--putih]"></i>  
                             </li>
@@ -82,18 +72,25 @@
                 </div>
                 <div class="flex flex-col border-t-2 border-[--hitam] mt-4">
                     <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
-                        <ul class="flex items-center justify-start space-x-2">
-                            <li class="flex-nowrap">
+                        <ul class="flex items-center justify-start space-x-2 cursor-pointer">
+                            <li class="flex-nowrap" onclick="openProfile()">
                                 <div class="h-8 w-8 rounded-full overflow-hidden">
                                     <img src="img/Profile 2.png" alt="Profile Picture" class="h-full w-full object-cover">
                                 </div>
                             </li>
-                            <li class="flex-nowrap flex-grow">
+                            <li class="flex-nowrap flex-grow" onclick="openProfile()">
                                 <div>Sukkha Citta</div>
                             </li>
                             <li class="flex-nowrap">
                                 <i class="fa-solid fa-ellipsis text-[--hitam] group-hover:text-[--putih] items-end"></i>
                             </li>
+
+                            <script>
+                                function openProfile() {
+                                window.location.href ='Profile.html';
+                                }
+                            </script>
+
                         </ul>
                     </div>
                 </div>
@@ -102,7 +99,7 @@
         <div class="w-[80%] p-4 h-screen flex flex-col">
             <div>
                 <div class="text-4xl font-bold uppercase mb-4">
-                    <div>Tambahkan Produk</div>
+                    <div>Edit Produk</div>
                 </div>
                 <div class="flex justify-end">
                     <div id="pilihButton" data-state="pilih" class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam] w-fit">Upload Produk</div>

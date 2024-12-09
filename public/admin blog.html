@@ -30,29 +30,12 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded cursor-pointer" onclick="openProduk()">
-                        <ul class="flex items-center justify-start space-x-2">
-                            <li class="flex-nowrap">
-                                <i class="fa-solid fa-cube text-[--hitam] group-hover:text-[--putih]"></i>  
-                            </li>
-                            <li class="flex-nowrap">
-                                <div>Produk</div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <script>
-                        function openProduk() {
-                           window.open('admin produk.html');
-                       }
-                    </script>
-
                     <div class="bg-[--ijo] text-[--putih] text-md font-normal p-2 rounded cursor-pointer ">
                         <ul class="flex items-center justify-start space-x-2">
                             <li class="flex-nowrap">
                                 <i class="fa-regular fa-square-plus text-[--putih]"></i>  
                             </li>
-                            <li class="flex-nowrap">
+                            <li class="flex-nowrap" onclick="openAdminBlog()">
                                 <div>Upload Blog</div>
                             </li>
                         </ul>
@@ -60,7 +43,7 @@
                 </div>
                 <div class="flex flex-col space-y-2 w-full border-t-2 border-[--hitam] idi mt-auto">
                     <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
-                        <ul class="flex items-center justify-start space-x-2">
+                        <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
                                 <i class="fa-regular fa-circle-question text-[--hitam] group-hover:text-[--putih]"></i>  
                             </li>
@@ -70,7 +53,7 @@
                         </ul>
                     </div>
                     <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded">
-                        <ul class="flex items-center justify-start space-x-2">
+                        <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
                                 <i class="fa-solid fa-gear text-[--hitam] group-hover:text-[--putih]"></i>  
                             </li>
@@ -83,18 +66,29 @@
                 <div class="flex flex-col border-t-2 border-[--hitam] mt-4">
                     <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
                         <ul class="flex items-center justify-start space-x-2">
-                            <li class="flex-nowrap">
+                            <li class="flex-nowrap cursor-pointer" onclick="openProfile()">
                                 <div class="h-8 w-8 rounded-full overflow-hidden">
                                     <img src="img/Profile 2.png" alt="Profile Picture" class="h-full w-full object-cover">
                                 </div>
                             </li>
-                            <li class="flex-nowrap flex-grow">
+                            <li class="flex-nowrap flex-grow cursor-pointer" onclick="openProfile()">
                                 <div>MUTIA KHAIRUNNISA</div>
                             </li>
                             <li class="flex-nowrap">
                                 <i class="fa-solid fa-ellipsis text-[--hitam] group-hover:text-[--putih] items-end"></i>
                             </li>
                         </ul>
+
+                        <script>
+                            function openProfile() {
+                                window.location.href = 'Profile.html';
+                            }
+                            
+                            function openAdminBlog() {
+                                window.location.href = 'admin blog.html';
+                            }
+                        </script>
+
                     </div>
                 </div>
             </div>
@@ -123,7 +117,7 @@
                         <div id="pilihButton" data-state="pilih" class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]">Pilih</div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]">Tambahkan Produk</div>
+                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]" id="addBlogButton">Tambahkan Blog</div>
                     </div>
                 </div>
                 
@@ -149,7 +143,7 @@
                                         <div class="flex flex-col p-4 w-full">
                                             <div class="flex justify-between items-center">
                                                 <span class="text-md font-bold">Category</span>
-                                                <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer">
+                                                <div class="flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1 cursor-pointer" onclick="openEdit()">
                                                     <i class="fa-regular fa-pen-to-square text-[--hitam]"></i>
                                                     <span class="ml-1 text-xs font-bold text-[--hitam]">Edit</span>
                                                 </div>
@@ -158,6 +152,13 @@
                                             <div class="flex justify-between items-center w-3/4 mt-2">
                                                 <span class="text-6xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
+
+                                            <script>
+                                                function openEdit() {
+                                                window.location.href ='admin tambahkan blog.html';
+                                                }
+                                            </script>
+
                                         </div>
                                     </div>
                                 </div>
@@ -515,11 +516,11 @@
                                 const checkedCards = document.querySelectorAll('.group input[type="checkbox"]:checked');
                                 
                                 if (checkedCards.length === 0) {
-                                    alert('Pilih card yang ingin dihapus terlebih dahulu');
+                                    alert('Pilih blog yang ingin dihapus terlebih dahulu');
                                     return;
                                 }
 
-                                const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus ${checkedCards.length} card?`);
+                                const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus ${checkedCards.length} blog?`);
                                 
                                 if (confirmDelete) {
                                     // Simpan jumlah card yang akan dihapus
@@ -540,7 +541,7 @@
                                     // Optional: Tambahkan notifikasi
                                     Swal2.fire({ 
                                         icon: 'success', 
-                                        title: `Berhasil menghapus ${cardsToRemove} card`, 
+                                        title: `Berhasil menghapus ${cardsToRemove} blog`, 
                                         showConfirmButton: false, 
                                         timer: 1500 
                                     });
@@ -610,6 +611,50 @@
                                 }
                                 if (trashIcon) {
                                     trashIcon.classList.add('hidden');
+                                }
+                            });
+
+                            // Fungsi untuk menambahkan produk dan menampilkan notifikasi
+                            function addSelectedBlog() {
+                                const checkedCards = document.querySelectorAll('.group input[type="checkbox"]:checked');
+                                
+                                if (checkedCards.length === 0) {
+                                    alert('Pilih blog yang ingin ditambahkan terlebih dahulu');
+                                    return;
+                                }
+
+                                // Simpan jumlah card yang akan ditambahkan
+                                const cardsToAdd = checkedCards.length;
+
+                                // Tampilkan notifikasi
+                                Swal.fire({ 
+                                    icon: 'success', 
+                                    title: `Berhasil menambahkan ${cardsToAdd} blog`, 
+                                    showConfirmButton: false, 
+                                    timer: 1500
+                                }).then(() => {
+                                    // Reset checkboxes after the notification
+                                    resetCheckboxes();
+                                    // Reset select mode after resetting checkboxes
+                                    resetSelectMode();
+                                });
+
+                                // Optional: Lakukan tindakan lain seperti menambahkan produk ke database
+                            }
+
+                            // Fungsi untuk mereset checkboxes
+                            function resetCheckboxes() {
+                                const checkboxes = document.querySelectorAll('.group input[type="checkbox"]');
+                                checkboxes.forEach(checkbox => {
+                                    checkbox.checked = false; // Uncheck all checkboxes
+                                });
+                            }
+
+                            // Event listener untuk tombol "Tambahkan Produk"
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const addBlogButton = document.getElementById('addBlogButton');
+                                if (addBlogButton) {
+                                    addBlogButton.addEventListener('click', addSelectedBlog);
                                 }
                             });
                         </script>

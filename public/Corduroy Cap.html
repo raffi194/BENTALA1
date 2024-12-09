@@ -20,13 +20,21 @@
             <div class="flex justify-between items-center py-1">
                 <div class="absolute left-10 top-4 h-16 w-16 space-x-10">
                     <ul class="sm:flex space-x-10">
-                        <li><a href="koleksi.html" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline">Koleksi</a></li>
-                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline" onclick="openKomunitas()">Komunitas</a></li>
-                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline">Tentang</a></li>
+                        <li><a href="koleksi.html" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openKoleksi()">Koleksi</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openBlog()">Blog</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openTentang()">Tentang</a></li>
                     </ul>
                     <script>
-                        function openKomunitas() {
-                            window.open('Komunitas.html');
+                        function openKoleksi() {
+                            window.location.href = 'Koleksi.html';
+                        }
+                        
+                        function openBlog() {
+                            window.location.href = 'Blog.html';
+                        }
+                        
+                        function openTentang() {
+                            window.location.href = '';
                         }
                     </script>
                 </div>
@@ -48,23 +56,24 @@
                                 <i class="fa-solid fa-bag-shopping fa-lg" style="color: var(--hitam);"></i>
                             </div>
                         </button>
+                        <button class="btn" type="button">
+                            <div onclick="openProfile()">
+                                <i class="fa-regular fa-user fa-lg" style="color: var(--hitam);"></i>
+                            </div>
+                        </button>
 
                         <script>
                             function openCart() {
-                                window.open('Cart.html');
+                                window.location.href = 'Cart.html';
+                            }
+
+                            function openProfile() {
+                                window.location.href = 'Profile.html';
                             }
                         </script>
-                        <button class="btn" type="button">
-                            <i class="fa-regular fa-user fa-lg"onclick="openProfile()" style="color: var(--hitam);"></i>
-                        </button>
+
                     </form>
                 </div>
-
-                <script>
-                    function openProfile() {
-                        window.open('Profile.html', '_blank');
-                    }
-                </script>
             </div>
         </div>
     </nav>
@@ -264,11 +273,11 @@
                     
                         <div class="mt-8 space-y-2 max-w-[315   px]">
                             <div class="flex flex-nowrap cursor-pointer">
-                                <a href="Keranjang.html" class="w-full py-2 bg-transparent text-[--hitam] border-2 border-[--hitam] no-underline rounded-xl text-center font-semibold hover:bg-[--hitamkurang]">Customize</a>
+                                <span class="w-full py-2 bg-transparent text-[--hitam] border-2 border-[--hitam] no-underline rounded-xl text-center font-semibold hover:bg-[--hitamkurang]">Customize</span>
                             </div>
                             
-                            <div class="flex flex-nowrap cursor-pointer">
-                                <a href="Cart2.html" class="w-full py-2 bg-[--hitam] text-[--putih] border-2 border-[--hitam] no-underline rounded-xl text-center">Add To Cart</a>
+                            <div class="flex flex-nowrap cursor-pointer" onclick="openCart2()">
+                                <span class="w-full py-2 bg-[--hitam] text-[--putih] border-2 border-[--hitam] no-underline rounded-xl text-center">Add To Cart</span>
                             </div>
                             
                             <div class="flex flex-nowrap cursor-pointer">
@@ -278,6 +287,13 @@
                             <div class="flex justify-center mt-2">
                                 <span class="text-nowrap text-center">Free shipping over Rp 150.000</span>
                             </div>
+
+                            <script>
+                                function openCart2() {
+                                    window.location.href = 'Cart2.html';
+                                }
+                            </script>
+
                         </div>
                     </div>
                 </div>

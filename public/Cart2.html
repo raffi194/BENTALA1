@@ -20,13 +20,21 @@
             <div class="flex justify-between items-center py-1">
                 <div class="absolute left-10 top-4 h-16 w-16 space-x-10">
                     <ul class="sm:flex space-x-10">
-                        <li><a href="koleksi.html" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline">Koleksi</a></li>
-                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline" onclick="openKomunitas()">Komunitas</a></li>
-                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline">Tentang</a></li>
+                        <li><a href="koleksi.html" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openKoleksi()">Koleksi</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openBlog()">Blog</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openTentang()">Tentang</a></li>
                     </ul>
                     <script>
-                        function openKomunitas() {
-                            window.open('Komunitas.html');
+                        function openKoleksi() {
+                            window.location.href = 'Koleksi.html';
+                        }
+                        
+                        function openBlog() {
+                            window.location.href = 'Blog.html';
+                        }
+                        
+                        function openTentang() {
+                            window.location.href = '';
                         }
                     </script>
                 </div>
@@ -44,19 +52,28 @@
                             </svg>
                         </div>
                         <button class="btn" type="button">
-                            <i class="fa-solid fa-bag-shopping fa-lg" style="color: var(--hitam);"></i>
+                            <div onclick="openCart()">
+                                <i class="fa-solid fa-bag-shopping fa-lg" style="color: var(--hitam);"></i>
+                            </div>
                         </button>
                         <button class="btn" type="button">
-                            <i class="fa-regular fa-user fa-lg"onclick="openProfile()" style="color: var(--hitam);"></i>
+                            <div onclick="openProfile()">
+                                <i class="fa-regular fa-user fa-lg" style="color: var(--hitam);"></i>
+                            </div>
                         </button>
+
+                        <script>
+                            function openCart() {
+                                window.location.href = 'Cart.html';
+                            }
+
+                            function openProfile() {
+                                window.location.href = 'Profile.html';
+                            }
+                        </script>
+
                     </form>
                 </div>
-
-                <script>
-                    function openProfile() {
-                        window.open('Profile.html', '_blank');
-                    }
-                </script>
             </div>
         </div>
     </nav>

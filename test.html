@@ -3,102 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/css/styleguide.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --hitamkurang: rgba(0, 0, 0, 0.5); /* Define your custom background color */
-        }
-    </style>
-    <title>Multiple Choice Radio Input</title>
+    <title>Success Animation Example</title>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body class="flex justify-center items-center h-screen bg-gray-100">
+<body>
 
-  <div class="flex flex-col space-y-4">
-      <!-- Group 1 -->
-      <div class="flex-shrink-0"> 
-          <div class="relative w-fit"> 
-              <div id="card1" class="bg-white rounded-lg border-2 border-black overflow-hidden transition-all duration-300">
-                  <div class="relative group">
-                      <input type="radio" name="group1" class="absolute top-2 left-2 cursor-pointer z-10" onclick="toggleBackground('card1')" />
-                      <img src="https://via.placeholder.com/320x240" alt="Product 1" class="w-80 h-96 object-cover"> 
-                  </div>
-              </div>
-              <div class="flex flex-col p-4">
-                  <div class="flex justify-between items-center"> 
-                      <span class="text-md font-bold">Product 1</span>
-                      <div class="flex items-center bg-white border border-black rounded-2xl px-2 py-1 cursor-pointer">
-                          <i class="fa-regular fa-pen-to-square text-black"></i>
-                          <span class="ml-1 text-xs font-bold text-black">Edit</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+<div class="grid">
+    <div class="group">
+        <input type="checkbox" onchange="toggleChecked(this, 'card1')" />
+        <div id="card1">Card 1</div>
+    </div>
+    <div class="group">
+        <input type="checkbox" onchange="toggleChecked(this, 'card2')" />
+        <div id="card2">Card 2</div>
+    </div>
+    <!-- More cards... -->
+</div>
 
-      <!-- Group 2 -->
-      <div class="flex-shrink-0"> 
-          <div class="relative w-fit"> 
-              <div id="card2" class="bg-white rounded-lg border-2 border-black overflow-hidden transition-all duration-300">
-                  <div class="relative group">
-                      <input type="radio" name="group1" class="absolute top-2 left-2 cursor-pointer z-10" onclick="toggleBackground('card2')" />
-                      <img src="https://via.placeholder.com/320x240" alt="Product 2" class="w-80 h-96 object-cover"> 
-                  </div>
-              </div>
-              <div class="flex flex-col p-4">
-                  <div class="flex justify-between items-center"> 
-                      <span class="text-md font-bold">Product 2</span>
-                      <div class="flex items-center bg-white border border-black rounded-2xl px-2 py-1 cursor-pointer">
-                          <i class="fa-regular fa-pen-to-square text-black"></i>
-                          <span class="ml-1 text-xs font-bold text-black">Edit</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+<button id="addProductButton">Tambahkan Produk</button>
 
-      <!-- Group 3 -->
-      <div class="flex-shrink-0"> 
-          <div class="relative w-fit"> 
-              <div id="card3" class="bg-white rounded-lg border-2 border-black overflow-hidden transition-all duration-300">
-                  <div class="relative group">
-                      <input type="radio" name="group2" class="absolute top-2 left-2 cursor-pointer z-10" onclick="toggleBackground('card3')" />
-                      <img src="https://via.placeholder.com/320x240" alt="Product 3" class="w-80 h-96 object-cover"> 
-                  </div>
-              </div>
-              <div class="flex flex-col p-4">
-                  <div class="flex justify-between items-center"> 
-                      <span class="text-md font-bold">Product 3</span>
-                      <div class="flex items-center bg-white border border-black rounded-2xl px-2 py-1 cursor-pointer">
-                          <i class="fa-regular fa-pen-to-square text-black"></i>
-                          <span class="ml-1 text-xs font-bold text-black ">Edit</span>
-                      </div>
-                  </div>
-          </div>
-      </div>
-  </div>
+<dotlottie-player id="successAnimation" src="https://lottie.host/d91cba67-c5af-4577-8048-5fcb6b771417/RJgeO65EWo.lottie" background="transparent" speed="1" style="width: 300px; height: 300px; display: none;" loop autoplay></dotlottie-player>
 
-  <script>
-      function toggleBackground(cardId) {
-          const cards = document.querySelectorAll(`[id^="card"]`);
-          cards.forEach(c => {
-              c.classList.remove('bg-black'); // Remove custom background color
-              c.classList.add('bg-white'); // Reset to default background color
-          });
+<script>
+    // Fungsi untuk menambahkan produk dan menampilkan notifikasi
+    function addSelectedProducts() {
+        const checkedCards = document.querySelectorAll('.group input[type="checkbox"]:checked');
+        
+        if (checkedCards.length === 0) {
+            alert('Pilih card yang ingin ditambahkan terlebih dahulu');
+            return;
+        }
 
-          const card = document.getElementById(cardId);
-          const isChecked = document.querySelector(`input[name="${cardId.replace('card', 'group')}"]:checked`);
+        // Simpan jumlah card yang akan ditambahkan
+        const cardsToAdd = checkedCards.length;
 
-          // If the current radio is checked, change the background color
-          if (isChecked) {
-              card.classList.remove('bg-white'); // Remove default background color
-              card.classList.add('bg-black'); // Apply custom background color
-          }
-      }
-  </script>
+        // Tampilkan notifikasi
+        Swal.fire({ 
+            icon: 'success', 
+            title: `Berhasil menambahkan ${cardsToAdd} card ke toko kita`, 
+            showConfirmButton: false, 
+            timer: 1500
+        }).then(() => {
+            // Reset checkboxes after the notification
+            resetCheckboxes();
+        });
+
+        // Optional: Lakukan tindakan lain seperti menambahkan produk ke database
+    }
+
+    // Fungsi untuk mereset checkboxes
+    function resetCheckboxes() {
+        const checkboxes = document.querySelectorAll('.group input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false; // Uncheck all checkboxes
+        });
+    }
+
+    // Event listener untuk tombol "Tambahkan Produk"
+    document.addEventListener('DOMContentLoaded', () => {
+        const addProductButton = document.getElementById('addProductButton');
+        if (addProductButton) {
+            addProductButton.addEventListener('click', addSelectedProducts);
+        }
+    });
+</script>
+
 </body>
 </html>
-
-
-

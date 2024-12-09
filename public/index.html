@@ -22,13 +22,21 @@
             <div class="flex justify-between items-center py-1">
                 <div class="absolute left-10 top-4 h-16 w-16 space-x-10">
                     <ul class="sm:flex space-x-10">
-                        <li><a href="koleksi.html" class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer">Koleksi</a></li>
-                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openKomunitas()">Komunitas</a></li>
-                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer">Tentang</a></li>
+                        <li><a href="koleksi.html" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openKoleksi()">Koleksi</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openBlog()">Blog</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openTentang()">Tentang</a></li>
                     </ul>
                     <script>
-                        function openKomunitas() {
-                            window.open('Komunitas.html');
+                        function openKoleksi() {
+                            window.location.href = 'Koleksi.html';
+                        }
+                        
+                        function openBlog() {
+                            window.location.href = 'Blog.html';
+                        }
+                        
+                        function openTentang() {
+                            window.location.href = '';
                         }
                     </script>
                 </div>
@@ -50,25 +58,24 @@
                                 <i class="fa-solid fa-bag-shopping fa-lg" style="color: var(--hitam);"></i>
                             </div>
                         </button>
+                        <button class="btn" type="button">
+                            <div onclick="openProfile()">
+                                <i class="fa-regular fa-user fa-lg" style="color: var(--hitam);"></i>
+                            </div>
+                        </button>
 
                         <script>
                             function openCart() {
-                                window.open('Cart.html');
+                                window.location.href = 'Cart.html';
+                            }
+
+                            function openProfile() {
+                                window.location.href = 'Profile.html';
                             }
                         </script>
 
-                        <button class="btn" type="button">
-                            <i class="fa-regular fa-user fa-lg"onclick="openProfile()" style="color: var(--hitam);"></i>
-                        </button>
                     </form>
                 </div>
-
-                <script>
-                    function openProfile() {
-                        window.open('Profile.html', '_blank');
-                    }
-                </script>
-
             </div>
         </div>
     </nav>
@@ -434,8 +441,7 @@
                                     </script>
                             
                                     <!-- Card 8 -->
-                                    <div class="relative">
-                                        <a href="Corduroy Cap.html">
+                                    <div class="relative" onclick="openCorduroy()">
                                         <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
                                             <div class="relative group">
                                                 <img src="img/card08.png" alt="Product 9" class="w-full h-96 object-cover shadow-lg transition-shadow duration-300 hover:shadow-none"> <!-- Menghilangkan bayangan saat di-hover -->
@@ -456,11 +462,17 @@
                                             <div class="flex justify-between items-center w-full mt-2">
                                                 <span class="text-xl font-bold">Rp159.000</span>
                                             </div>
-                                        </a>
                                             <div class="relative">
                                                 <i id="heart-icon" class="fa-regular fa-heart fa-xl absolute bottom-17 right-0" style="color: #0a090b; cursor: pointer;" onclick="toggleHeart(this)"></i>
                                             </div>
                                         </div>
+
+                                        <script>
+                                            function openCorduroy() {
+                                                window.location.href = 'Corduroy Cap.html';
+                                            }
+                                        </script>
+
                                     </div>
                                     
                                     <script>
@@ -482,7 +494,7 @@
                                         <a href="#">
                                         <div class="bg-[--putih] rounded-lg shadow-lg overflow-hidden border-2 border-[--hitam]">
                                             <div class="relative group">
-                                                    <img src="img/card09.png" alt="Product 9" class="w-full h-96 object-cover shadow-lg transition-shadow duration-300 hover:shadow-none"> <!-- Menghilangkan bayangan saat di-hover -->
+                                                    <img src="img/card09.png" alt="Product 9" class="w-full h-96 object-cover shadow-lg transition-shadow duration-300 hover:shadow-none"> 
                                                     <div class="absolute inset-0 bg-[--hitam] opacity-30 transition-opacity duration-300 group-hover:opacity-0"></div>
                                             </div>
                                             <div class="absolute top-2 left-2 flex items-center bg-[--putih] border border-[--hitam] rounded-2xl px-2 py-1">
@@ -2100,9 +2112,9 @@
             }
         </script>
 
-<div class="relative flex flex-col md:flex-row">
-    <div class="flex flex-col justify-center max-w-full ml-5 mb-10 h-full w-full md:w-2/3 lg:w-3/4 xl:w-2/3">
-        <div class="w-auto h-auto ml-10 mt-24">
+<div class="relative flex flex-col md:flex-row justify-between mx-10">
+    <div class="flex flex-col justify-center max-w-full mb-10 h-full w-full flex-grow">
+        <div class="w-auto h-auto mt-24">
             <div class="max-w-xl ml-2 mt-5 mb-10">
                 <span class="text-5xl font-bold">Pilihan Hijau Hari Ini, Masa Depan Cerah nanti</span>
             </div>
@@ -2129,7 +2141,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-shrink-0 my-10 mr-24 w-full md:w-1/3 lg:w-1/4 xl:w-1/3">
+    <div class="flex-shrink my-10 w-full flex items-end justify-end">
         <img src="img/gambarbwh.png" alt="Deskripsi Gambar" class="h-full object-cover" />
     </div>
 </div>
@@ -2177,7 +2189,7 @@
                        }
                
                        function openyt() {
-                           window.open('admin produk.html', '_blank');
+                           window.open('https://www.instagram.com/raffi1__/', '_blank');
                        }
                
                        function openVideo() {

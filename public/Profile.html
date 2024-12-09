@@ -20,13 +20,21 @@
             <div class="flex justify-between items-center py-1">
                 <div class="absolute left-10 top-4 h-16 w-16 space-x-10">
                     <ul class="sm:flex space-x-10">
-                        <li><a href="koleksi.html" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline">Koleksi</a></li>
-                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline" onclick="openKomunitas()">Komunitas</a></li>
-                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline">Tentang</a></li>
+                        <li><a href="koleksi.html" class="text-[--hitam] hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openKoleksi()">Koleksi</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openBlog()">Blog</a></li>
+                        <li><a class="text-[--hitam]  hover:bg-[--hitam] hover:text-[--putih] px-3 py-2 rounded no-underline cursor-pointer" onclick="openTentang()">Tentang</a></li>
                     </ul>
                     <script>
-                        function openKomunitas() {
-                            window.open('Komunitas.html');
+                        function openKoleksi() {
+                            window.location.href = 'Koleksi.html';
+                        }
+                        
+                        function openBlog() {
+                            window.location.href = 'Blog.html';
+                        }
+                        
+                        function openTentang() {
+                            window.location.href = '';
                         }
                     </script>
                 </div>
@@ -48,332 +56,347 @@
                                 <i class="fa-solid fa-bag-shopping fa-lg" style="color: var(--hitam);"></i>
                             </div>
                         </button>
+                        <button class="btn" type="button">
+                            <div onclick="openProfile()">
+                                <i class="fa-regular fa-user fa-lg" style="color: var(--hitam);"></i>
+                            </div>
+                        </button>
 
                         <script>
                             function openCart() {
-                                window.open('Cart.html');
+                                window.location.href = 'Cart.html';
+                            }
+
+                            function openProfile() {
+                                window.location.href = 'Profile.html';
                             }
                         </script>
-                        <button class="btn" type="button">
-                            <i class="fa-regular fa-user fa-lg" style="color: var(--hitam);"></i>
-                        </button>
+
                     </form>
                 </div>
             </div>
         </div>
     </nav>
 
-<div class="h-fit">
-    <div class="mt-24 ml-10 mb-5">
-        <div class="flex flex-nowrap">
-            <ul class="flex flex-nowrap space-x-1">
-                <li>
-                    <a href="koleksi.html" class="text-[--hitam] px-3 py-2 rounded no-underline text-lg cursor-pointer">Home</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-angle-right fa-xs relative top-0.5"></i>
-                </li>
-                <li>
-                    <a href="#" class="text-[--hitam] px-3 py-2 rounded no-underline text-lg cursor-pointer font-semibold">Profile</a>
-                </li>
-            </ul>
-        </div>    
-    </div>
-
-    <div class="w-1/3 mb-5">
-        <div class="ml-12">
+    <div class="h-fit">
+        <div class="mt-24 ml-10 mb-5">
             <div class="flex flex-nowrap">
-                 <span class="text-[--hitam] rounded no-underline text-6xl font-bold uppercase">Profile</span>
-            </div>    
-        </div>
-    </div>
-</div>
-
-<div class="flex flex-col items-center w-full px-10 pb-32 h-fit">
-    <ul class="flex flex-nowrap my-10 space-x-10 w-full">
-        <li class="justify-center space-y-5 w-[30%] border-2 border-[--hitam]"> 
-            <div class="rectangle w-full h-fit ">
-                <div class="flex items-center w-full">
-                    <ul class="flex h-fit w-full">
-                        <li class="w-full">
-                            <div class="flex h-full w-full border-b-2 border-[--hitam]">
-                                <ul class="flex flex-nowrap items-center space-x-3 mx-2 h-full text-[--hitam] w-full"> 
-                                    <li class="flex items-center h-full my-3"> 
-                                        <div class="h-16 w-16 rounded-full overflow-hidden border-2 border-[--hitam]">
-                                            <img src="img/Profile 2.png" alt="Profile Picture" class="h-full w-full object-cover">
-                                        </div>
-                                    </li>
-                                    <li class="flex items-center h-full w-full"> 
-                                        <div class="flex flex-nowrap items-center">
-                                            <span class="font-medium text-xl">MUTIA KHAIRUNNISA</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="flex items-center w-full">
-                    <ul class="flex h-fit w-full">
-                        <li>
-                            <div class="flex h-full w-full">
-                                <ul class="flex flex-col space-y-3 mx-10 my-3 h-full text-[--hitam] w-full"> 
-                                    <li class="flex flex-col h-full"> 
-                                        <div class="flex">
-                                            <span class="font-semibold text-xl">Kotak Masuk</span>
-                                        </div>
-                                        <ul class="flex flex-col space-y-3 mx-10 my-3 h-full text-[--hitam] w-full"> 
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Chat</span>
-                                                </div>
-                                            </li>
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Diskusi Produk</span>
-                                                </div>
-                                            </li>
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Ulasan</span>
-                                                </div>
-                                            </li>
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Pesan Bantuan</span>
-                                                </div>
-                                            </li>
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Pesanan Dikomplain</span>
-                                                </div>
-                                            </li>
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Update</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="flex flex-col h-full"> 
-                                        <div class="flex">
-                                            <span class="font-semibold text-xl">Pembelian</span>
-                                        </div>
-                                        <ul class="flex flex-col space-y-3 mx-10 my-3 h-full text-[--hitam] w-full"> 
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Menunggu Pembayaran</span>
-                                                </div>
-                                            </li>
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Diskusi Produk</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="flex flex-col h-full"> 
-                                        <div class="flex">
-                                            <span class="font-semibold text-xl">Daftar Transaksi</span>
-                                        </div>
-
-                                        <ul class="flex flex-col space-y-3 mx-10 my-3 h-full text-[--hitam] w-full"> 
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Wishlist</span>
-                                                </div>
-                                            </li>
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Toko Favorit</span>
-                                                </div>
-                                            </li>
-                                            <li class="flex h-full"> 
-                                                <div class="flex">
-                                                    <span class="font-medium text-lg cursor-pointer">Pengaturan</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li class="justify-center space-y-5 w-[70%] relative">
-            <div class="h-fit">
-                <ul class="flex flex-nowrap space-x-10 p-4 w-full"> 
-                    <li class="flex items-center">
-                        <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Biodata Diri</span>
+                <ul class="flex flex-nowrap space-x-1">
+                    <li>
+                        <a href="koleksi.html" class="text-[--hitam] px-3 py-2 rounded no-underline text-lg cursor-pointer">Home</a>
                     </li>
-                    <li class="flex items-center">
-                        <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Daftar Alamat</span>
+                    <li>
+                        <i class="fa-solid fa-angle-right fa-xs relative top-0.5"></i>
                     </li>
-                    <li class="flex items-center">
-                        <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Pembayaran</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Rekening Bank</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Notifikasi</span>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Keamanan</span>
-                    </li>
-                    <li class="flex items-center hover:bg-[--hitam] hover:text-[--putih] p-2">
-                        <span class="font-medium text-lg cursor-pointer">Toko Anda</span>
+                    <li>
+                        <a href="#" class="text-[--hitam] px-3 py-2 rounded no-underline text-lg cursor-pointer font-semibold">Profile</a>
                     </li>
                 </ul>
+            </div>    
+        </div>
+
+        <div class="w-1/3 mb-5">
+            <div class="ml-12">
+                <div class="flex flex-nowrap">
+                    <span class="text-[--hitam] rounded no-underline text-6xl font-bold uppercase">Profile</span>
+                </div>    
             </div>
-        
-            <div class="flex flex-nowrap justify-between mx-3 space-x-10">
-                <div class="h-fit p-4 w-[40%]">
-                    <div class="space-y-10">
-                        <div class="border-2 border-[--hitam] rounded-2xl space-y-3">
-                            <div class="bg-[--putih] rounded-2xl overflow-hidden border-b-2 border-[--hitam]">
-                                <div class="group">
-                                    <img src="img/Profile 3.png" alt="Product 9" class="w-full h-96 object-cover"> 
-                                </div>
-                            </div>
-                            <div class="flex flex-col p-4 space-y-5">
-                                <div class="flex items-center justify-center text-lg h-fit p-2 hover:bg-[--hitamkurang] rounded-3xl border-2 border-[--hitam]">
-                                    Pilih Foto
-                                </div>                            
-                                <span class="text-sm text-[--hitam]">Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file yang diperbolehkan: .JPG .JPEG .PNG</span>
-                            </div>
-                        </div>
-                        <div class="space-y-5">
-                            <div class="flex items-center justify-center text-lg h-fit p-2 hover:bg-[--hitamkurang] rounded-3xl border-2 border-[--hitam] cursor-pointer">
-                                Buat Kata Sandi
-                            </div>
-                            <div class="flex items-center justify-center text-lg h-fit p-2 hover:bg-[--hitamkurang] rounded-3xl border-2 border-[--hitam] cursor-pointer">
-                                PIN Bentala
-                            </div>
-                            <div class="flex items-center justify-center text-lg h-fit p-2 hover:bg-[--hitamkurang] rounded-3xl border-2 border-[--hitam] cursor-pointer" onclick="openAdmin()">
-                                Verifikasi Instan
-                            </div>
+        </div>
+    </div>
 
-                            <script>
-                                function openAdmin() {
-                                window.open('admin.html', '_blank');
-                                }
-                            </script>
+    <div class="flex flex-col items-center w-full px-10 pb-32 h-fit">
+        <ul class="flex flex-nowrap my-10 space-x-10 w-full">
+            <li class="justify-center space-y-5 w-[30%] border-2 border-[--hitam]"> 
+                <div class="rectangle w-full h-fit ">
+                    <div class="flex items-center w-full">
+                        <ul class="flex h-fit w-full">
+                            <li class="w-full">
+                                <div class="flex h-full w-full border-b-2 border-[--hitam]">
+                                    <ul class="flex flex-nowrap items-center space-x-3 mx-2 h-full text-[--hitam] w-full"> 
+                                        <li class="flex items-center h-full my-3"> 
+                                            <div class="h-16 w-16 rounded-full overflow-hidden border-2 border-[--hitam]">
+                                                <img src="img/Profile 2.png" alt="Profile Picture" class="h-full w-full object-cover">
+                                            </div>
+                                        </li>
+                                        <li class="flex items-center h-full w-full"> 
+                                            <div class="flex flex-nowrap items-center">
+                                                <span class="font-medium text-xl">MUTIA KHAIRUNNISA</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex items-center w-full">
+                        <ul class="flex h-fit w-full">
+                            <li>
+                                <div class="flex h-full w-full">
+                                    <ul class="flex flex-col space-y-3 mx-10 my-3 h-full text-[--hitam] w-full"> 
+                                        <li class="flex flex-col h-full"> 
+                                            <div class="flex">
+                                                <span class="font-semibold text-xl">Kotak Masuk</span>
+                                            </div>
+                                            <ul class="flex flex-col space-y-3 mx-10 my-3 h-full text-[--hitam] w-full"> 
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Chat</span>
+                                                    </div>
+                                                </li>
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Diskusi Produk</span>
+                                                    </div>
+                                                </li>
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Ulasan</span>
+                                                    </div>
+                                                </li>
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Pesan Bantuan</span>
+                                                    </div>
+                                                </li>
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Pesanan Dikomplain</span>
+                                                    </div>
+                                                </li>
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Update</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="flex flex-col h-full"> 
+                                            <div class="flex">
+                                                <span class="font-semibold text-xl">Pembelian</span>
+                                            </div>
+                                            <ul class="flex flex-col space-y-3 mx-10 my-3 h-full text-[--hitam] w-full"> 
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Menunggu Pembayaran</span>
+                                                    </div>
+                                                </li>
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Diskusi Produk</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="flex flex-col h-full"> 
+                                            <div class="flex">
+                                                <span class="font-semibold text-xl">Daftar Transaksi</span>
+                                            </div>
 
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="h-fit p-2 w-[60%] space-y-5">
-                    <div class="flex w-full">
-                        <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start pt-5 border-t-2 border-[--hitam]"> 
-                            <li class="flex items-start flex-grow"> 
-                                <div>
-                                    <span class="text-base font-bold text-[--hitam]">Biodata diri</span>
-                                </div>
-                            </li>
-                            <li class="flex items-end"> 
-                                <div class="flex flex-col items-end">
-                                    <span class="text-sm text-[--hitam]">Ubah</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex w-full">
-                        <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start"> 
-                            <li class="flex items-start flex-grow"> 
-                                <div>
-                                    <span class="text-base font-bold text-[--hitam]">Nama</span>
-                                </div>
-                            </li>
-                            <li class="flex items-end"> 
-                                <div class="flex flex-col items-end">
-                                    <span class="text-sm text-[--hitam]">MUTIA KHAIRUNNISA</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex w-full">
-                        <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start"> 
-                            <li class="flex items-start flex-grow"> 
-                                <div>
-                                    <span class="text-base font-bold text-[--hitam]">Tanggal Lahir</span>
-                                </div>
-                            </li>
-                            <li class="flex items-end"> 
-                                <div class="flex flex-col items-end">
-                                    <span class="text-sm text-[--hitam]">17 Agustus 1945</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex w-full">
-                        <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start mb-5"> 
-                            <li class="flex items-start flex-grow"> 
-                                <div>
-                                    <span class="text-base font-bold text-[--hitam]">Jenis Kelamin</span>
-                                </div>
-                            </li>
-                            <li class="flex items-end"> 
-                                <div class="flex flex-col items-end">
-                                    <span class="text-sm text-[--hitam]">Wanita</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex w-full">
-                        <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start pt-5 border-t-2 border-[--hitam]"> 
-                            <li class="flex items-start flex-grow"> 
-                                <div>
-                                    <span class="text-base font-bold text-[--hitam]">Kontak</span>
-                                </div>
-                            </li>
-                            <li class="flex items-end"> 
-                                <div class="flex flex-col items-end">
-                                    <span class="text-sm text-[--hitam]">Ubah</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex w-full">
-                        <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start"> 
-                            <li class="flex items-start flex-grow"> 
-                                <div>
-                                    <span class="text-base font-bold text-[--hitam]">Email</span>
-                                </div>
-                            </li>
-                            <li class="flex items-end"> 
-                                <div class="flex flex-col items-end">
-                                    <span class="text-sm text-[--hitam]">Mutia@student.ub.ac.id</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex w-full">
-                        <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start"> 
-                            <li class="flex items-start flex-grow"> 
-                                <div>
-                                    <span class="text-base font-bold text-[--hitam]">Nomor HP</span>
-                                </div>
-                            </li>
-                            <li class="flex items-end"> 
-                                <div class="flex flex-col items-end">
-                                    <span class="text-sm text-[--hitam]">+62 813-8408-2769</span>
+                                            <ul class="flex flex-col space-y-3 mx-10 my-3 h-full text-[--hitam] w-full"> 
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Wishlist</span>
+                                                    </div>
+                                                </li>
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Toko Favorit</span>
+                                                    </div>
+                                                </li>
+                                                <li class="flex h-full"> 
+                                                    <div class="flex">
+                                                        <span class="font-medium text-lg cursor-pointer">Pengaturan</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </li>
-    </ul>     
-</div>
+            </li>
+            <li class="justify-center space-y-5 w-[70%] relative">
+                <div class="h-fit w-full">
+                    <ul class="flex flex-nowrap space-x-10 p-4 w-full"> 
+                        <li class="flex items-center text-center">
+                            <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Biodata Diri</span>
+                        </li>
+                        <li class="flex items-center text-center">
+                            <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Daftar Alamat</span>
+                        </li>
+                        <li class="flex items-center text-center">
+                            <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Pembayaran</span>
+                        </li>
+                        <li class="flex items-center text-center">
+                            <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Rekening Bank</span>
+                        </li>
+                        <li class="flex items-center text-center">
+                            <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Notifikasi</span>
+                        </li>
+                        <li class="flex items-center text-center">
+                            <span class="font-medium text-lg cursor-pointer hover:underline hover:font-bold">Keamanan</span>
+                        </li>
+                        <li class="flex items-center text-center hover:bg-[--hitam] hover:text-[--putih] p-2" onclick="openAdminProduk()">
+                            <span class="font-medium text-lg cursor-pointer">Toko Anda</span>
+                        </li>
+                        <li class="flex items-center text-center hover:bg-[--hitam] hover:text-[--putih] p-2" onclick="openAdminBlog()">
+                            <span class="font-medium text-lg cursor-pointer">Upload Blog</span>
+                        </li>
+                    </ul>
 
-    <footer class="bg-[--hitam] text-[--putih]">
-        <div class="mx-auto px-4 py-8">
+                    <script>
+                        function openAdminProduk() {
+                            window.location.href = 'admin produk.html';
+                        }
+
+                        function openAdminBlog() {
+                            window.location.href = 'admin blog.html';
+                        }
+                    </script>
+
+                </div>
+            
+                <div class="flex flex-nowrap justify-between mx-3 space-x-10">
+                    <div class="h-fit p-4 w-[40%]">
+                        <div class="space-y-10">
+                            <div class="border-2 border-[--hitam] rounded-2xl space-y-3">
+                                <div class="bg-[--putih] rounded-2xl overflow-hidden border-b-2 border-[--hitam]">
+                                    <div class="group">
+                                        <img src="img/Profile 3.png" alt="Product 9" class="w-full h-96 object-cover"> 
+                                    </div>
+                                </div>
+                                <div class="flex flex-col p-4 space-y-5">
+                                    <label class="flex items-center justify-center text-lg h-fit p-2 hover:bg-[--hitamkurang] rounded-3xl border-2 border-[--hitam] cursor-pointer">
+                                        Pilih Foto
+                                        <input type="file" accept=".jpg, .jpeg, .png" class="hidden" />
+                                    </label>                                
+                                    <span class="text-sm text-[--hitam]">Besar file: maksimum 10.000.000 bytes (10 Megabytes). Ekstensi file yang diperbolehkan: .JPG .JPEG .PNG</span>
+                                </div>
+                            </div>
+                            <div class="space-y-5">
+                                <div class="flex items-center justify-center text-lg h-fit p-2 hover:bg-[--hitamkurang] rounded-3xl border-2 border-[--hitam] cursor-pointer">
+                                    Buat Kata Sandi
+                                </div>
+                                <div class="flex items-center justify-center text-lg h-fit p-2 hover:bg-[--hitamkurang] rounded-3xl border-2 border-[--hitam] cursor-pointer">
+                                    PIN Bentala
+                                </div>
+                                <div class="flex items-center justify-center text-lg h-fit p-2 hover:bg-[--hitamkurang] rounded-3xl border-2 border-[--hitam] cursor-pointer">
+                                    Verifikasi Instan
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="h-fit p-2 w-[60%] space-y-5">
+                        <div class="flex w-full">
+                            <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start pt-5 border-t-2 border-[--hitam]"> 
+                                <li class="flex items-start flex-grow"> 
+                                    <div>
+                                        <span class="text-base font-bold text-[--hitam]">Biodata diri</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-end"> 
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-sm text-[--hitam]">Ubah</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex w-full">
+                            <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start"> 
+                                <li class="flex items-start flex-grow"> 
+                                    <div>
+                                        <span class="text-base font-bold text-[--hitam]">Nama</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-end"> 
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-sm text-[--hitam]">MUTIA KHAIRUNNISA</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex w-full">
+                            <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start"> 
+                                <li class="flex items-start flex-grow"> 
+                                    <div>
+                                        <span class="text-base font-bold text-[--hitam]">Tanggal Lahir</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-end"> 
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-sm text-[--hitam]">17 Agustus 1945</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex w-full">
+                            <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start mb-5"> 
+                                <li class="flex items-start flex-grow"> 
+                                    <div>
+                                        <span class="text-base font-bold text-[--hitam]">Jenis Kelamin</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-end"> 
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-sm text-[--hitam]">Wanita</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex w-full">
+                            <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start pt-5 border-t-2 border-[--hitam]"> 
+                                <li class="flex items-start flex-grow"> 
+                                    <div>
+                                        <span class="text-base font-bold text-[--hitam]">Kontak</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-end"> 
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-sm text-[--hitam]">Ubah</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex w-full">
+                            <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start"> 
+                                <li class="flex items-start flex-grow"> 
+                                    <div>
+                                        <span class="text-base font-bold text-[--hitam]">Email</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-end"> 
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-sm text-[--hitam]">Mutia@student.ub.ac.id</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex w-full">
+                            <ul class="flex flex-nowrap space-x-5 mx-2 h-fit text-[--hitam] w-full justify-start"> 
+                                <li class="flex items-start flex-grow"> 
+                                    <div>
+                                        <span class="text-base font-bold text-[--hitam]">Nomor HP</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-end"> 
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-sm text-[--hitam]">+62 813-8408-2769</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>     
+    </div>
+
+<footer class="bg-[--hitam] text-[--putih]">
+    <div class="mx-auto px-4 py-8">
             <div class="relative">
                 <div class="logo mb-4 md:mb-0 absolute left-0">
                     <img class="company-logo-icon h-10" alt="Logo" src="img/logo bentala putih.png">
@@ -445,10 +468,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+    </div>
+</footer>
             
-            <div id="videoPopup" class="fixed inset-0 items-center justify-center hidden">
+    <div id="videoPopup" class="fixed inset-0 items-center justify-center hidden">
                 <div id="videoContent" class="relative w-screen h-screen flex items-center justify-center">
                     <video id="myVideo" class="w-full h-full object-cover" loop>
                         <source src="img/You are an idiot!! - Zuhuk (480p, h264, youtube).mp4" type="video/mp4">
@@ -461,9 +484,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+    </div>
             
-            <script>
+    <script>
                 function moveQuestion() {
                     const question = document.getElementById('question');
                     const videoContent = document.getElementById('videoContent');
@@ -494,7 +517,7 @@
                 yesButton.addEventListener('click', () => {
                     window.location.href = 'index.html';
                 });
-            </script>
+    </script>
 
     <script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'></script>
     <script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'></script>

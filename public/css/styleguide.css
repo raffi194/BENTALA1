@@ -16,12 +16,13 @@
     --putihtransparan: #F2F2F31A;
     --ijo: #389C9A;
     --shadowitem: rgba(22, 22, 22, 0.8);
-    --abuabu: #CCCCCC;
+    --abuabu: #A59E9E;
     --hitamkurang: #0000002F;
     --orange: #DD6737;
     --ijocap: #219B9D;
     --hoverijo: #147D7B;
-    --coklat: #C47600
+    --coklat: #C47600;
+    --Grey: #585656;
   }
 
   body {

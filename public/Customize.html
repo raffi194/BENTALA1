@@ -79,12 +79,12 @@
     </nav>
 
     <div class="h-screen w-full flex flex-col items-center justify-center my-6">
-        <div class="h-[70%] w-[95%] bg-blue-500 mb-2 mt-2 border-2 border-[--hitam] overflow-hidden" id="imageContainer">
+        <div class="h-[70%] w-[95%] mb-2 mt-2 border-2 border-[--hitam] overflow-hidden" id="imageContainer">
             <img src="img/Cap Pa Green Pe Light Gray 1.png" alt="Gambar Cap Pa" class="w-full h-full object-contain transition-transform duration-500" id="mainImage" />
         </div>
-        <div class="h-[20%] w-[95%] bg-green-500 border-2 border-[--hitam]">
+        <div class="h-[20%] w-[95%] border-2 border-[--hitam]">
             <!-- Dropdown -->
-            <div class="flex items-center justify-center w-[95%] mx-auto mt-4 border-2 border-[--hitam]">
+            <div class="flex items-center justify-center w-[95%] mx-auto mt-4">
                 <!-- Dropdown Icon -->
                 <div class="cursor-pointer" onclick="toggleDropdown()">
                     <div class="flex items-center justify-center border-2 border-[--hitam] w-10 h-10 rounded-full">
@@ -110,13 +110,21 @@
                 </div>
                 
                 <!-- Rectangle Done (End) -->
-                <div class="border-2 border-[--hitam] text-[--hitam] p-2 px-4 rounded-xl">
+                <div class="border-2 border-[--hitam] text-[--hitam] p-2 px-4 rounded-xl cursor-pointer" onclick="openCorduroyCap()">
                     Done
                 </div>
+
+                <script>
+                    function openCorduroyCap() {
+                        window.location.href = 'Corduroy Cap.html';
+                    }
+                    
+                </script>
+
             </div>
             
             <!-- Warna yang ditampilkan (Dropdown Content) -->
-            <div id="colorDisplay" class="flex justify-center mt-4 hidden space-x-5">
+            <div id="colorDisplay" data-slide-index="0" class="flex justify-center mt-4 hidden space-x-5">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[--hitam] relative cursor-pointer pilihwarna group" onclick="toggleSelect(this, 'Orange')">
                     <span class="absolute top-[-25px] left-1/2 transform -translate-x-1/2 text-sm text-center font-medium w-max hidden">Orange</span>
                     <div class="absolute inset-0 rounded-full bg-[--orange]"></div>

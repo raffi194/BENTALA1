@@ -98,7 +98,10 @@
                 <div>EDIT BLOG</div>
             </div>
             <div class="w-full h-auto p-2">
-                <div class="flex flex-nowrap justify-end space-x-5">
+                <div class="flex flex-nowrap justify-start space-x-5">
+                    <div class="flex justify-start flex-grow">
+                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]" onclick="openAddBlog()">Tambahkan Blog</div>
+                    </div>
                     <div class="relative">
                         <input type="text" placeholder="Search" class="bg-transparent text-[--item] border-2 border-[--hitam] rounded-2xl py-2 pl-10 pr-3">
                         <svg class="absolute left-3 top-3 transform  text-[--hitam] h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -117,7 +120,7 @@
                         <div id="pilihButton" data-state="pilih" class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]">Pilih</div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]" id="addBlogButton">Tambahkan Blog</div>
+                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]" id="uploadBlogButton">Upload Blog</div>
                     </div>
                 </div>
                 
@@ -155,6 +158,10 @@
 
                                             <script>
                                                 function openEdit() {
+                                                window.location.href ='admin Edit blog.html';
+                                                }
+
+                                                function openAddBlog() {
                                                 window.location.href ='admin tambahkan blog.html';
                                                 }
                                             </script>
@@ -629,7 +636,7 @@
                                 // Tampilkan notifikasi
                                 Swal.fire({ 
                                     icon: 'success', 
-                                    title: `Berhasil menambahkan ${cardsToAdd} blog`, 
+                                    title: `Berhasil Upload ${cardsToAdd} blog`, 
                                     showConfirmButton: false, 
                                     timer: 1500
                                 }).then(() => {
@@ -652,9 +659,9 @@
 
                             // Event listener untuk tombol "Tambahkan Produk"
                             document.addEventListener('DOMContentLoaded', () => {
-                                const addBlogButton = document.getElementById('addBlogButton');
-                                if (addBlogButton) {
-                                    addBlogButton.addEventListener('click', addSelectedBlog);
+                                const uploadBlogButton = document.getElementById('uploadBlogButton');
+                                if (uploadBlogButton) {
+                                    uploadBlogButton.addEventListener('click', addSelectedBlog);
                                 }
                             });
                         </script>

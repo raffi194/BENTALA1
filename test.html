@@ -3,71 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Animation Example</title>
-    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>BENTALA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="font-['Inter']">
+    <!-- Navbar -->
+    <nav class="w-full flex justify-between items-center p-4 bg-[--putih] shadow">
+        <div class="text-lg font-bold">BENTALA</div>
+        <div class="flex space-x-4">
+            <button class="hover:underline" onclick="openTentang()">Tentang</button>
+            <button class="hover:underline" onclick="location.href='koleksi.html'">Koleksi</button>
+        </div>
+    </nav>
 
-<div class="grid">
-    <div class="group">
-        <input type="checkbox" onchange="toggleChecked(this, 'card1')" />
-        <div id="card1">Card 1</div>
+    <!-- Filter Section -->
+    <div class="w-full flex flex-col md:flex-row mt-4">
+        <!-- Filters -->
+        <aside class="w-full md:w-1/4 p-4 border-r">
+            <h2 class="font-semibold mb-2">Filter</h2>
+
+            <!-- Warna Filter -->
+            <div class="mb-4">
+                <label class="block font-medium mb-2">Warna:</label>
+                <div class="flex space-x-2">
+                    <button class="w-8 h-8 rounded-full bg-red-500" aria-label="Merah"></button>
+                    <button class="w-8 h-8 rounded-full bg-blue-500" aria-label="Biru"></button>
+                    <button class="w-8 h-8 rounded-full bg-yellow-500" aria-label="Kuning"></button>
+                </div>
+            </div>
+
+            <!-- Harga Filter -->
+            <div>
+                <label class="block font-medium mb-2">Harga:</label>
+                <input type="range" min="0" max="1000000" step="10000" class="w-full">
+                <p class="text-sm text-gray-500 mt-2">Rp 0 - Rp 1,000,000</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="w-full md:w-3/4 p-4">
+            <div class="bg-[--abuabu] p-4 rounded">
+                <p>Konten produk akan ditampilkan di sini.</p>
+            </div>
+        </main>
     </div>
-    <div class="group">
-        <input type="checkbox" onchange="toggleChecked(this, 'card2')" />
-        <div id="card2">Card 2</div>
-    </div>
-    <!-- More cards... -->
-</div>
 
-<button id="addProductButton">Tambahkan Produk</button>
+    <!-- Footer -->
+    <footer class="w-full p-4 bg-[--hitam] text-white text-center">
+        <p>&copy; 2024 BENTALA. All rights reserved.</p>
+    </footer>
 
-<dotlottie-player id="successAnimation" src="https://lottie.host/d91cba67-c5af-4577-8048-5fcb6b771417/RJgeO65EWo.lottie" background="transparent" speed="1" style="width: 300px; height: 300px; display: none;" loop autoplay></dotlottie-player>
-
-<script>
-    // Fungsi untuk menambahkan produk dan menampilkan notifikasi
-    function addSelectedProducts() {
-        const checkedCards = document.querySelectorAll('.group input[type="checkbox"]:checked');
-        
-        if (checkedCards.length === 0) {
-            alert('Pilih card yang ingin ditambahkan terlebih dahulu');
-            return;
+    <script>
+        function openTentang() {
+            alert('Halaman tentang belum tersedia.');
         }
-
-        // Simpan jumlah card yang akan ditambahkan
-        const cardsToAdd = checkedCards.length;
-
-        // Tampilkan notifikasi
-        Swal.fire({ 
-            icon: 'success', 
-            title: `Berhasil menambahkan ${cardsToAdd} card ke toko kita`, 
-            showConfirmButton: false, 
-            timer: 1500
-        }).then(() => {
-            // Reset checkboxes after the notification
-            resetCheckboxes();
-        });
-
-        // Optional: Lakukan tindakan lain seperti menambahkan produk ke database
-    }
-
-    // Fungsi untuk mereset checkboxes
-    function resetCheckboxes() {
-        const checkboxes = document.querySelectorAll('.group input[type="checkbox"]');
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = false; // Uncheck all checkboxes
-        });
-    }
-
-    // Event listener untuk tombol "Tambahkan Produk"
-    document.addEventListener('DOMContentLoaded', () => {
-        const addProductButton = document.getElementById('addProductButton');
-        if (addProductButton) {
-            addProductButton.addEventListener('click', addSelectedProducts);
-        }
-    });
-</script>
-
+    </script>
 </body>
 </html>

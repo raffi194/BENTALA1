@@ -47,7 +47,7 @@
                     <form class="space-x-10 flex items-center">
                         <div class="relative">
                             <input type="text" placeholder="Search" class="bg-transparent text-[--item] border-2 border-[--hitam] rounded-lg py-1 pl-10 pr-3">
-                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 text-[--abuabu] h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                             </svg>
                         </div>
@@ -99,775 +99,1054 @@
                     <div class="w-[60%]"> 
                         <div class="grid grid-cols-1 gap-4 h-[calc(100vh-200px)] overflow-y-auto" style="scrollbar-width: none; -ms-overflow-style: none;">                            
                             <!-- Card 1 -->
-                            <div class="flex-shrink-0 relative">
-                                <div class="relative w-fit">
-                                    <div class="relative flex"> 
-                                        <div class="overflow-hidden transition-shadow duration-300 flex"> 
-                                            <div class="relative group">
-                                                <div id="card1" class="absolute inset-0 bg-[--hitamkurang] opacity-0 group-[.checked]:opacity-50 pointer-events-none transition-opacity duration-300"></div>
-                                                <div class="absolute top-2 left-2 z-20 checkbox-container hidden">
-                                                    <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')"/>
-                                                    <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
-                                                </div>
-                                                <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                            <div class="relative w-fit">
+                                <div class="relative flex">
+                                    <div class="overflow-hidden transition-shadow duration-300 flex">
+                                        <div class="relative group">
+                                            <div id="card1" class="absolute inset-0 bg-[--hitam] opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                                            <div class="absolute top-2 left-2 z-20 hidden">
+                                                <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                                                <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
                                             </div>
-                                            
-                                            <div class="flex flex-col p-4 w-full">
-                                                <div class="flex flex-nowrap items-center space-x-5">
-                                                    <div class="flex flex-grow">
-                                                        <span class="text-md font-bold">Category</span>
-                                                    </div>
-                                                    <div onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
-                                                        <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
-                                                    </div>
-                                                    <div onclick="openEditForm()" class="flex items-center justify-end border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
-                                                        <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
-                                                    </div>
-                                                </div>
-                                                <div class="w-3/4 mt-2">
-                                                    <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
-                                                </div>
-                            
-                                                <div class="mt-2">
-                                                    <span>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</span>
-                                                </div>
+                                            <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                                        </div>
+                        
+                                        <div class="flex flex-col p-4 w-full">
+                                            <div class="flex items-center space-x-5">
+                                                <span class="flex-grow text-md font-bold">Category</span>
+                                                <button onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
+                                                    <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
+                                                </button>
+                                                <button onclick="openEditForm()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
+                                                    <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
+                                                </button>
                                             </div>
-                                            
-                                            <!-- Popup Edit Form -->
-                                            <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
-                                                <div class="bg-white rounded-lg p-6 w-96">
-                                                    <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
-                                                    <form id="editDataForm">
-                                                        <div class="mb-4">
-                                                            <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
-                                                            <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                            <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <span class="mb-2 w-[80%] text-left">Gambar</span>
-                                                            <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
-                                                                <i class="fa-solid fa-upload fa-xs mr-2"></i>
-                                                                <span>Masukkan</span>
-                                                                <input type="file" class="hidden" />
-                                                            </label>  
-                                                        </div>
-                                                        <div class="flex justify-end space-x-2">
-                                                            <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
-                                                            <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="w-3/4 mt-2">
+                                                <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
-                            
-                                            <!-- Success Animation -->
-                                            <div id="success-animation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
-                                                    <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
-                                            </div>
-                            
-                                            <!-- Delete Success Animation -->
-                                            <div id="delete-success-animation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
-                                                    <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
+                        
+                                            <div class="mt-2">
+                                                <span class="text-sm font-medium text-[--hitam]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
                                             </div>
                                         </div>
+                        
+                                        <!-- Popup Edit Form -->
+                                        <div id="editForm" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex justify-center items-center">
+                                            <div class="bg-[--putih] rounded-lg p-6 w-96">
+                                                <span class="text-xl font-semibold mb-4">Edit Data</span>
+                                                <form id="editDataForm">
+                                                    <div class="mb-4">
+                                                        <label for="nama-kategori" class="block text-sm font-medium text-[--hitam]">Nama Kategori</label>
+                                                        <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="deskripsi" class="block text-sm font-medium text-[--hitam]">Deskripsi</label>
+                                                        <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="flex items-center border border-[--hitam] rounded-2xl p-2 cursor-pointer">
+                                                            <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                                            <span>Upload Gambar</span>
+                                                            <input type="file" class="hidden">
+                                                        </label>
+                                                    </div>
+                                                    <div class="flex justify-end space-x-2">
+                                                        <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-[--merah] rounded-lg text-[--putih] hover:bg-[--hitam] hover:text-[--putih]">Batal</button>
+                                                        <button type="submit" onclick="handleSubmit(event)" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Success Animation -->
+                                        <div id="successAnimation1" class="hidden fixed inset-0 bg-[--hitamkurang] z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center">
+                                                <span class="text-2xl font-bold text-[--ijo] mb-4 block">Data Berhasil Disimpan!</span>
+                                                <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam] font-bold">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <!-- Delete Success Animation -->
+                                        <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                                                <span class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</span>
+                                                <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-[--merah] text-[--putih] rounded-lg hover:bg-[--hitam]">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <script>
+                                            function toggleChecked(checkbox, cardId) {
+                                                const card = document.getElementById(cardId);
+                                                card.classList.toggle("opacity-50", checkbox.checked);
+                                            }
+                                    
+                                            function openEditForm() {
+                                                document.getElementById("editForm").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeEditForm() {
+                                                document.getElementById("editForm").classList.add("hidden");
+                                            }
+                                    
+                                            function handleSubmit(event) {
+                                                event.preventDefault(); 
+                                                closeEditForm();
+                                                setTimeout(() => {
+                                                    document.getElementById('successAnimation1').classList.remove('hidden');
+                                                }, 300); 
+                                            }
+                                    
+                                            function closeSuccessAnimation1() {
+                                                document.getElementById("successAnimation1").classList.add("hidden");
+                                            }
+                                    
+                                            function handleDelete() {
+                                                document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeDeleteSuccessAnimation() {
+                                                document.getElementById("deleteSuccessAnimation").classList.add("hidden");
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
     
                             <!-- Card 2 -->
-                            <div class="flex-shrink-0 relative">
-                                <div class="relative w-fit">
-                                    <div class="relative flex"> 
-                                        <div class="overflow-hidden transition-shadow duration-300 flex"> 
-                                            <div class="relative group">
-                                                <div id="card1" class="absolute inset-0 bg-[--hitamkurang] opacity-0 group-[.checked]:opacity-50 pointer-events-none transition-opacity duration-300"></div>
-                                                <div class="absolute top-2 left-2 z-20 checkbox-container hidden">
-                                                    <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')"/>
-                                                    <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
-                                                </div>
-                                                <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                            <div class="relative w-fit">
+                                <div class="relative flex">
+                                    <div class="overflow-hidden transition-shadow duration-300 flex">
+                                        <div class="relative group">
+                                            <div id="card1" class="absolute inset-0 bg-[--hitam] opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                                            <div class="absolute top-2 left-2 z-20 hidden">
+                                                <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                                                <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
                                             </div>
-                                            
-                                            <div class="flex flex-col p-4 w-full">
-                                                <div class="flex flex-nowrap items-center space-x-5">
-                                                    <div class="flex flex-grow">
-                                                        <span class="text-md font-bold">Category</span>
-                                                    </div>
-                                                    <div onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
-                                                        <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
-                                                    </div>
-                                                    <div onclick="openEditForm()" class="flex items-center justify-end border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
-                                                        <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
-                                                    </div>
-                                                </div>
-                                                <div class="w-3/4 mt-2">
-                                                    <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
-                                                </div>
-                            
-                                                <div class="mt-2">
-                                                    <span>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</span>
-                                                </div>
+                                            <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                                        </div>
+                        
+                                        <div class="flex flex-col p-4 w-full">
+                                            <div class="flex items-center space-x-5">
+                                                <span class="flex-grow text-md font-bold">Category</span>
+                                                <button onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
+                                                    <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
+                                                </button>
+                                                <button onclick="openEditForm()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
+                                                    <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
+                                                </button>
                                             </div>
-                                            
-                                            <!-- Popup Edit Form -->
-                                            <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
-                                                <div class="bg-white rounded-lg p-6 w-96">
-                                                    <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
-                                                    <form id="editDataForm">
-                                                        <div class="mb-4">
-                                                            <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
-                                                            <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                            <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <span class="mb-2 w-[80%] text-left">Gambar</span>
-                                                            <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
-                                                                <i class="fa-solid fa-upload fa-xs mr-2"></i>
-                                                                <span>Masukkan</span>
-                                                                <input type="file" class="hidden" />
-                                                            </label>  
-                                                        </div>
-                                                        <div class="flex justify-end space-x-2">
-                                                            <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
-                                                            <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="w-3/4 mt-2">
+                                                <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
-                            
-                                            <!-- Success Animation -->
-                                            <div id="success-animation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
-                                                    <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
-                                            </div>
-                            
-                                            <!-- Delete Success Animation -->
-                                            <div id="delete-success-animation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
-                                                    <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
+                        
+                                            <div class="mt-2">
+                                                <span class="text-sm font-medium text-[--hitam]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
                                             </div>
                                         </div>
+                        
+                                        <!-- Popup Edit Form -->
+                                        <div id="editForm" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex justify-center items-center">
+                                            <div class="bg-[--putih] rounded-lg p-6 w-96">
+                                                <span class="text-xl font-semibold mb-4">Edit Data</span>
+                                                <form id="editDataForm">
+                                                    <div class="mb-4">
+                                                        <label for="nama-kategori" class="block text-sm font-medium text-[--hitam]">Nama Kategori</label>
+                                                        <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="deskripsi" class="block text-sm font-medium text-[--hitam]">Deskripsi</label>
+                                                        <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="flex items-center border border-[--hitam] rounded-2xl p-2 cursor-pointer">
+                                                            <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                                            <span>Upload Gambar</span>
+                                                            <input type="file" class="hidden">
+                                                        </label>
+                                                    </div>
+                                                    <div class="flex justify-end space-x-2">
+                                                        <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-[--merah] rounded-lg text-[--putih] hover:bg-[--hitam] hover:text-[--putih]">Batal</button>
+                                                        <button type="submit" onclick="handleSubmit(event)" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Success Animation -->
+                                        <div id="successAnimation1" class="hidden fixed inset-0 bg-[--hitamkurang] z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center">
+                                                <span class="text-2xl font-bold text-[--ijo] mb-4 block">Data Berhasil Disimpan!</span>
+                                                <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam] font-bold">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <!-- Delete Success Animation -->
+                                        <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                                                <span class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</span>
+                                                <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-[--merah] text-[--putih] rounded-lg hover:bg-[--hitam]">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <script>
+                                            function toggleChecked(checkbox, cardId) {
+                                                const card = document.getElementById(cardId);
+                                                card.classList.toggle("opacity-50", checkbox.checked);
+                                            }
+                                    
+                                            function openEditForm() {
+                                                document.getElementById("editForm").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeEditForm() {
+                                                document.getElementById("editForm").classList.add("hidden");
+                                            }
+                                    
+                                            function handleSubmit(event) {
+                                                event.preventDefault(); 
+                                                closeEditForm();
+                                                setTimeout(() => {
+                                                    document.getElementById('successAnimation1').classList.remove('hidden');
+                                                }, 300); 
+                                            }
+                                    
+                                            function closeSuccessAnimation1() {
+                                                document.getElementById("successAnimation1").classList.add("hidden");
+                                            }
+                                    
+                                            function handleDelete() {
+                                                document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeDeleteSuccessAnimation() {
+                                                document.getElementById("deleteSuccessAnimation").classList.add("hidden");
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>                            
     
                             <!-- Card 3 -->
-                            <div class="flex-shrink-0 relative">
-                                <div class="relative w-fit">
-                                    <div class="relative flex"> 
-                                        <div class="overflow-hidden transition-shadow duration-300 flex"> 
-                                            <div class="relative group">
-                                                <div id="card1" class="absolute inset-0 bg-[--hitamkurang] opacity-0 group-[.checked]:opacity-50 pointer-events-none transition-opacity duration-300"></div>
-                                                <div class="absolute top-2 left-2 z-20 checkbox-container hidden">
-                                                    <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')"/>
-                                                    <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
-                                                </div>
-                                                <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                            <div class="relative w-fit">
+                                <div class="relative flex">
+                                    <div class="overflow-hidden transition-shadow duration-300 flex">
+                                        <div class="relative group">
+                                            <div id="card1" class="absolute inset-0 bg-[--hitam] opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                                            <div class="absolute top-2 left-2 z-20 hidden">
+                                                <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                                                <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
                                             </div>
-                                            
-                                            <div class="flex flex-col p-4 w-full">
-                                                <div class="flex flex-nowrap items-center space-x-5">
-                                                    <div class="flex flex-grow">
-                                                        <span class="text-md font-bold">Category</span>
-                                                    </div>
-                                                    <div onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
-                                                        <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
-                                                    </div>
-                                                    <div onclick="openEditForm()" class="flex items-center justify-end border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
-                                                        <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
-                                                    </div>
-                                                </div>
-                                                <div class="w-3/4 mt-2">
-                                                    <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
-                                                </div>
-                            
-                                                <div class="mt-2">
-                                                    <span>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</span>
-                                                </div>
+                                            <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                                        </div>
+                        
+                                        <div class="flex flex-col p-4 w-full">
+                                            <div class="flex items-center space-x-5">
+                                                <span class="flex-grow text-md font-bold">Category</span>
+                                                <button onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
+                                                    <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
+                                                </button>
+                                                <button onclick="openEditForm()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
+                                                    <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
+                                                </button>
                                             </div>
-                                            
-                                            <!-- Popup Edit Form -->
-                                            <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
-                                                <div class="bg-white rounded-lg p-6 w-96">
-                                                    <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
-                                                    <form id="editDataForm">
-                                                        <div class="mb-4">
-                                                            <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
-                                                            <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                            <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <span class="mb-2 w-[80%] text-left">Gambar</span>
-                                                            <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
-                                                                <i class="fa-solid fa-upload fa-xs mr-2"></i>
-                                                                <span>Masukkan</span>
-                                                                <input type="file" class="hidden" />
-                                                            </label>  
-                                                        </div>
-                                                        <div class="flex justify-end space-x-2">
-                                                            <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
-                                                            <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="w-3/4 mt-2">
+                                                <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
-                            
-                                            <!-- Success Animation -->
-                                            <div id="success-animation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
-                                                    <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
-                                            </div>
-                            
-                                            <!-- Delete Success Animation -->
-                                            <div id="delete-success-animation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
-                                                    <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
+                        
+                                            <div class="mt-2">
+                                                <span class="text-sm font-medium text-[--hitam]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
                                             </div>
                                         </div>
+                        
+                                        <!-- Popup Edit Form -->
+                                        <div id="editForm" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex justify-center items-center">
+                                            <div class="bg-[--putih] rounded-lg p-6 w-96">
+                                                <span class="text-xl font-semibold mb-4">Edit Data</span>
+                                                <form id="editDataForm">
+                                                    <div class="mb-4">
+                                                        <label for="nama-kategori" class="block text-sm font-medium text-[--hitam]">Nama Kategori</label>
+                                                        <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="deskripsi" class="block text-sm font-medium text-[--hitam]">Deskripsi</label>
+                                                        <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="flex items-center border border-[--hitam] rounded-2xl p-2 cursor-pointer">
+                                                            <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                                            <span>Upload Gambar</span>
+                                                            <input type="file" class="hidden">
+                                                        </label>
+                                                    </div>
+                                                    <div class="flex justify-end space-x-2">
+                                                        <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-[--merah] rounded-lg text-[--putih] hover:bg-[--hitam] hover:text-[--putih]">Batal</button>
+                                                        <button type="submit" onclick="handleSubmit(event)" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Success Animation -->
+                                        <div id="successAnimation1" class="hidden fixed inset-0 bg-[--hitamkurang] z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center">
+                                                <span class="text-2xl font-bold text-[--ijo] mb-4 block">Data Berhasil Disimpan!</span>
+                                                <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam] font-bold">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <!-- Delete Success Animation -->
+                                        <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                                                <span class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</span>
+                                                <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-[--merah] text-[--putih] rounded-lg hover:bg-[--hitam]">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <script>
+                                            function toggleChecked(checkbox, cardId) {
+                                                const card = document.getElementById(cardId);
+                                                card.classList.toggle("opacity-50", checkbox.checked);
+                                            }
+                                    
+                                            function openEditForm() {
+                                                document.getElementById("editForm").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeEditForm() {
+                                                document.getElementById("editForm").classList.add("hidden");
+                                            }
+                                    
+                                            function handleSubmit(event) {
+                                                event.preventDefault(); 
+                                                closeEditForm();
+                                                setTimeout(() => {
+                                                    document.getElementById('successAnimation1').classList.remove('hidden');
+                                                }, 300); 
+                                            }
+                                    
+                                            function closeSuccessAnimation1() {
+                                                document.getElementById("successAnimation1").classList.add("hidden");
+                                            }
+                                    
+                                            function handleDelete() {
+                                                document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeDeleteSuccessAnimation() {
+                                                document.getElementById("deleteSuccessAnimation").classList.add("hidden");
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>                            
                     
                             <!-- Card 4 -->
-                            <div class="flex-shrink-0 relative">
-                                <div class="relative w-fit">
-                                    <div class="relative flex"> 
-                                        <div class="overflow-hidden transition-shadow duration-300 flex"> 
-                                            <div class="relative group">
-                                                <div id="card1" class="absolute inset-0 bg-[--hitamkurang] opacity-0 group-[.checked]:opacity-50 pointer-events-none transition-opacity duration-300"></div>
-                                                <div class="absolute top-2 left-2 z-20 checkbox-container hidden">
-                                                    <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')"/>
-                                                    <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
-                                                </div>
-                                                <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                            <div class="relative w-fit">
+                                <div class="relative flex">
+                                    <div class="overflow-hidden transition-shadow duration-300 flex">
+                                        <div class="relative group">
+                                            <div id="card1" class="absolute inset-0 bg-[--hitam] opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                                            <div class="absolute top-2 left-2 z-20 hidden">
+                                                <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                                                <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
                                             </div>
-                                            
-                                            <div class="flex flex-col p-4 w-full">
-                                                <div class="flex flex-nowrap items-center space-x-5">
-                                                    <div class="flex flex-grow">
-                                                        <span class="text-md font-bold">Category</span>
-                                                    </div>
-                                                    <div onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
-                                                        <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
-                                                    </div>
-                                                    <div onclick="openEditForm()" class="flex items-center justify-end border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
-                                                        <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
-                                                    </div>
-                                                </div>
-                                                <div class="w-3/4 mt-2">
-                                                    <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
-                                                </div>
-                            
-                                                <div class="mt-2">
-                                                    <span>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</span>
-                                                </div>
+                                            <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                                        </div>
+                        
+                                        <div class="flex flex-col p-4 w-full">
+                                            <div class="flex items-center space-x-5">
+                                                <span class="flex-grow text-md font-bold">Category</span>
+                                                <button onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
+                                                    <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
+                                                </button>
+                                                <button onclick="openEditForm()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
+                                                    <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
+                                                </button>
                                             </div>
-                                            
-                                            <!-- Popup Edit Form -->
-                                            <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
-                                                <div class="bg-white rounded-lg p-6 w-96">
-                                                    <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
-                                                    <form id="editDataForm">
-                                                        <div class="mb-4">
-                                                            <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
-                                                            <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                            <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <span class="mb-2 w-[80%] text-left">Gambar</span>
-                                                            <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
-                                                                <i class="fa-solid fa-upload fa-xs mr-2"></i>
-                                                                <span>Masukkan</span>
-                                                                <input type="file" class="hidden" />
-                                                            </label>  
-                                                        </div>
-                                                        <div class="flex justify-end space-x-2">
-                                                            <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
-                                                            <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="w-3/4 mt-2">
+                                                <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
-                            
-                                            <!-- Success Animation -->
-                                            <div id="success-animation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
-                                                    <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
-                                            </div>
-                            
-                                            <!-- Delete Success Animation -->
-                                            <div id="delete-success-animation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
-                                                    <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
+                        
+                                            <div class="mt-2">
+                                                <span class="text-sm font-medium text-[--hitam]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
                                             </div>
                                         </div>
+                        
+                                        <!-- Popup Edit Form -->
+                                        <div id="editForm" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex justify-center items-center">
+                                            <div class="bg-[--putih] rounded-lg p-6 w-96">
+                                                <span class="text-xl font-semibold mb-4">Edit Data</span>
+                                                <form id="editDataForm">
+                                                    <div class="mb-4">
+                                                        <label for="nama-kategori" class="block text-sm font-medium text-[--hitam]">Nama Kategori</label>
+                                                        <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="deskripsi" class="block text-sm font-medium text-[--hitam]">Deskripsi</label>
+                                                        <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="flex items-center border border-[--hitam] rounded-2xl p-2 cursor-pointer">
+                                                            <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                                            <span>Upload Gambar</span>
+                                                            <input type="file" class="hidden">
+                                                        </label>
+                                                    </div>
+                                                    <div class="flex justify-end space-x-2">
+                                                        <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-[--merah] rounded-lg text-[--putih] hover:bg-[--hitam] hover:text-[--putih]">Batal</button>
+                                                        <button type="submit" onclick="handleSubmit(event)" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Success Animation -->
+                                        <div id="successAnimation1" class="hidden fixed inset-0 bg-[--hitamkurang] z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center">
+                                                <span class="text-2xl font-bold text-[--ijo] mb-4 block">Data Berhasil Disimpan!</span>
+                                                <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam] font-bold">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <!-- Delete Success Animation -->
+                                        <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                                                <span class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</span>
+                                                <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-[--merah] text-[--putih] rounded-lg hover:bg-[--hitam]">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <script>
+                                            function toggleChecked(checkbox, cardId) {
+                                                const card = document.getElementById(cardId);
+                                                card.classList.toggle("opacity-50", checkbox.checked);
+                                            }
+                                    
+                                            function openEditForm() {
+                                                document.getElementById("editForm").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeEditForm() {
+                                                document.getElementById("editForm").classList.add("hidden");
+                                            }
+                                    
+                                            function handleSubmit(event) {
+                                                event.preventDefault(); 
+                                                closeEditForm();
+                                                setTimeout(() => {
+                                                    document.getElementById('successAnimation1').classList.remove('hidden');
+                                                }, 300); 
+                                            }
+                                    
+                                            function closeSuccessAnimation1() {
+                                                document.getElementById("successAnimation1").classList.add("hidden");
+                                            }
+                                    
+                                            function handleDelete() {
+                                                document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeDeleteSuccessAnimation() {
+                                                document.getElementById("deleteSuccessAnimation").classList.add("hidden");
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>                            
                     
                             <!-- Card 5 -->
-                            <div class="flex-shrink-0 relative">
-                                <div class="relative w-fit">
-                                    <div class="relative flex"> 
-                                        <div class="overflow-hidden transition-shadow duration-300 flex"> 
-                                            <div class="relative group">
-                                                <div id="card1" class="absolute inset-0 bg-[--hitamkurang] opacity-0 group-[.checked]:opacity-50 pointer-events-none transition-opacity duration-300"></div>
-                                                <div class="absolute top-2 left-2 z-20 checkbox-container hidden">
-                                                    <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')"/>
-                                                    <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
-                                                </div>
-                                                <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                            <div class="relative w-fit">
+                                <div class="relative flex">
+                                    <div class="overflow-hidden transition-shadow duration-300 flex">
+                                        <div class="relative group">
+                                            <div id="card1" class="absolute inset-0 bg-[--hitam] opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                                            <div class="absolute top-2 left-2 z-20 hidden">
+                                                <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                                                <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
                                             </div>
-                                            
-                                            <div class="flex flex-col p-4 w-full">
-                                                <div class="flex flex-nowrap items-center space-x-5">
-                                                    <div class="flex flex-grow">
-                                                        <span class="text-md font-bold">Category</span>
-                                                    </div>
-                                                    <div onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
-                                                        <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
-                                                    </div>
-                                                    <div onclick="openEditForm()" class="flex items-center justify-end border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
-                                                        <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
-                                                    </div>
-                                                </div>
-                                                <div class="w-3/4 mt-2">
-                                                    <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
-                                                </div>
-                            
-                                                <div class="mt-2">
-                                                    <span>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</span>
-                                                </div>
+                                            <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                                        </div>
+                        
+                                        <div class="flex flex-col p-4 w-full">
+                                            <div class="flex items-center space-x-5">
+                                                <span class="flex-grow text-md font-bold">Category</span>
+                                                <button onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
+                                                    <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
+                                                </button>
+                                                <button onclick="openEditForm()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
+                                                    <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
+                                                </button>
                                             </div>
-                                            
-                                            <!-- Popup Edit Form -->
-                                            <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
-                                                <div class="bg-white rounded-lg p-6 w-96">
-                                                    <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
-                                                    <form id="editDataForm">
-                                                        <div class="mb-4">
-                                                            <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
-                                                            <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                            <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <span class="mb-2 w-[80%] text-left">Gambar</span>
-                                                            <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
-                                                                <i class="fa-solid fa-upload fa-xs mr-2"></i>
-                                                                <span>Masukkan</span>
-                                                                <input type="file" class="hidden" />
-                                                            </label>  
-                                                        </div>
-                                                        <div class="flex justify-end space-x-2">
-                                                            <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
-                                                            <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="w-3/4 mt-2">
+                                                <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
-                            
-                                            <!-- Success Animation -->
-                                            <div id="success-animation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
-                                                    <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
-                                            </div>
-                            
-                                            <!-- Delete Success Animation -->
-                                            <div id="delete-success-animation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
-                                                    <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
+                        
+                                            <div class="mt-2">
+                                                <span class="text-sm font-medium text-[--hitam]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
                                             </div>
                                         </div>
+                        
+                                        <!-- Popup Edit Form -->
+                                        <div id="editForm" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex justify-center items-center">
+                                            <div class="bg-[--putih] rounded-lg p-6 w-96">
+                                                <span class="text-xl font-semibold mb-4">Edit Data</span>
+                                                <form id="editDataForm">
+                                                    <div class="mb-4">
+                                                        <label for="nama-kategori" class="block text-sm font-medium text-[--hitam]">Nama Kategori</label>
+                                                        <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="deskripsi" class="block text-sm font-medium text-[--hitam]">Deskripsi</label>
+                                                        <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="flex items-center border border-[--hitam] rounded-2xl p-2 cursor-pointer">
+                                                            <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                                            <span>Upload Gambar</span>
+                                                            <input type="file" class="hidden">
+                                                        </label>
+                                                    </div>
+                                                    <div class="flex justify-end space-x-2">
+                                                        <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-[--merah] rounded-lg text-[--putih] hover:bg-[--hitam] hover:text-[--putih]">Batal</button>
+                                                        <button type="submit" onclick="handleSubmit(event)" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Success Animation -->
+                                        <div id="successAnimation1" class="hidden fixed inset-0 bg-[--hitamkurang] z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center">
+                                                <span class="text-2xl font-bold text-[--ijo] mb-4 block">Data Berhasil Disimpan!</span>
+                                                <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam] font-bold">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <!-- Delete Success Animation -->
+                                        <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                                                <span class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</span>
+                                                <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-[--merah] text-[--putih] rounded-lg hover:bg-[--hitam]">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <script>
+                                            function toggleChecked(checkbox, cardId) {
+                                                const card = document.getElementById(cardId);
+                                                card.classList.toggle("opacity-50", checkbox.checked);
+                                            }
+                                    
+                                            function openEditForm() {
+                                                document.getElementById("editForm").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeEditForm() {
+                                                document.getElementById("editForm").classList.add("hidden");
+                                            }
+                                    
+                                            function handleSubmit(event) {
+                                                event.preventDefault(); 
+                                                closeEditForm();
+                                                setTimeout(() => {
+                                                    document.getElementById('successAnimation1').classList.remove('hidden');
+                                                }, 300); 
+                                            }
+                                    
+                                            function closeSuccessAnimation1() {
+                                                document.getElementById("successAnimation1").classList.add("hidden");
+                                            }
+                                    
+                                            function handleDelete() {
+                                                document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeDeleteSuccessAnimation() {
+                                                document.getElementById("deleteSuccessAnimation").classList.add("hidden");
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>                            
                     
                             <!-- Card 6 -->
-                            <div class="flex-shrink-0 relative">
-                                <div class="relative w-fit">
-                                    <div class="relative flex"> 
-                                        <div class="overflow-hidden transition-shadow duration-300 flex"> 
-                                            <div class="relative group">
-                                                <div id="card1" class="absolute inset-0 bg-[--hitamkurang] opacity-0 group-[.checked]:opacity-50 pointer-events-none transition-opacity duration-300"></div>
-                                                <div class="absolute top-2 left-2 z-20 checkbox-container hidden">
-                                                    <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')"/>
-                                                    <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
-                                                </div>
-                                                <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                            <div class="relative w-fit">
+                                <div class="relative flex">
+                                    <div class="overflow-hidden transition-shadow duration-300 flex">
+                                        <div class="relative group">
+                                            <div id="card1" class="absolute inset-0 bg-[--hitam] opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                                            <div class="absolute top-2 left-2 z-20 hidden">
+                                                <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                                                <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
                                             </div>
-                                            
-                                            <div class="flex flex-col p-4 w-full">
-                                                <div class="flex flex-nowrap items-center space-x-5">
-                                                    <div class="flex flex-grow">
-                                                        <span class="text-md font-bold">Category</span>
-                                                    </div>
-                                                    <div onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
-                                                        <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
-                                                    </div>
-                                                    <div onclick="openEditForm()" class="flex items-center justify-end border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
-                                                        <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
-                                                    </div>
-                                                </div>
-                                                <div class="w-3/4 mt-2">
-                                                    <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
-                                                </div>
-                            
-                                                <div class="mt-2">
-                                                    <span>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</span>
-                                                </div>
+                                            <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                                        </div>
+                        
+                                        <div class="flex flex-col p-4 w-full">
+                                            <div class="flex items-center space-x-5">
+                                                <span class="flex-grow text-md font-bold">Category</span>
+                                                <button onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
+                                                    <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
+                                                </button>
+                                                <button onclick="openEditForm()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
+                                                    <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
+                                                </button>
                                             </div>
-                                            
-                                            <!-- Popup Edit Form -->
-                                            <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
-                                                <div class="bg-white rounded-lg p-6 w-96">
-                                                    <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
-                                                    <form id="editDataForm">
-                                                        <div class="mb-4">
-                                                            <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
-                                                            <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                            <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <span class="mb-2 w-[80%] text-left">Gambar</span>
-                                                            <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
-                                                                <i class="fa-solid fa-upload fa-xs mr-2"></i>
-                                                                <span>Masukkan</span>
-                                                                <input type="file" class="hidden" />
-                                                            </label>  
-                                                        </div>
-                                                        <div class="flex justify-end space-x-2">
-                                                            <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
-                                                            <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="w-3/4 mt-2">
+                                                <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
-                            
-                                            <!-- Success Animation -->
-                                            <div id="success-animation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
-                                                    <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
-                                            </div>
-                            
-                                            <!-- Delete Success Animation -->
-                                            <div id="delete-success-animation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
-                                                    <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
+                        
+                                            <div class="mt-2">
+                                                <span class="text-sm font-medium text-[--hitam]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
                                             </div>
                                         </div>
+                        
+                                        <!-- Popup Edit Form -->
+                                        <div id="editForm" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex justify-center items-center">
+                                            <div class="bg-[--putih] rounded-lg p-6 w-96">
+                                                <span class="text-xl font-semibold mb-4">Edit Data</span>
+                                                <form id="editDataForm">
+                                                    <div class="mb-4">
+                                                        <label for="nama-kategori" class="block text-sm font-medium text-[--hitam]">Nama Kategori</label>
+                                                        <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="deskripsi" class="block text-sm font-medium text-[--hitam]">Deskripsi</label>
+                                                        <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="flex items-center border border-[--hitam] rounded-2xl p-2 cursor-pointer">
+                                                            <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                                            <span>Upload Gambar</span>
+                                                            <input type="file" class="hidden">
+                                                        </label>
+                                                    </div>
+                                                    <div class="flex justify-end space-x-2">
+                                                        <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-[--merah] rounded-lg text-[--putih] hover:bg-[--hitam] hover:text-[--putih]">Batal</button>
+                                                        <button type="submit" onclick="handleSubmit(event)" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Success Animation -->
+                                        <div id="successAnimation1" class="hidden fixed inset-0 bg-[--hitamkurang] z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center">
+                                                <span class="text-2xl font-bold text-[--ijo] mb-4 block">Data Berhasil Disimpan!</span>
+                                                <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam] font-bold">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <!-- Delete Success Animation -->
+                                        <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                                                <span class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</span>
+                                                <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-[--merah] text-[--putih] rounded-lg hover:bg-[--hitam]">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <script>
+                                            function toggleChecked(checkbox, cardId) {
+                                                const card = document.getElementById(cardId);
+                                                card.classList.toggle("opacity-50", checkbox.checked);
+                                            }
+                                    
+                                            function openEditForm() {
+                                                document.getElementById("editForm").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeEditForm() {
+                                                document.getElementById("editForm").classList.add("hidden");
+                                            }
+                                    
+                                            function handleSubmit(event) {
+                                                event.preventDefault(); 
+                                                closeEditForm();
+                                                setTimeout(() => {
+                                                    document.getElementById('successAnimation1').classList.remove('hidden');
+                                                }, 300); 
+                                            }
+                                    
+                                            function closeSuccessAnimation1() {
+                                                document.getElementById("successAnimation1").classList.add("hidden");
+                                            }
+                                    
+                                            function handleDelete() {
+                                                document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeDeleteSuccessAnimation() {
+                                                document.getElementById("deleteSuccessAnimation").classList.add("hidden");
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>                            
                     
                             <!-- Card 7 -->
-                            <div class="flex-shrink-0 relative">
-                                <div class="relative w-fit">
-                                    <div class="relative flex"> 
-                                        <div class="overflow-hidden transition-shadow duration-300 flex"> 
-                                            <div class="relative group">
-                                                <div id="card1" class="absolute inset-0 bg-[--hitamkurang] opacity-0 group-[.checked]:opacity-50 pointer-events-none transition-opacity duration-300"></div>
-                                                <div class="absolute top-2 left-2 z-20 checkbox-container hidden">
-                                                    <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')"/>
-                                                    <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
-                                                </div>
-                                                <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                            <div class="relative w-fit">
+                                <div class="relative flex">
+                                    <div class="overflow-hidden transition-shadow duration-300 flex">
+                                        <div class="relative group">
+                                            <div id="card1" class="absolute inset-0 bg-[--hitam] opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                                            <div class="absolute top-2 left-2 z-20 hidden">
+                                                <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                                                <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
                                             </div>
-                                            
-                                            <div class="flex flex-col p-4 w-full">
-                                                <div class="flex flex-nowrap items-center space-x-5">
-                                                    <div class="flex flex-grow">
-                                                        <span class="text-md font-bold">Category</span>
-                                                    </div>
-                                                    <div onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
-                                                        <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
-                                                    </div>
-                                                    <div onclick="openEditForm()" class="flex items-center justify-end border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
-                                                        <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
-                                                    </div>
-                                                </div>
-                                                <div class="w-3/4 mt-2">
-                                                    <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
-                                                </div>
-                            
-                                                <div class="mt-2">
-                                                    <span>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</span>
-                                                </div>
+                                            <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                                        </div>
+                        
+                                        <div class="flex flex-col p-4 w-full">
+                                            <div class="flex items-center space-x-5">
+                                                <span class="flex-grow text-md font-bold">Category</span>
+                                                <button onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
+                                                    <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
+                                                </button>
+                                                <button onclick="openEditForm()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
+                                                    <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
+                                                </button>
                                             </div>
-                                            
-                                            <!-- Popup Edit Form -->
-                                            <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
-                                                <div class="bg-white rounded-lg p-6 w-96">
-                                                    <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
-                                                    <form id="editDataForm">
-                                                        <div class="mb-4">
-                                                            <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
-                                                            <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                            <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <span class="mb-2 w-[80%] text-left">Gambar</span>
-                                                            <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
-                                                                <i class="fa-solid fa-upload fa-xs mr-2"></i>
-                                                                <span>Masukkan</span>
-                                                                <input type="file" class="hidden" />
-                                                            </label>  
-                                                        </div>
-                                                        <div class="flex justify-end space-x-2">
-                                                            <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
-                                                            <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="w-3/4 mt-2">
+                                                <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
-                            
-                                            <!-- Success Animation -->
-                                            <div id="success-animation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
-                                                    <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
-                                            </div>
-                            
-                                            <!-- Delete Success Animation -->
-                                            <div id="delete-success-animation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
-                                                    <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
+                        
+                                            <div class="mt-2">
+                                                <span class="text-sm font-medium text-[--hitam]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
                                             </div>
                                         </div>
+                        
+                                        <!-- Popup Edit Form -->
+                                        <div id="editForm" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex justify-center items-center">
+                                            <div class="bg-[--putih] rounded-lg p-6 w-96">
+                                                <span class="text-xl font-semibold mb-4">Edit Data</span>
+                                                <form id="editDataForm">
+                                                    <div class="mb-4">
+                                                        <label for="nama-kategori" class="block text-sm font-medium text-[--hitam]">Nama Kategori</label>
+                                                        <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="deskripsi" class="block text-sm font-medium text-[--hitam]">Deskripsi</label>
+                                                        <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="flex items-center border border-[--hitam] rounded-2xl p-2 cursor-pointer">
+                                                            <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                                            <span>Upload Gambar</span>
+                                                            <input type="file" class="hidden">
+                                                        </label>
+                                                    </div>
+                                                    <div class="flex justify-end space-x-2">
+                                                        <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-[--merah] rounded-lg text-[--putih] hover:bg-[--hitam] hover:text-[--putih]">Batal</button>
+                                                        <button type="submit" onclick="handleSubmit(event)" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Success Animation -->
+                                        <div id="successAnimation1" class="hidden fixed inset-0 bg-[--hitamkurang] z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center">
+                                                <span class="text-2xl font-bold text-[--ijo] mb-4 block">Data Berhasil Disimpan!</span>
+                                                <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam] font-bold">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <!-- Delete Success Animation -->
+                                        <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                                                <span class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</span>
+                                                <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-[--merah] text-[--putih] rounded-lg hover:bg-[--hitam]">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <script>
+                                            function toggleChecked(checkbox, cardId) {
+                                                const card = document.getElementById(cardId);
+                                                card.classList.toggle("opacity-50", checkbox.checked);
+                                            }
+                                    
+                                            function openEditForm() {
+                                                document.getElementById("editForm").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeEditForm() {
+                                                document.getElementById("editForm").classList.add("hidden");
+                                            }
+                                    
+                                            function handleSubmit(event) {
+                                                event.preventDefault(); 
+                                                closeEditForm();
+                                                setTimeout(() => {
+                                                    document.getElementById('successAnimation1').classList.remove('hidden');
+                                                }, 300); 
+                                            }
+                                    
+                                            function closeSuccessAnimation1() {
+                                                document.getElementById("successAnimation1").classList.add("hidden");
+                                            }
+                                    
+                                            function handleDelete() {
+                                                document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeDeleteSuccessAnimation() {
+                                                document.getElementById("deleteSuccessAnimation").classList.add("hidden");
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>                            
                     
                             <!-- Card 8 -->
-                            <div class="flex-shrink-0 relative">
-                                <div class="relative w-fit">
-                                    <div class="relative flex"> 
-                                        <div class="overflow-hidden transition-shadow duration-300 flex"> 
-                                            <div class="relative group">
-                                                <div id="card1" class="absolute inset-0 bg-[--hitamkurang] opacity-0 group-[.checked]:opacity-50 pointer-events-none transition-opacity duration-300"></div>
-                                                <div class="absolute top-2 left-2 z-20 checkbox-container hidden">
-                                                    <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')"/>
-                                                    <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
-                                                </div>
-                                                <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                            <div class="relative w-fit">
+                                <div class="relative flex">
+                                    <div class="overflow-hidden transition-shadow duration-300 flex">
+                                        <div class="relative group">
+                                            <div id="card1" class="absolute inset-0 bg-[--hitam] opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                                            <div class="absolute top-2 left-2 z-20 hidden">
+                                                <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                                                <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
                                             </div>
-                                            
-                                            <div class="flex flex-col p-4 w-full">
-                                                <div class="flex flex-nowrap items-center space-x-5">
-                                                    <div class="flex flex-grow">
-                                                        <span class="text-md font-bold">Category</span>
-                                                    </div>
-                                                    <div onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
-                                                        <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
-                                                    </div>
-                                                    <div onclick="openEditForm()" class="flex items-center justify-end border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
-                                                        <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
-                                                    </div>
-                                                </div>
-                                                <div class="w-3/4 mt-2">
-                                                    <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
-                                                </div>
-                            
-                                                <div class="mt-2">
-                                                    <span>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</span>
-                                                </div>
+                                            <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                                        </div>
+                        
+                                        <div class="flex flex-col p-4 w-full">
+                                            <div class="flex items-center space-x-5">
+                                                <span class="flex-grow text-md font-bold">Category</span>
+                                                <button onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
+                                                    <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
+                                                </button>
+                                                <button onclick="openEditForm()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
+                                                    <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
+                                                </button>
                                             </div>
-                                            
-                                            <!-- Popup Edit Form -->
-                                            <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
-                                                <div class="bg-white rounded-lg p-6 w-96">
-                                                    <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
-                                                    <form id="editDataForm">
-                                                        <div class="mb-4">
-                                                            <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
-                                                            <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                            <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <span class="mb-2 w-[80%] text-left">Gambar</span>
-                                                            <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
-                                                                <i class="fa-solid fa-upload fa-xs mr-2"></i>
-                                                                <span>Masukkan</span>
-                                                                <input type="file" class="hidden" />
-                                                            </label>  
-                                                        </div>
-                                                        <div class="flex justify-end space-x-2">
-                                                            <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
-                                                            <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="w-3/4 mt-2">
+                                                <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
-                            
-                                            <!-- Success Animation -->
-                                            <div id="success-animation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
-                                                    <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
-                                            </div>
-                            
-                                            <!-- Delete Success Animation -->
-                                            <div id="delete-success-animation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
-                                                    <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
+                        
+                                            <div class="mt-2">
+                                                <span class="text-sm font-medium text-[--hitam]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
                                             </div>
                                         </div>
+                        
+                                        <!-- Popup Edit Form -->
+                                        <div id="editForm" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex justify-center items-center">
+                                            <div class="bg-[--putih] rounded-lg p-6 w-96">
+                                                <span class="text-xl font-semibold mb-4">Edit Data</span>
+                                                <form id="editDataForm">
+                                                    <div class="mb-4">
+                                                        <label for="nama-kategori" class="block text-sm font-medium text-[--hitam]">Nama Kategori</label>
+                                                        <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="deskripsi" class="block text-sm font-medium text-[--hitam]">Deskripsi</label>
+                                                        <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="flex items-center border border-[--hitam] rounded-2xl p-2 cursor-pointer">
+                                                            <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                                            <span>Upload Gambar</span>
+                                                            <input type="file" class="hidden">
+                                                        </label>
+                                                    </div>
+                                                    <div class="flex justify-end space-x-2">
+                                                        <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-[--merah] rounded-lg text-[--putih] hover:bg-[--hitam] hover:text-[--putih]">Batal</button>
+                                                        <button type="submit" onclick="handleSubmit(event)" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Success Animation -->
+                                        <div id="successAnimation1" class="hidden fixed inset-0 bg-[--hitamkurang] z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center">
+                                                <span class="text-2xl font-bold text-[--ijo] mb-4 block">Data Berhasil Disimpan!</span>
+                                                <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam] font-bold">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <!-- Delete Success Animation -->
+                                        <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                                                <span class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</span>
+                                                <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-[--merah] text-[--putih] rounded-lg hover:bg-[--hitam]">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <script>
+                                            function toggleChecked(checkbox, cardId) {
+                                                const card = document.getElementById(cardId);
+                                                card.classList.toggle("opacity-50", checkbox.checked);
+                                            }
+                                    
+                                            function openEditForm() {
+                                                document.getElementById("editForm").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeEditForm() {
+                                                document.getElementById("editForm").classList.add("hidden");
+                                            }
+                                    
+                                            function handleSubmit(event) {
+                                                event.preventDefault(); 
+                                                closeEditForm();
+                                                setTimeout(() => {
+                                                    document.getElementById('successAnimation1').classList.remove('hidden');
+                                                }, 300); 
+                                            }
+                                    
+                                            function closeSuccessAnimation1() {
+                                                document.getElementById("successAnimation1").classList.add("hidden");
+                                            }
+                                    
+                                            function handleDelete() {
+                                                document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeDeleteSuccessAnimation() {
+                                                document.getElementById("deleteSuccessAnimation").classList.add("hidden");
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>                            
                     
                             <!-- Card 9 -->
-                            <div class="flex-shrink-0 relative">
-                                <div class="relative w-fit">
-                                    <div class="relative flex"> 
-                                        <div class="overflow-hidden transition-shadow duration-300 flex"> 
-                                            <div class="relative group">
-                                                <div id="card1" class="absolute inset-0 bg-[--hitamkurang] opacity-0 group-[.checked]:opacity-50 pointer-events-none transition-opacity duration-300"></div>
-                                                <div class="absolute top-2 left-2 z-20 checkbox-container hidden">
-                                                    <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')"/>
-                                                    <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
-                                                </div>
-                                                <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                            <div class="relative w-fit">
+                                <div class="relative flex">
+                                    <div class="overflow-hidden transition-shadow duration-300 flex">
+                                        <div class="relative group">
+                                            <div id="card1" class="absolute inset-0 bg-[--hitam] opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                                            <div class="absolute top-2 left-2 z-20 hidden">
+                                                <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                                                <label for="checkbox1" class="w-5 h-5 border-2 border-[--hitam] rounded-full block cursor-pointer peer-checked:bg-[--hitam] peer-checked:border-[--hitam]"></label>
                                             </div>
-                                            
-                                            <div class="flex flex-col p-4 w-full">
-                                                <div class="flex flex-nowrap items-center space-x-5">
-                                                    <div class="flex flex-grow">
-                                                        <span class="text-md font-bold">Category</span>
-                                                    </div>
-                                                    <div onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
-                                                        <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
-                                                    </div>
-                                                    <div onclick="openEditForm()" class="flex items-center justify-end border border-[--hitam] rounded-xl px-2 p-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
-                                                        <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
-                                                        <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
-                                                    </div>
-                                                </div>
-                                                <div class="w-3/4 mt-2">
-                                                    <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
-                                                </div>
-                            
-                                                <div class="mt-2">
-                                                    <span>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</span>
-                                                </div>
+                                            <img src="img/Placeholder Image.png" alt="Product 1" class="w-[600px] h-80 object-cover"> <!-- Image on the left -->
+                                        </div>
+                        
+                                        <div class="flex flex-col p-4 w-full">
+                                            <div class="flex items-center space-x-5">
+                                                <span class="flex-grow text-md font-bold">Category</span>
+                                                <button onclick="handleDelete()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--merah]">
+                                                    <i class="fa-solid fa-trash text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Delete</span>
+                                                </button>
+                                                <button onclick="openEditForm()" class="flex items-center border border-[--hitam] rounded-xl px-2 py-2 cursor-pointer space-x-2 group hover:bg-[--ijo]">
+                                                    <i class="fa-solid fa-pen-to-square text-[--hitam] group-hover:text-[--putih]"></i>
+                                                    <span class="text-xs font-bold text-[--hitam] group-hover:text-[--putih]">Edit</span>
+                                                </button>
                                             </div>
-                                            
-                                            <!-- Popup Edit Form -->
-                                            <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
-                                                <div class="bg-white rounded-lg p-6 w-96">
-                                                    <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
-                                                    <form id="editDataForm">
-                                                        <div class="mb-4">
-                                                            <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
-                                                            <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                            <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <span class="mb-2 w-[80%] text-left">Gambar</span>
-                                                            <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
-                                                                <i class="fa-solid fa-upload fa-xs mr-2"></i>
-                                                                <span>Masukkan</span>
-                                                                <input type="file" class="hidden" />
-                                                            </label>  
-                                                        </div>
-                                                        <div class="flex justify-end space-x-2">
-                                                            <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
-                                                            <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="w-3/4 mt-2">
+                                                <span class="text-4xl font-bold text-[--hitam]">Blog title heading will go here</span>
                                             </div>
-                            
-                                            <!-- Success Animation -->
-                                            <div id="success-animation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
-                                                    <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
-                                            </div>
-                            
-                                            <!-- Delete Success Animation -->
-                                            <div id="delete-success-animation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
-                                                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                                                    <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
-                                                    <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
-                                                </div>
+                        
+                                            <div class="mt-2">
+                                                <span class="text-sm font-medium text-[--hitam]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
                                             </div>
                                         </div>
+                        
+                                        <!-- Popup Edit Form -->
+                                        <div id="editForm" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex justify-center items-center">
+                                            <div class="bg-[--putih] rounded-lg p-6 w-96">
+                                                <span class="text-xl font-semibold mb-4">Edit Data</span>
+                                                <form id="editDataForm">
+                                                    <div class="mb-4">
+                                                        <label for="nama-kategori" class="block text-sm font-medium text-[--hitam]">Nama Kategori</label>
+                                                        <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="deskripsi" class="block text-sm font-medium text-[--hitam]">Deskripsi</label>
+                                                        <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-[--hitam] px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="flex items-center border border-[--hitam] rounded-2xl p-2 cursor-pointer">
+                                                            <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                                            <span>Upload Gambar</span>
+                                                            <input type="file" class="hidden">
+                                                        </label>
+                                                    </div>
+                                                    <div class="flex justify-end space-x-2">
+                                                        <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-[--merah] rounded-lg text-[--putih] hover:bg-[--hitam] hover:text-[--putih]">Batal</button>
+                                                        <button type="submit" onclick="handleSubmit(event)" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Success Animation -->
+                                        <div id="successAnimation1" class="hidden fixed inset-0 bg-[--hitamkurang] z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center">
+                                                <span class="text-2xl font-bold text-[--ijo] mb-4 block">Data Berhasil Disimpan!</span>
+                                                <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-[--putih] rounded-lg hover:bg-[--hitam] font-bold">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <!-- Delete Success Animation -->
+                                        <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-[--hitamkurang] bg-opacity-50 z-[9999] flex items-center justify-center">
+                                            <div class="bg-[--putih] p-6 rounded-lg shadow-lg text-center flex flex-col items-center">
+                                                <span class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</span>
+                                                <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-[--merah] text-[--putih] rounded-lg hover:bg-[--hitam]">Tutup</button>
+                                            </div>
+                                        </div>                                        
+                        
+                                        <script>
+                                            function toggleChecked(checkbox, cardId) {
+                                                const card = document.getElementById(cardId);
+                                                card.classList.toggle("opacity-50", checkbox.checked);
+                                            }
+                                    
+                                            function openEditForm() {
+                                                document.getElementById("editForm").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeEditForm() {
+                                                document.getElementById("editForm").classList.add("hidden");
+                                            }
+                                    
+                                            function handleSubmit(event) {
+                                                event.preventDefault(); 
+                                                closeEditForm();
+                                                setTimeout(() => {
+                                                    document.getElementById('successAnimation1').classList.remove('hidden');
+                                                }, 300); 
+                                            }
+                                    
+                                            function closeSuccessAnimation1() {
+                                                document.getElementById("successAnimation1").classList.add("hidden");
+                                            }
+                                    
+                                            function handleDelete() {
+                                                document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+                                            }
+                                    
+                                            function closeDeleteSuccessAnimation() {
+                                                document.getElementById("deleteSuccessAnimation").classList.add("hidden");
+                                            }
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>                            

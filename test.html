@@ -3,62 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BENTALA</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-['Inter']">
-    <!-- Navbar -->
-    <nav class="w-full flex justify-between items-center p-4 bg-[--putih] shadow">
-        <div class="text-lg font-bold">BENTALA</div>
-        <div class="flex space-x-4">
-            <button class="hover:underline" onclick="openTentang()">Tentang</button>
-            <button class="hover:underline" onclick="location.href='koleksi.html'">Koleksi</button>
-        </div>
-    </nav>
-
-    <!-- Filter Section -->
-    <div class="w-full flex flex-col md:flex-row mt-4">
-        <!-- Filters -->
-        <aside class="w-full md:w-1/4 p-4 border-r">
-            <h2 class="font-semibold mb-2">Filter</h2>
-
-            <!-- Warna Filter -->
-            <div class="mb-4">
-                <label class="block font-medium mb-2">Warna:</label>
-                <div class="flex space-x-2">
-                    <button class="w-8 h-8 rounded-full bg-red-500" aria-label="Merah"></button>
-                    <button class="w-8 h-8 rounded-full bg-blue-500" aria-label="Biru"></button>
-                    <button class="w-8 h-8 rounded-full bg-yellow-500" aria-label="Kuning"></button>
-                </div>
-            </div>
-
-            <!-- Harga Filter -->
-            <div>
-                <label class="block font-medium mb-2">Harga:</label>
-                <input type="range" min="0" max="1000000" step="10000" class="w-full">
-                <p class="text-sm text-gray-500 mt-2">Rp 0 - Rp 1,000,000</p>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="w-full md:w-3/4 p-4">
-            <div class="bg-[--abuabu] p-4 rounded">
-                <p>Konten produk akan ditampilkan di sini.</p>
-            </div>
-        </main>
-    </div>
-
-    <!-- Footer -->
-    <footer class="w-full p-4 bg-[--hitam] text-white text-center">
-        <p>&copy; 2024 BENTALA. All rights reserved.</p>
-    </footer>
-
+    <title>Popup Card with Tailwind</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-        function openTentang() {
-            alert('Halaman tentang belum tersedia.');
+        function toggleChecked(checkbox, cardId) {
+            const card = document.getElementById(cardId);
+            card.classList.toggle("opacity-50", checkbox.checked);
+        }
+
+        function openEditForm() {
+            document.getElementById("editForm").classList.remove("hidden");
+        }
+
+        function closeEditForm() {
+            document.getElementById("editForm").classList.add("hidden");
+        }
+
+        function showSuccessAnimation1() {
+            document.getElementById("successAnimation1").classList.remove("hidden");
+        }
+
+        function closeSuccessAnimation1() {
+            document.getElementById("successAnimation1").classList.add("hidden");
+        }
+
+        function handleDelete() {
+            document.getElementById("deleteSuccessAnimation").classList.remove("hidden");
+        }
+
+        function closeDeleteSuccessAnimation() {
+            document.getElementById("deleteSuccessAnimation").classList.add("hidden");
         }
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="relative w-fit">
+        <div class="relative flex">
+            <div class="overflow-hidden transition-shadow duration-300 flex">
+                <div class="relative group">
+                    <div id="card1" class="absolute inset-0 bg-black opacity-0 group-checked:opacity-50 pointer-events-none transition-opacity duration-300"></div>
+                    <div class="absolute top-2 left-2 z-20 hidden">
+                        <input type="checkbox" id="checkbox1" class="hidden peer" onchange="toggleChecked(this, 'card1')" />
+                        <label for="checkbox1" class="w-5 h-5 border-2 border-black rounded-full block cursor-pointer peer-checked:bg-black peer-checked:border-black"></label>
+                    </div>
+                    <img src="https://via.placeholder.com/600x400" alt="Product 1" class="w-[600px] h-80 object-cover">
+                </div>
+
+                <div class="flex flex-col p-4 w-full bg-white">
+                    <div class="flex items-center space-x-5">
+                        <span class="flex-grow text-md font-bold">Category</span>
+                        <button onclick="handleDelete()" class="flex items-center border border-black rounded-xl px-2 py-2 cursor-pointer space-x-2 hover:bg-red-500">
+                            <i class="fa-solid fa-trash text-black hover:text-white"></i>
+                            <span class="text-xs font-bold text-black hover:text-white">Delete</span>
+                        </button>
+                        <button onclick="openEditForm()" class="flex items-center border border-black rounded-xl px-2 py-2 cursor-pointer space-x-2 hover:bg-green-500">
+                            <i class="fa-solid fa-pen-to-square text-black hover:text-white"></i>
+                            <span class="text-xs font-bold text-black hover:text-white">Edit</span>
+                        </button>
+                    </div>
+                    <div class="w-3/4 mt-2">
+                        <span class="text-4xl font-bold text-black">Blog title heading will go here</span>
+                    </div>
+
+                    <div class="mt-2">
+                        <span class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat urna ut lacus pellentesque tincidunt.</span>
+                    </div>
+                </div>
+
+                <!-- Popup Edit Form -->
+                <div id="editForm" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 z-[9999] flex justify-center items-center">
+                    <div class="bg-white rounded-lg p-6 w-96">
+                        <h2 class="text-xl font-semibold mb-4">Edit Data</h2>
+                        <form id="editDataForm">
+                            <div class="mb-4">
+                                <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
+                                <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
+                                <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label class="flex items-center border border-gray-300 rounded-2xl p-2 cursor-pointer">
+                                    <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                    <span>Upload Gambar</span>
+                                    <input type="file" class="hidden">
+                                </label>
+                            </div>
+                            <div class="flex justify-end space-x-2">
+                                <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
+                                <button type="submit" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-black">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Success Animation -->
+                <div id="successAnimation1" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <h2 class="text-2xl font-bold text-green-500 mb-4">Data Berhasil Disimpan!</h2>
+                        <button onclick="closeSuccessAnimation1()" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-black">Tutup</button>
+                    </div>
+                </div>
+
+                <!-- Delete Success Animation -->
+                <div id="deleteSuccessAnimation" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[9999] flex items-center justify-center">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <h2 class="text-2xl font-bold text-black mb-4">Data Berhasil Dihapus!</h2>
+                        <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-black">Tutup</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>

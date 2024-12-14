@@ -395,7 +395,7 @@
                                     </label>  
                                 </div>
                                 <div class="flex justify-end space-x-2">
-                                    <button type="button" onclick="closePopup()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
+                                    <button type="button" onclick="closeEditForm()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
                                     <button type="submit1" onclick="showSuccessAnimation1()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
                                 </div>
                             </form>
@@ -433,6 +433,10 @@
                 
                     function closePopup() {
                         document.getElementById('popup').classList.add('hidden');
+                    }
+
+                    function closeEditForm() {
+                        document.getElementById('editForm').classList.add('hidden');
                     }
                 
                     function handleFormSubmit(event) {

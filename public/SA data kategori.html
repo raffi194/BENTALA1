@@ -46,7 +46,6 @@
                 <div class="flex flex-col border-t-2 border-[--hitam] mt-5">
                     <div class="mt-3">
                         <div class="text-[--hitam] text-md font-normal rounded space-y-3">
-                            <!-- Components Section -->
                             <span class="font-medium text-[--abuabu] uppercase text-xs">Interface</span>
                             <div class="rounded-lg hover:bg-[--ijo] group p-2">
                                 <ul class="flex items-center justify-start space-x-2 cursor-pointer" onclick="toggleDropdown('components-dropdown', 'components-icon')">
@@ -98,36 +97,32 @@
                 
                 <script>
                     function toggleDropdown(dropdownId, iconId) {
-                    // Ambil semua dropdown dan ikon di halaman
                     const allDropdowns = document.querySelectorAll('.dropdown-content');
                     const allIcons = document.querySelectorAll('.dropdown-icon');
 
-                    // Tutup semua dropdown lainnya
                     allDropdowns.forEach((dropdown) => {
                         if (dropdown.id !== dropdownId) {
-                            dropdown.classList.add('hidden'); // Tutup dropdown lain
+                            dropdown.classList.add('hidden'); 
                         }
                     });
 
-                    // Pastikan semua ikon lainnya diatur ke kondisi tertutup
                     allIcons.forEach((icon) => {
                         if (icon.id !== iconId) {
-                            icon.classList.remove('fa-angle-down'); // Ganti ke ikon tertutup
+                            icon.classList.remove('fa-angle-down'); 
                             icon.classList.add('fa-angle-right');
                         }
                     });
 
-                    // Toggle dropdown yang diminta
                     const dropdown = document.getElementById(dropdownId);
                     const icon = document.getElementById(iconId);
 
                     if (dropdown.classList.contains('hidden')) {
-                        dropdown.classList.remove('hidden'); // Buka dropdown
-                        icon.classList.remove('fa-angle-right'); // Ganti ikon ke tanda terbuka
+                        dropdown.classList.remove('hidden');                         
+                        icon.classList.remove('fa-angle-right'); 
                         icon.classList.add('fa-angle-down');
                     } else {
-                        dropdown.classList.add('hidden'); // Tutup dropdown
-                        icon.classList.remove('fa-angle-down'); // Ganti ikon ke tanda tertutup
+                        dropdown.classList.add('hidden');                         
+                        icon.classList.remove('fa-angle-down'); 
                         icon.classList.add('fa-angle-right');
                             }
                     }
@@ -159,7 +154,7 @@
                     <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
                         <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
-                                <i class="fa-sharp fa-solid fa-person-through-window text-[--hitam] group-hover:text-[--putih]"></i>  
+                                <i class="fa-sharp fa-solid fa-door-open text-[--hitam] group-hover:text-[--putih]"></i>  
                             </li>
                             <li class="flex-nowrap">
                                 <div>Log Out</div>
@@ -194,44 +189,137 @@
             </div>
         
             <div class="">
-                <div class="p-4 flex items-start w-full h-full">
-                    <table class="table-auto border-collapse border w-full border-gray-200">
-                        <thead>
-                            <tr class="bg-gray-100 h-fit">
-                                <th class="border border-gray-300 text-center px-4 py-2">No</th>
-                                <th class="border border-gray-300 text-center px-4 py-2">Nama Kategori</th>
-                                <th class="border border-gray-300 text-center px-4 py-2">Nama Subkategori</th>
-                                <th class="border border-gray-300 text-center px-4 py-2">Deskripsi</th>
-                                <th class="border border-gray-300 text-center px-4 py-2">Gambar</th>
-                                <th class="border border-gray-300 text-center px-4 py-2">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="h-full">
-                                <td class="border border-gray-300 text-center px-4 py-2 w-5">1</td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-56">nama yang sangat panjang dan tidak boleh melebihi lebar kolom</td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-56">nim yang sangat panjang</td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-56">jurusan yang sangat panjang dan tidak boleh melebihi lebar kolom</td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-64"><img class="h-full" src="img/Dancung.jpg" alt=""></td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-56 space-x-4">
-                                    <button class="bg-[--ijo] text-white px-3 py-1 rounded hover:bg-[--hitam]">Edit</button>
-                                    <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-[--hitam]">Hapus</button>
-                                </td>
-                            </tr>
-                            <tr class="h-full">
-                                <td class="border border-gray-300 text-center px-4 py-2 w-5">2</td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-56">nama yang sangat panjang dan tidak boleh melebihi lebar kolom</td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-56">nim yang sangat panjang</td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-56">jurusan yang sangat panjang dan tidak boleh melebihi lebar kolom</td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-64"><img class="h-full" src="img/gambarbwh.png" alt=""></td>
-                                <td class="border border-gray-300 text-center px-4 py-2 w-56 space-x-4">
-                                    <button class="bg-[--ijo] text-white px-3 py-1 rounded hover:bg-[--hitam]">Edit</button>
-                                    <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-[--hitam]">Hapus</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="p-4">
+                    <span class="font-medium text-4xl text-[--hitam]">Data Kategori</span>
                 </div>
+                <div class="p-4">
+                    <div class="border-2 border-[--hitam]">
+                        <div class="p-4 bg-[--ijo]">
+                            <span class="font-medium text-2xl text-[--putih]">Data Kategori</span>
+                        </div>
+                        <div class="p-4 flex justify-end">
+                            <div onclick="openPopup()" class="border-2 border-[--hitam] hover:bg-[--hitam] hover:text-[--putih] cursor-pointer w-fit p-2 px-4 rounded-xl">
+                                <span class="font-medium text-lg">Tambah Data</span>
+                            </div>
+                        </div>
+                        <div class="p-4 flex items-start w-full h-full">
+                            <table class="table-auto border-collapse border w-full border-gray-200">
+                                <thead>
+                                    <tr class="bg-gray-100 h-fit">
+                                        <th class="border border-gray-300 text-center px-4 py-2">No</th>
+                                        <th class="border border-gray-300 text-center px-4 py-2">Nama Kategori</th>
+                                        <th class="border border-gray-300 text-center px-4 py-2">Deskripsi</th>
+                                        <th class="border border-gray-300 text-center px-4 py-2">Gambar</th>
+                                        <th class="border border-gray-300 text-center px-4 py-2">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="h-full">
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-5">1</td>
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-56">nama yang sangat panjang dan tidak boleh melebihi lebar kolom</td>
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-56">nim yang sangat panjang</td>
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-64"><img class="h-full" src="img/Dancung.jpg" alt=""></td>
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-56 space-x-4 space-y-4">
+                                            <button class="bg-[--ijo] text-white px-3 py-1 rounded hover:bg-[--hitam]">Edit</button>
+                                            <button onclick="handleDelete()" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-[--hitam]">Hapus</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="h-full">
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-5">2</td>
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-56">nama yang sangat panjang dan tidak boleh melebihi lebar kolom</td>
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-56">nim yang sangat panjang</td>
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-64"><img class="h-full" src="img/gambarbwh.png" alt=""></td>
+                                        <td class="border border-gray-300 text-center px-4 py-2 w-56 space-x-4 space-y-4">
+                                            <button class="bg-[--ijo] text-white px-3 py-1 rounded hover:bg-[--hitam]">Edit</button>
+                                            <button onclick="handleDelete()" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-[--hitam]">Hapus</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                
+                    <!-- Popup Form -->
+                    <div id="popup" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center hidden">
+                        <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+                            <span class="text-xl font-bold mb-4">Tambah Data Kategori</span>
+                            <form onsubmit="handleFormSubmit(event)">
+                                <div class="mb-4">
+                                    <label for="nama-kategori" class="block text-sm font-medium text-gray-700">Nama Kategori</label>
+                                    <input type="text" id="nama-kategori" placeholder="Masukkan Nama Kategori" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
+                                    <textarea id="deskripsi" placeholder="Masukkan Deskripsi" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-[--ijo] focus:border-[--ijo]"></textarea>
+                                </div>
+                                <div class="mb-4">
+                                    <span class="mb-2 w-[80%] text-left">Gambar</span>
+                                    <label class="flex items-center border border-[--abuabu] rounded-2xl p-2 cursor-pointer">
+                                        <i class="fa-solid fa-upload fa-xs mr-2"></i>
+                                        <span>Masukkan</span>
+                                        <input type="file" class="hidden" />
+                                    </label>  
+                                </div>
+                                <div class="flex justify-end space-x-2">
+                                    <button type="button" onclick="closePopup()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Batal</button>
+                                    <button type="submit" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Simpan</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                
+                    <!-- Success Animation -->
+                    <div id="success-animation" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center hidden">
+                        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                            <h2 class="text-2xl font-bold text-[--ijo] mb-4">Data Berhasil Disimpan!</h2>
+                            <button onclick="closeSuccessAnimation()" class="px-4 py-2 bg-[--ijo] text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
+                        </div>
+                    </div>
+                
+                    <!-- Delete Success Animation -->
+                    <div id="delete-success-animation" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center hidden">
+                        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                            <h2 class="text-2xl font-bold text-[--hitam] mb-4">Data Berhasil Dihapus!</h2>
+                            <button onclick="closeDeleteSuccessAnimation()" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-[--hitam]">Tutup</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    function openPopup() {
+                        document.getElementById('popup').classList.remove('hidden');
+                    }
+                
+                    function closePopup() {
+                        document.getElementById('popup').classList.add('hidden');
+                    }
+                
+                    function handleFormSubmit(event) {
+                        event.preventDefault();
+                        closePopup();
+                        showSuccessAnimation();
+                    }
+                
+                    function showSuccessAnimation() {
+                        document.getElementById('success-animation').classList.remove('hidden');
+                    }
+                
+                    function closeSuccessAnimation() {
+                        document.getElementById('success-animation').classList.add('hidden');
+                    }
+                
+                    function handleDelete() {
+                        showDeleteSuccessAnimation();
+                    }
+                
+                    function showDeleteSuccessAnimation() {
+                        document.getElementById('delete-success-animation').classList.remove('hidden');
+                    }
+                
+                    function closeDeleteSuccessAnimation() {
+                        document.getElementById('delete-success-animation').classList.add('hidden');
+                    }
+                </script>
             </div>
         </div>
     </div>

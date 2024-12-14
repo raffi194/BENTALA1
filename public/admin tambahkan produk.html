@@ -99,10 +99,10 @@
         <div class="w-[80%] p-4 h-screen flex flex-col">
             <div>
                 <div class="text-4xl font-bold uppercase mb-4">
-                    <div>Edit Produk</div>
+                    <div>Tambahkan Produk</div>
                 </div>
                 <div class="flex justify-end">
-                    <div id="pilihButton" data-state="pilih" class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam] w-fit">Upload Produk</div>
+                    <div id="pilihButton" onclick="openAdminProduct()"  data-state="pilih" class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam] w-fit">Submit Produk</div>
                 </div>
             </div>
 
@@ -197,6 +197,10 @@
                         </div>
                         
                         <script>
+                            function openAdminProduct() {
+                                window.location.href = 'admin produk.html';
+                            }
+
                             function setActive(labelId) {
                                 const label = document.getElementById(labelId);
                                 label.classList.add('bg-[--hitam]', 'text-[--putih]');

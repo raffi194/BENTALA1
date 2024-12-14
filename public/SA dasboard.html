@@ -46,7 +46,6 @@
                 <div class="flex flex-col border-t-2 border-[--hitam] mt-5">
                     <div class="mt-3">
                         <div class="text-[--hitam] text-md font-normal rounded space-y-3">
-                            <!-- Components Section -->
                             <span class="font-medium text-[--abuabu] uppercase text-xs">Interface</span>
                             <div class="rounded-lg hover:bg-[--ijo] group p-2">
                                 <ul class="flex items-center justify-start space-x-2 cursor-pointer" onclick="toggleDropdown('components-dropdown', 'components-icon')">
@@ -98,36 +97,32 @@
                 
                 <script>
                     function toggleDropdown(dropdownId, iconId) {
-                    // Ambil semua dropdown dan ikon di halaman
                     const allDropdowns = document.querySelectorAll('.dropdown-content');
                     const allIcons = document.querySelectorAll('.dropdown-icon');
 
-                    // Tutup semua dropdown lainnya
                     allDropdowns.forEach((dropdown) => {
                         if (dropdown.id !== dropdownId) {
-                            dropdown.classList.add('hidden'); // Tutup dropdown lain
+                            dropdown.classList.add('hidden'); 
                         }
                     });
 
-                    // Pastikan semua ikon lainnya diatur ke kondisi tertutup
                     allIcons.forEach((icon) => {
                         if (icon.id !== iconId) {
-                            icon.classList.remove('fa-angle-down'); // Ganti ke ikon tertutup
+                            icon.classList.remove('fa-angle-down'); 
                             icon.classList.add('fa-angle-right');
                         }
                     });
 
-                    // Toggle dropdown yang diminta
                     const dropdown = document.getElementById(dropdownId);
                     const icon = document.getElementById(iconId);
 
                     if (dropdown.classList.contains('hidden')) {
-                        dropdown.classList.remove('hidden'); // Buka dropdown
-                        icon.classList.remove('fa-angle-right'); // Ganti ikon ke tanda terbuka
+                        dropdown.classList.remove('hidden'); 
+                        icon.classList.remove('fa-angle-right'); 
                         icon.classList.add('fa-angle-down');
                     } else {
-                        dropdown.classList.add('hidden'); // Tutup dropdown
-                        icon.classList.remove('fa-angle-down'); // Ganti ikon ke tanda tertutup
+                        dropdown.classList.add('hidden'); 
+                        icon.classList.remove('fa-angle-down'); 
                         icon.classList.add('fa-angle-right');
                             }
                     }

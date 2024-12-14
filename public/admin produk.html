@@ -95,6 +95,9 @@
             </div>
             <div class="w-full h-auto p-2">
                 <div class="flex flex-nowrap justify-end space-x-5">
+                    <div class="flex justify-start flex-grow">
+                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]" onclick="openAddProduct()">Tambahkan Produk</div>
+                    </div>
                     <div class="relative">
                         <input type="text" placeholder="Search" class="bg-transparent text-[--item] border-2 border-[--hitam] rounded-2xl py-2 pl-10 pr-3">
                         <svg class="absolute left-3 top-3 transform  text-[--hitam] h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -113,7 +116,7 @@
                         <div id="pilihButton" data-state="pilih" class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]">Pilih</div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]" id="addProductButton">Tambahkan Produk</div>
+                        <div class="text-[--hitam] p-2 px-4 rounded-2xl border-2 hover:bg-[--hitam] hover:text-[--putih] cursor-pointer border-[--hitam]" id="addProductButton">Upload Produk</div>
                     </div>
                 </div>
                 
@@ -179,7 +182,7 @@
                             </div>
 
                             <script>
-                                function openEdit() {
+                                function openEditprofile() {
                                 window.location.href ='admin tambahkan produk.html';
                                 }
                             </script>
@@ -840,7 +843,7 @@
                                 const checkedCards = document.querySelectorAll('.group input[type="checkbox"]:checked');
                                 
                                 if (checkedCards.length === 0) {
-                                    alert('Pilih produk yang ingin ditambahkan terlebih dahulu');
+                                    alert('Pilih produk yang ingin diupload terlebih dahulu');
                                     return;
                                 }
 

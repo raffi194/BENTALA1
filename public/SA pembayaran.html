@@ -32,10 +32,10 @@
                     </div>
                 </div>
                 <div class="flex flex-col border-t-2 border-[--hitam] mt-5 bg-">
-                    <div class="text-[--hitam] text-md font-normal rounded-lg mt-3 hover:bg-[--ijo] p-2 cursor-pointer">
+                    <div class="text-[--hitam] text-md font-normal rounded-lg mt-3 hover:bg-[--ijo] hover:text-[--putih] group p-2 cursor-pointer" onclick="openDashboard()">
                         <ul class="flex items-center justify-start space-x-2">
                             <li class="flex-nowrap">
-                                <i class="fa-solid fa-gauge text-[--hitam]"></i>
+                                <i class="fa-solid fa-gauge text-[--hitam] group-hover:text-[--putih]"></i>
                             </li>
                             <li class="flex-nowrap font-bold text-sm">
                                 <div>Dashboard</div>
@@ -59,14 +59,14 @@
                                         <i id="components-icon" class="fa-solid fa-angle-right text-[--hitam] group-hover:text-[--putih] dropdown-icon"></i>
                                     </li>
                                 </ul>
-                                <div id="components-dropdown" class="hidden mt-2 space-y-2 pl-8 dropdown-content">
-                                    <div class="text-[--hitam] text-sm font-medium group-hover:text-[--putih] cursor-pointer">Data Kategori</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Data Subkategori</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Data Slider</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Data Barang</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Data Member</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Data Testimoni</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Data Review</div>
+                                <div id="components-dropdown" class="hidden mt-2 space-y-2 pl-8 dropdown-content group">
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openDataKategori()">Data Kategori</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openDataSubkategori()">Data Subkategori</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openDataSlider()">Data Slider</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openDataBarang()">Data Barang</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openDataMember()">Data Member</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openDataTestimoni()">Data Testimoni</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openDataReview()">Data Review</div>
                                 </div>
                             </div>
                             
@@ -82,13 +82,13 @@
                                         <i id="components-icon1" class="fa-solid fa-angle-right text-[--hitam] group-hover:text-[--putih] dropdown-icon"></i>
                                     </li>
                                 </ul>
-                                <div id="components-dropdown1" class="hidden mt-2 space-y-2 pl-8 dropdown-content">
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Pesanan Baru</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Pesanan Dikonfirmasi</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Pesanan Dikemas</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Pesanan Dikirim</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Pesanan Diterima</div>
-                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer">Pesanan Selesai</div>
+                                <div id="components-dropdown1" class="hidden mt-2 space-y-2 pl-8 dropdown-content group">
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openPesananBaru()">Pesanan Baru</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openPesananDikonfirmasi()">Pesanan Dikonfirmasi</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openPesananDikemas()">Pesanan Dikemas</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openPesananDikirim()">Pesanan Dikirim</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openPesananDiterima()">Pesanan Diterima</div>
+                                    <div class="text-[--hitam] text-sm font-medium hover:text-[--putih] cursor-pointer" onclick="openPesananSelesai()">Pesanan Selesai</div>
                                 </div>
                             </div>
                         </div>
@@ -129,10 +129,10 @@
                 </script>
 
                 <div class="flex flex-col space-y-2 w-full border-t-2 border-[--hitam] mt-auto mb-3">
-                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
+                    <div class="bg-[--ijo] text-[--putih] text-md font-normal p-2 rounded mt-3" onclick="openPembayaran()">
                         <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
-                                <i class="fa-regular fa-credit-card text-[--hitam] group-hover:text-[--putih]"></i>  
+                                <i class="fa-regular fa-credit-card group-hover:text-[--putih]"></i>  
                             </li>
                             <li class="flex-nowrap">
                                 <div>Pembayaran</div>
@@ -142,7 +142,7 @@
                 </div>
                 
                 <div class="flex flex-col space-y-2 w-full border-t-2 border-[--hitam] mb-3">
-                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
+                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3" onclick="openLaporanPesanan()">
                         <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
                                 <i class="fa-solid fa-book text-[--hitam] group-hover:text-[--putih]"></i>  
@@ -155,7 +155,7 @@
                 </div>
                 
                 <div class="flex flex-col space-y-2 w-full border-t-2 border-[--hitam] mb-5">
-                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
+                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3" onclick="openSupport()">
                         <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
                                 <i class="fa-regular fa-circle-question text-[--hitam] group-hover:text-[--putih]"></i>  
@@ -165,7 +165,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded">
+                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded" onclick="openSettings()">
                         <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
                                 <i class="fa-solid fa-gear text-[--hitam] group-hover:text-[--putih]"></i>  
@@ -177,7 +177,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col space-y-2 w-full border-t-2 border-[--hitam]">
-                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3">
+                    <div class="group hover:bg-[--ijo] hover:text-[--putih] text-[--hitam] text-md font-normal p-2 rounded mt-3" onclick="openLogOut()">
                         <ul class="flex items-center justify-start space-x-2 cursor-pointer">
                             <li class="flex-nowrap">
                                 <i class="fa-sharp fa-solid fa-door-open text-[--hitam] group-hover:text-[--putih]"></i>  
@@ -188,6 +188,86 @@
                         </ul>
                     </div>
                 </div>
+
+                <script>
+                    function openDashboard() {
+                                window.location.href = 'SA dashboard.html';
+                            }
+                    
+                    function openDataKategori() {
+                                window.location.href = 'SA data kategori.html';
+                            }
+                            
+                    function openDataSubkategori() {
+                                window.location.href = 'SA data subkategori.html';
+                            }
+                    
+                    function openDataSlider() {
+                                window.location.href = 'SA data slider.html';
+                            }
+
+                    function openDataBarang() {
+                                window.location.href = 'SA data barang.html';
+                            }
+                    
+                    function openDataMember() {
+                                window.location.href = '';
+                            }
+
+                    function openDataTestimoni() {
+                                window.location.href = 'SA data testimoni.html';
+                            }
+                    
+                    function openDataReview() {
+                                window.location.href = '';
+                            }
+
+                    function openPesananBaru() {
+                                window.location.href = 'SA data pesanan baru.html';
+                            }
+                    
+                    function openPesananDikonfirmasi() {
+                                window.location.href = 'SA data pesanan dikonfirmasi.html';
+                            }
+                            
+                    function openPesananDikemas() {
+                                window.location.href = 'SA data pesanan dikemas.html';
+                            }
+                    
+                    function openPesananDikirim() {
+                                window.location.href = 'SA data pesanan dikirim.html';
+                            }
+
+                    function openPesananDiterima() {
+                                window.location.href = 'SA data pesanan diterima.html';
+                            }
+                    
+                    function openPesananSelesai() {
+                                window.location.href = 'SA data pesanan selesai.html';
+                            }
+
+                    function openPembayaran() {
+                                window.location.href = 'SA pembayaran.html';
+                            }
+
+                    function openLaporanPesanan() {
+                                window.location.href = 'SA laporan pesanan.html';
+                            }
+
+                    function openSupport() {
+                                window.location.href = '';
+                            }
+                    
+                    function openSettings() {
+                                window.location.href = '';
+                            }
+
+                    function openLogOut() {
+                                window.location.href = '';
+                            }
+                    
+                </script>
+
             </div>
         </div>
         <div class="w-[80%] h-full flex flex-col bg-[--putih]">

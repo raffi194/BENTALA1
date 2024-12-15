@@ -13,6 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <title>BENTALA</title>
+
 </head>
 <body>
     <nav class="fixed top-0 w-full h-14 z-10 bg-[--putih]">
@@ -78,46 +79,78 @@
         </div>
     </nav>
 
-    <div class="flex-grow">
-        <div class="swiper-container w-full h-screen">
-            <div class="swiper-wrapper">
+    <div class="content mx-auto mt-14">
+        <div class="relative">
+            <div class="slider flex flex-col snap-y snap-mandatory overflow-y-auto h-screen touch-pan-y scrollbar-hide">
                 <!-- Slide 1 -->
-                <div class="swiper-slide flex items-center justify-center bg-blue-500">
-                    <h1 class="text-white text-4xl">Slide 1</h1>
-                </div>
+                <div class="slide flex-none snap-start w-full h-full flex justify-center items-center relative">
+                    <!-- Background image -->
+                    <img src="img/About atas.png" alt="Your image" class="w-full h-full object-cover">
+                    
+                    <!-- Text at the bottom-left corner -->
+                    <div class="absolute bottom-4 left-4 text-white font-semibold text-xl">
+                        Your Text Here
+                    </div>                
+                </div>                               
+
                 <!-- Slide 2 -->
-                <div class="swiper-slide flex items-center justify-center bg-green-500">
-                    <h1 class="text-white text-4xl">Slide 2</h1>
+                <div class="slide flex-none snap-start w-full h-full bg-gray-300 flex justify-center items-center">
+                    <h2 class="text-4xl font-bold">Slide 2</h2>
                 </div>
+
                 <!-- Slide 3 -->
-                <div class="swiper-slide flex items-center justify-center bg-red-500">
-                    <h1 class="text-white text-4xl">Slide 3</h1>
-                </div>
-                <!-- Slide 4 -->
-                <div class="swiper-slide flex items-center justify-center bg-yellow-500">
-                    <h1 class="text-white text-4xl">Slide 4</h1>
-                </div>
-                <!-- Slide 5 -->
-                <div class="swiper-slide flex items-center justify-center bg-purple-500">
-                    <h1 class="text-white text-4xl">Slide 5</h1>
+                <div class="slide flex-none snap-start w-full h-full bg-gray-400 flex justify-center items-center">
+                    <h2 class="text-4xl font-bold">Slide 3</h2>
                 </div>
             </div>
-            <!-- Pagination (Optional) -->
-            <div class="swiper-pagination"></div>
+
+            <!-- Dots Navigation -->
+            <div class="slider-dots fixed right-5 top-1/2 transform -translate-y-1/2 flex flex-col">
+                <div class="dot mb-2 w-3 h-3 bg-gray-400 rounded-full cursor-pointer" onclick="scrollToSlide(1)"></div>
+                <div class="dot mb-2 w-3 h-3 bg-gray-400 rounded-full cursor-pointer" onclick="scrollToSlide(2)"></div>
+                <div class="dot mb-2 w-3 h-3 bg-gray-400 rounded-full cursor-pointer" onclick="scrollToSlide(3)"></div>
+            </div>
         </div>
     </div>
 
+    <style>
+        .scrollbar-hide {
+            -ms-overflow-style: none;   
+            scrollbar-width: none;    
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;           
+        }
+    </style>
+
     <script>
-        // Initialize Swiper
-        const swiper = new Swiper('.swiper-container', {
-            direction: 'vertical', // Set swipe direction to vertical
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            mousewheel: true,
-            loop: true, // Optional: Enables looping
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function scrollToSlide(index) {
+            const slide = slides[index - 1];
+            slide.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updateActiveDot() {
+            const scrollPosition = slider.scrollTop;
+            const slideHeight = slider.offsetHeight;
+            const activeIndex = Math.round(scrollPosition / slideHeight);
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-gray-700', index === activeIndex);
+                dot.classList.toggle('bg-gray-400', index !== activeIndex);
+            });
+        }
+
+        slider.addEventListener('scroll', () => {
+            updateActiveDot();
         });
+
+        // Initialize active dot
+        updateActiveDot();
     </script>
 
 
@@ -248,7 +281,6 @@
     <script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'></script>
     <script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'></script>
     <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
     <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
     <script src="https:// cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 </body>

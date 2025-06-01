@@ -172,17 +172,16 @@
             <!-- Product Image Section (Center) -->
             <li class="flex-1 flex justify-center">
                 <div class="mt-20 flex flex-col items-center justify-center">
-                    <img src="img/HeadCC.png" alt="Product 9"
-                        class="w-full h-80 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
+                    <img id="hatImage" src="img/HeadCC.png" alt="Product 9" class="w-full h-80 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
 
-                    <div class="flex justify-center mt-5 space-x-1 h-36">
+                    <!-- <div class="flex justify-center mt-5 space-x-1 h-36">
                         <img src="img/CC01.png" alt="Product 1"
                             class="w-32 h-20 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
                         <img src="img/CC02.png" alt="Product 2"
                             class="w-32 h-20 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
                         <img src="img/CC03.png" alt="Product 3"
                             class="w-32 h-20 object-cover border-2 border-[--hitam] rounded-lg cursor-pointer">
-                    </div>
+                    </div> -->
                 </div>
             </li>
             <!-- Ukuran Section (Right) -->
@@ -264,19 +263,22 @@
 
                         <div class="mt-2 flex items-start space-x-4 relative">
                             <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[--putih] relative cursor-pointer pilihwarna"
-                                onclick="toggleSelect(this)">
+                                onclick="toggleSelect(this, 'HeadCC.png')">
                                 <div class="absolute inset-0 rounded-full bg-[--ijocap]"></div>
                             </div>
                             <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-[--putih] relative cursor-pointer pilihwarna"
-                                onclick="toggleSelect(this)">
+                                onclick="toggleSelect(this, 'Cap Pa Orange Pe Grey 1.png')">
                                 <div class="absolute inset-0 rounded-full bg-[--orange]"></div>
                             </div>
 
                             <script>
-                                function toggleSelect(element) {
+                                function toggleSelect(element, newImageFileName) {
                                     const sizeCards = document.querySelectorAll('.pilihwarna');
 
                                     const isSelected = element.classList.contains('border-[--hitam]');
+
+                                    const hatImage = document.getElementById('hatImage');
+                                    hatImage.src = 'img/' + newImageFileName;
 
                                     if (isSelected) {
                                         element.classList.remove('border-[--hitam]');
